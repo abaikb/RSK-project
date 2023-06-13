@@ -17,7 +17,7 @@ const App = () => {
         </Route>
       </Routes>
     </BrowserRouter>
-    <Login/>
+    <div className='login'><Login/></div>
     </div>
   )
 }
