@@ -1,0 +1,12 @@
+.icons {
+    position: absolute;
+    bottom: 20px;
+    right: 50px;
+}
+
+.img {
+    width: 132px;
+    height: 42px;
+    margin-right: 30px;
+    object-fit: cover;
+}
