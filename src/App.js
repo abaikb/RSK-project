@@ -7,14 +7,16 @@ import { OrderPage } from './pages/online_order';
 
 const App = () => {
   return (
+    <div className="bank_img">
     <BrowserRouter>
       <Routes>
-        <Route path='/'element={<Layout />}>
+        <Route path='/' element={<Layout />}>
           <Route path='/about_us' element={<AboutPage />} />
           <Route path='/order' element={<OrderPage />} />
         </Route>
       </Routes>
     </BrowserRouter>
+    </div>
   )
 }
 
