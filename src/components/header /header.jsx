@@ -1,63 +1,44 @@
-import React, { useState } from 'react';
-import './header.css';
-import Login from '../Login/login';
-;
+import { NavLink } from "react-router-dom"
+import Logo from '../images/Лого РСК.png'
+import Lang from '../images/язык иконка.png'
+import style from './header.module.css'
 
-const Header = ({ isLoggedIn, onLogin, onLogout }) => {
-  const [showModal, setShowModal] = useState(false);
-
-  const handleLogin = () => {
-    setShowModal(true);
-  };
-
-  const handleLogout = () => {
-    setShowModal(false);
-    onLogout();
-  };
-
+const links = [
+  {
+    id: 1,
+    text: 'Главная',
+    route: '/'
+  },
+  {
+    id: 2,
+    text: 'О нас',
+    route: '/about_us'
+  },
+  {
+    id: 3,
+    text: 'Онлайн очередь',
+    router: '/order'
+  }
+]
+const Header = () => {
   return (
-    <header className="header">
-      <div className="container">
-        <div className="logoContainer">
-          <img src="/path/to/logo.png" alt="Логотип" className="logo" />
+    <>
+      <div className={style.header_wrapper}>
+        <img className={style.logo} src={Logo} alt="logo rsk" />
+        <div className={style.links_container}>
+        {
+          links.map((link) => (
+              <NavLink className={style.link} key={link.id} to={link.route}>
+                {link.text}
+              </NavLink>
+          ))
+        }
         </div>
-        <nav className="navigation">
-          <ul>
-            <li>
-              <a href="/">Главная</a>
-            </li>
-            <li>
-              <a href="/services">Услуги</a>
-            </li>
-            <li>
-              <a href="/contacts">Контакты</a>
-            </li>
-          </ul>
-        </nav>
-        <div>
-          {isLoggedIn ? (
-            <button onClick={handleLogout} className="button">
-              Выйти
-            </button>
-          ) : (
-            <button onClick={handleLogin} className="button">
-              Войти
-            </button>
-          )}
-        </div>
+        <button className={style.lang_btn}><img src={Lang}></img></button>
       </div>
-      {showModal && (
-        <div className="modal">
-          <div className="modal-content">
-            <Login onLogin={onLogin} /> {/* Импортируем и используем компонент Login */}
-            <button onClick={() => setShowModal(false)} className="modal-close">
-              Закрыть
-            </button>
-          </div>
-        </div>
-      )}
-    </header>
-  );
-};
+    </>
 
-export default Header;
+  )
+}
+
+export default Header
