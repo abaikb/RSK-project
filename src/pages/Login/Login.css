@@ -1,0 +1,81 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+.login-form {
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+.login-form input {
+  width: 411px;
+  height: 60px;
+  padding: 24px;
+  margin-top: 17px;
+  background: #eef8ff;
+  border-radius: 15px;
+  margin-bottom: 10px;
+  border: none;
+  font-size: 18px;
+  color: #6591b0;
+}
+
+.login-checkbox {
+  display: flex;
+  align-items: center;
+  color: #eef8ff;
+  margin-top: 27px;
+}
+
+.login-checkbox input[type="checkbox"] {
+  width: 21px;
+  height: 21px;
+}
+
+.login-form .forgot-link {
+  color: #eef8ff;
+  margin-left: 92px;
+  margin-top: 9px;
+}
+
+.login-form span {
+  margin-left: 9px;
+  margin-top: 9px;
+}
+
+.login-form button {
+  width: 411px;
+  height: 59px;
+  background: #ffcd29;
+  border-radius: 15px;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+  color: #0f4f8d;
+  font-size: 26px;
+  line-height: 150%;
+}
+
+.login-links {
+  margin-top: 20px;
+}
+
+.login-links> .link {
+  font-family: "Roboto", sans-serif;
+  font-size: 20px;
+  line-height: 150%;
+  color: #ffffff;
+}
+
+
+
+@media screen and (max-width: 480px) {
+    .login-form input {
+        width: 100%;
+      }
+      
+      .login-form button {
+        width: 100%;
+      }
+}
