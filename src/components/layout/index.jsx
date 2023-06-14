@@ -13,6 +13,10 @@ export const Layout = () => {
       </div>
       
 
+      <Market />
+
+      <Footer />
+      {/* <Footer /> */}
     </>
   )
 }
