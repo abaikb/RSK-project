@@ -1,6 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 
+
+.login-container {
+  position: relative;
+}
+
 .login-form {
+  position: absolute;
+  top: 240px;
+  right: 80px;
   font-family: "Roboto", sans-serif;
   display: flex;
   flex-direction: column;
@@ -37,6 +45,7 @@
 }
 
 .login-form span {
+  color: #eef8ff;
   margin-left: 9px;
   margin-top: 9px;
 }
@@ -58,6 +67,7 @@
 
 .login-links {
   margin-top: 20px;
+  
 }
 
 .login-links> .link {
