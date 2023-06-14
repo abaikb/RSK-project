@@ -14,7 +14,6 @@ body {
   height: 100%;
 }
 
-<<<<<<< HEAD:src/App.css
 
 
 .login {
@@ -22,16 +21,3 @@ body {
   right: 80px;
   top: 171px;
 }
-=======
-.bank_img {
-  display: flex;
-  flex-wrap: wrap;
-  width: 100%;
-  height: 100vh;
-  /* background-image: url(./components//images//Баннер.png); */
-  background-repeat: no-repeat;
-  background-size: contain;
-  object-fit: contain;
-  position: relative;
-}
->>>>>>> 102c1e29897bd9c097461732a5db46444e1fb770:RSK-project-main/src/App.css
