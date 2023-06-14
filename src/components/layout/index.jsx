@@ -1,7 +1,7 @@
 import { Outlet } from 'react-router-dom'
-import Header  from '../header_/header'
-
-
+import Header from '../header/header'
+import Market from '../market/index'
+import Footer from '../footer/footer'
 
 export const Layout = () => {
   return (
@@ -11,12 +11,10 @@ export const Layout = () => {
       <div>
         <Outlet />
       </div>
-      
 
       <Market />
 
       <Footer />
-      {/* <Footer /> */}
     </>
   )
 }
