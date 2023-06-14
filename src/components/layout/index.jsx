@@ -12,10 +12,6 @@ export const Layout = () => {
       <div>
         <Outlet />
       </div>
-      
-      <Market />
-
-      <Footer />
     </>
   )
 }
