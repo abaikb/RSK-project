@@ -1,10 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 
-
-.login-container {
-  position: relative;
-}
-
 .login-form {
   position: absolute;
   top: 240px;

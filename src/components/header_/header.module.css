@@ -7,6 +7,15 @@
   padding: 30px 80px;
 }
 
+@media (max-width: 768px) {
+  .header_wrapper {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+    height: auto;
+  }
+}
+
 .logo {
   width: 200px;
   height: 40px;
@@ -17,6 +26,15 @@
   justify-content: space-between;
   width: 462px;
   margin-left: 400px;
+}
+
+@media (max-width: 1024px) {
+  .links_container {
+    margin-left: 0;
+    width: auto;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
 }
 
 .link {
@@ -35,4 +53,11 @@
 .lang_btn {
   background: #0F4F8D;
   border: none;
+}
+
+@media (max-width: 768px) {
+  .lang_btn {
+    margin-top: 20px;
+    width: 100%;
+  }
 }

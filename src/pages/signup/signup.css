@@ -1,50 +1,96 @@
 .signup-container {
-  position: absolute;
-  top: 115px;
-  right: 90px;
-}
-
-.form-container {
-  max-width: 400px;
-  margin: 0 auto;
-  padding: 20px;
-  border-radius: 8px;
-}
-
-.input-group {
-  margin-bottom: 16px;
-}
-.input-group input {
-  padding-left: 28px;
-  border: none;
-  background: #eef8ff;
-  border-radius: 15px;
-  width: 411px;
-  height: 50px;
-}
-
-.input-group input:focus {
-  outline: none;
-  border-color: #007bff;
-  box-shadow: 0 0 4px rgba(0, 123, 255, 0.5);
-}
-
-.button-container {
-  text-align: center;
-}
-
-.button-container button {
-  width: 411px;
-  height: 59px;
-  padding: 10px 20px;
-  background: #ffcd29;
-  border-radius: 15px;
-  color: #fff;
-  border: none;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.button-container button:hover {
-  background-color: #0056b3;
-}
+    position: absolute;
+    top: 115px;
+    right: 90px;
+  }
+  
+  @media (max-width: 768px) {
+    .form-container {
+        padding: 15px;
+    }
+    .signup-container {
+      position: static;
+      margin-top: 30px;
+      margin-right: 0px;
+    }
+  }
+  
+  .input-group {
+    margin-bottom: 10px;
+  }
+  
+  .input-group.no-margin {
+    margin-bottom: 0;
+  }
+  
+  .input-group input {
+    padding-left: 28px;
+    border: none;
+    background: #eef8ff;
+    border-radius: 15px;
+    width: 411px;
+    height: 50px;
+    font-family: 'Roboto';
+    font-weight: 400;
+  }
+  
+  @media (max-width: 768px) {
+    .input-group input {
+      width: 100%;
+    }
+  }
+  
+  .error {
+    font-family: 'Roboto';
+    color: red;
+    font-size: 15px;
+  }
+  
+  .input-group input:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 4px rgba(0, 123, 255, 0.5);
+  }
+  
+  .checkbox {
+    width: 21px;
+    height: 21px;
+    margin-top: 10px;
+  }
+  
+  .forgot-title {
+    font-family: 'Roboto';
+    font-weight: 400;
+    color: #eef8ff;
+    line-height: 150%;
+    margin-left: 26px;
+    margin-top: -25px;
+  }
+  
+  .button-container {
+    text-align: center;
+  }
+  
+  .button-container button {
+    width: 411px;
+    height: 59px;
+    padding: 10px 20px;
+    background: #ffcd29;
+    border-radius: 15px;
+    color: #0f4f8d;
+    font-size: 26px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+  }
+  
+  @media (max-width: 768px) {
+    .form-container {
+        padding: 15px;
+    }
+    .button-container button {
+      width: 100%;
+    }
+  }
+  
