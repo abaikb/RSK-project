@@ -1,0 +1,18 @@
+.icons {
+    position: absolute;
+    bottom: 20px;
+    right: 50px;
+}
+
+.img {
+    width: 132px;
+    height: 42px;
+    margin-right: 30px;
+    object-fit: cover;
+}
+
+.img:hover {
+    transition: transform 0.5s;
+    transform: scale(1.05);
+    cursor: pointer;
+}

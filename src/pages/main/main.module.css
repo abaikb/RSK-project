@@ -1,0 +1,21 @@
+.bankImg {
+    display: flex;
+    width: 60%;
+    height: 100vh;
+    object-fit: cover;
+   
+  }
+
+
+
+.mainText {
+    width: 787px;
+    height: 479px;    
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 150%;
+    color: #FFFFFF;
+    /* position: absolute; */
+    top: 500px ;
+    z-index: 5;
+}

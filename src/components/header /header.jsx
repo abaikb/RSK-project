@@ -7,7 +7,7 @@ const links = [
   {
     id: 1,
     text: 'Главная',
-    route: '/'
+    route: '/main'
   },
   {
     id: 2,
@@ -17,7 +17,7 @@ const links = [
   {
     id: 3,
     text: 'Онлайн очередь',
-    router: '/order'
+    route: '/order'
   }
 ]
 const Header = () => {
