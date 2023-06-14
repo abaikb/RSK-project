@@ -1,5 +1,8 @@
+
 export const MainPage = () => {
+  return (
     <div>
-        MainPage
+      Главная
     </div>
-}
+  );
+};
