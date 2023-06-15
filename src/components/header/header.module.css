@@ -50,8 +50,14 @@
 }
 
 .lang_btn {
+  width: 40x;
+  height: 25px;
+  border: 1px solid #FFFFFF;
+  border-radius: 3px;
+  font-size: 15px;
+  color: #FFFFFF;
   background: #0F4F8D;
-  border: none;
+
 }
 
 @media (max-width: 768px) {
