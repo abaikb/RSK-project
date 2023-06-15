@@ -33,8 +33,8 @@ const Header = () => {
               </NavLink>
           ))
         }
-        </div>
         <button className={style.lang_btn}><img src={Lang}></img></button>
+        </div>
       </div>
     </>
 
