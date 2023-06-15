@@ -1,20 +1,19 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 
-
-.login-container {
+.login_container {
   position: relative;
 }
 
-.login-form {
+.login_form {
   position: absolute;
-  top: 240px;
+  top: 100px;
   right: 80px;
   font-family: "Roboto", sans-serif;
   display: flex;
   flex-direction: column;
 }
 
-.login-form input {
+.login_form input {
   width: 411px;
   height: 60px;
   padding: 24px;
@@ -27,30 +26,38 @@
   color: #6591b0;
 }
 
-.login-checkbox {
+
+.login_form input:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 4px rgba(0, 123, 255, 0.5);
+}
+
+.login_checkbox {
   display: flex;
   align-items: center;
   margin-top: 27px;
 }
 
-.login-checkbox input[type="checkbox"] {
+
+.login_checkbox input[type="checkbox"] {
   width: 21px;
   height: 21px;
 }
 
-.login-form .forgot-link {
+.login_form .forgot_link {
   color: #eef8ff;
   margin-left: 92px;
   margin-top: 9px;
 }
 
-.login-form span {
+.login_form span {
   color: #eef8ff;
   margin-left: 9px;
   margin-top: 9px;
 }
 
-.login-form button {
+.login_form button {
   width: 411px;
   height: 59px;
   background: #ffcd29;
@@ -65,26 +72,31 @@
   line-height: 150%;
 }
 
-.login-links {
+.login_links {
   margin-top: 20px;
-  
 }
 
-.login-links> .link {
+.link {
   font-family: "Roboto", sans-serif;
   font-size: 20px;
   line-height: 150%;
   color: #ffffff;
 }
-
-
+.errors {
+  color: red;
+  background: #eaecf1;
+  border-radius: 8px;
+  width: 200px;
+  font-size: 10px;
+  padding: 3px;
+}
 
 @media screen and (max-width: 480px) {
-    .login-form input {
-        width: 100%;
-      }
-      
-      .login-form button {
-        width: 100%;
-      }
+  .login_form input {
+    width: 100%;
+  }
+  
+  .login_form button {
+    width: 100%;
+  }
 }

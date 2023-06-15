@@ -1,39 +1,41 @@
-.signup-container {
+.signupContainer {
   position: absolute;
   top: 115px;
   right: 90px;
 }
 
-.form-container {
+.formContainer {
   max-width: 400px;
   margin: 0 auto;
   padding: 20px;
   border-radius: 8px;
 }
 
-.input-group {
+.inputGroup {
   margin-bottom: 16px;
 }
-.input-group input {
+
+.inputGroup input {
   padding-left: 28px;
   border: none;
   background: #eef8ff;
   border-radius: 15px;
+  color: rgb(63, 118, 177);
   width: 411px;
   height: 50px;
 }
 
-.input-group input:focus {
+.inputGroup input:focus {
   outline: none;
   border-color: #007bff;
   box-shadow: 0 0 4px rgba(0, 123, 255, 0.5);
 }
 
-.button-container {
+.buttonContainer {
   text-align: center;
 }
 
-.button-container button {
+.buttonContainer button {
   width: 411px;
   height: 59px;
   padding: 10px 20px;
@@ -43,8 +45,31 @@
   border: none;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  color: #0f4f8d;
+  font-size: 26px;
+  margin-top: 10px;
 }
 
-.button-container button:hover {
-  background-color: #0056b3;
+.error {
+  color: red;
+  background: #eaecf1;
+  border-radius: 8px;
+  width: 287px;
+  height: 27.72px;
+  font-size: 10px;
+  padding: 3px;
 }
+.checkbox {
+  width: 21px;
+  height: 21px;
+}
+
+.forgot-title {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  color: #eef8ff;
+  line-height: 150%;
+  margin-left: 26px;
+  margin-top: -25px;
+}
+

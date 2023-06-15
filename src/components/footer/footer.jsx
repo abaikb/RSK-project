@@ -20,9 +20,9 @@ const Footer = () => {
                 </div>
             </div>
             <div className={style.thirdBlock}>
-                    <p className={style.blue}>Лицензия НБКР №033, <br/> от 22 июня 2017 года</p>
-                    <img className={style.logo} src={LogoSmall} alt="logo"/>
-                    <p className={style.blue2}>1996 - 2023</p>
+                <p className={style.blue}>Лицензия НБКР №033, <br /> от 22 июня 2017 года</p>
+                <img className={style.logo} src={LogoSmall} alt="logo" />
+                <p className={style.blue2}>1996 - 2023</p>
             </div>
         </footer>
     )
