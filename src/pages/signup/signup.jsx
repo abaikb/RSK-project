@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './signup.css';
+import styles from './signup.module.css';
 
 const RegistrationForm = () => {
   const [formData, setFormData] = useState({
@@ -12,15 +12,7 @@ const RegistrationForm = () => {
     confirmPassword: ''
   });
 
-  const [errors, setErrors] = useState({
-    lastName: '',
-    firstName: '',
-    middleName: '',
-    inn: '',
-    phoneNumber: '',
-    password: '',
-    confirmPassword: ''
-  });
+  const [errors, setErrors] = useState({});
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -28,67 +20,60 @@ const RegistrationForm = () => {
     setErrors((prevErrors) => ({ ...prevErrors, [name]: '' }));
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (validateForm()) {
-      // Form is valid, handle form submission
-    } else {
-      // Form is invalid, display error messages
+  const validateForm = () => {
+    const newErrors = {};
+
+    if (!formData.lastName) {
+      newErrors.lastName = 'Пожалуйста, введите фамилию';
     }
+
+    if (!formData.firstName) {
+      newErrors.firstName = 'Пожалуйста, введите имя';
+    }
+
+    if (!formData.middleName) {
+      newErrors.middleName = 'Пожалуйста, введите отчество';
+    }
+
+    if (!formData.inn) {
+      newErrors.inn = 'Пожалуйста, введите ИНН';
+    } else if (formData.inn.length !== 10) {
+      newErrors.inn = 'ИНН должен состоять из 10 цифр';
+    }
+
+    if (!formData.phoneNumber) {
+      newErrors.phoneNumber = 'Пожалуйста, введите номер телефона';
+    } else if (!/^\d{10}$/.test(formData.phoneNumber)) {
+      newErrors.phoneNumber = 'Номер телефона должен состоять из 10 цифр';
+    }
+
+    if (!formData.password) {
+      newErrors.password = 'Пожалуйста, введите пароль';
+    } else if (formData.password.length < 6) {
+      newErrors.password = 'Пароль должен содержать не менее 6 символов';
+    }
+
+    if (formData.confirmPassword !== formData.password) {
+      newErrors.confirmPassword = 'Пароли не совпадают';
+    }
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
   };
 
-  const validateForm = () => {
-    let isValid = true;
-    const updatedErrors = { ...errors };
 
-    if (formData.lastName.trim() === '') {
-      updatedErrors.lastName = 'Введите фамилию';
-      isValid = false;
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if (validateForm()) {
+      // Ваш код обработки отправки формы
     }
-
-    if (formData.firstName.trim() === '') {
-      updatedErrors.firstName = 'Введите имя';
-      isValid = false;
-    }
-
-    if (formData.middleName.trim() === '') {
-      updatedErrors.middleName = 'Введите отчество';
-      isValid = false;
-    }
-
-    if (formData.inn.trim() === '') {
-      updatedErrors.inn = 'Введите ИНН';
-      isValid = false;
-    }
-
-    if (formData.phoneNumber.trim() === '') {
-      updatedErrors.phoneNumber = 'Введите номер телефона';
-      isValid = false;
-    }
-
-    if (formData.password.trim() === '') {
-      updatedErrors.password = 'Введите пароль';
-      isValid = false;
-    }
-
-    if (formData.confirmPassword.trim() === '') {
-      updatedErrors.confirmPassword = 'Подтвердите пароль';
-      isValid = false;
-    }
-
-    if (formData.password !== formData.confirmPassword) {
-      updatedErrors.confirmPassword = 'Пароли не совпадают';
-      isValid = false;
-    }
-
-    setErrors(updatedErrors);
-    return isValid;
   };
 
   return (
-    <div className="signup-container">
-      <form className="form-container" onSubmit={handleSubmit}>
-        <div className="input-group">
+    <div className={styles.signupContainer}>
+      <form className={styles.formContainer} onSubmit={handleSubmit}>
+        <div className={styles.inputGroup}>
           <input
             type="text"
             name="lastName"
@@ -96,9 +81,9 @@ const RegistrationForm = () => {
             onChange={handleChange}
             placeholder="Фамилия"
           />
-          {errors.lastName && <div className="error">{errors.lastName}</div>}
+          {errors.lastName && <span className={styles.error}>{errors.lastName}</span>}
         </div>
-        <div className="input-group">
+        <div className={styles.inputGroup}>
           <input
             type="text"
             name="firstName"
@@ -106,9 +91,9 @@ const RegistrationForm = () => {
             onChange={handleChange}
             placeholder="Имя"
           />
-          {errors.firstName && <div className="error">{errors.firstName}</div>}
+          {errors.firstName && <span className={styles.error}>{errors.firstName}</span>}
         </div>
-        <div className="input-group">
+        <div className={styles.inputGroup}>
           <input
             type="text"
             name="middleName"
@@ -116,9 +101,9 @@ const RegistrationForm = () => {
             onChange={handleChange}
             placeholder="Отчество"
           />
-          {errors.middleName && <div className="error">{errors.middleName}</div>}
+          {errors.middleName && <span className={styles.error}>{errors.middleName}</span>}
         </div>
-        <div className="input-group">
+        <div className={styles.inputGroup}>
           <input
             type="text"
             name="inn"
@@ -126,9 +111,9 @@ const RegistrationForm = () => {
             onChange={handleChange}
             placeholder="ИНН"
           />
-          {errors.inn && <div className="error">{errors.inn}</div>}
+          {errors.inn && <span className={styles.error}>{errors.inn}</span>}
         </div>
-        <div className="input-group">
+        <div className={styles.inputGroup}>
           <input
             type="text"
             name="phoneNumber"
@@ -136,9 +121,9 @@ const RegistrationForm = () => {
             onChange={handleChange}
             placeholder="Номер телефона"
           />
-          {errors.phoneNumber && <div className="error">{errors.phoneNumber}</div>}
+          {errors.phoneNumber && <span className={styles.error}>{errors.phoneNumber}</span>}
         </div>
-        <div className="input-group">
+        <div className={styles.inputGroup}>
           <input
             type="password"
             name="password"
@@ -146,9 +131,9 @@ const RegistrationForm = () => {
             onChange={handleChange}
             placeholder="Пароль"
           />
-          {errors.password && <div className="error">{errors.password}</div>}
+          {errors.password && <span className={styles.error}>{errors.password}</span>}
         </div>
-        <div className="input-group">
+        <div className={styles.inputGroup}>
           <input
             type="password"
             name="confirmPassword"
@@ -157,15 +142,15 @@ const RegistrationForm = () => {
             placeholder="Повторите пароль"
           />
           {errors.confirmPassword && (
-            <div className="error">{errors.confirmPassword}</div>
+            <span className={styles.error}>{errors.confirmPassword}</span>
           )}
         </div>
         <div>
-          <input className="checkbox" type="checkbox" />
-          <div className="forgot-title">Запомнить меня</div>
+          <input className={styles.checkbox} type="checkbox" />
+          <div className={styles['forgot-title']}>Запомнить меня</div>
           <label></label>
         </div>
-        <div className="button-container">
+        <div className={styles.buttonContainer}>
           <button type="submit">Зарегистрироваться</button>
         </div>
       </form>

@@ -1,0 +1,75 @@
+.signupContainer {
+  position: absolute;
+  top: 115px;
+  right: 90px;
+}
+
+.formContainer {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.inputGroup {
+  margin-bottom: 16px;
+}
+
+.inputGroup input {
+  padding-left: 28px;
+  border: none;
+  background: #eef8ff;
+  border-radius: 15px;
+  color: rgb(63, 118, 177);
+  width: 411px;
+  height: 50px;
+}
+
+.inputGroup input:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 4px rgba(0, 123, 255, 0.5);
+}
+
+.buttonContainer {
+  text-align: center;
+}
+
+.buttonContainer button {
+  width: 411px;
+  height: 59px;
+  padding: 10px 20px;
+  background: #ffcd29;
+  border-radius: 15px;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  color: #0f4f8d;
+  font-size: 26px;
+  margin-top: 10px;
+}
+
+.error {
+  color: red;
+  background: #eaecf1;
+  border-radius: 8px;
+  width: 287px;
+  height: 27.72px;
+  font-size: 10px;
+  padding: 3px;
+}
+.checkbox {
+  width: 21px;
+  height: 21px;
+}
+
+.forgot-title {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  color: #eef8ff;
+  line-height: 150%;
+  margin-left: 26px;
+  margin-top: -25px;
+}
+
