@@ -6,6 +6,7 @@ const Login = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [rememberMe, setRememberMe] = useState(false);
+  const [errors, setErrors] = useState({});
 
   const handleUsernameChange = (e) => {
     setUsername(e.target.value);
@@ -19,17 +20,34 @@ const Login = () => {
     setRememberMe(e.target.checked);
   };
 
+  const validateForm = () => {
+    const newErrors = {};
+
+    if (!username) {
+      newErrors.username = 'Пожалуйста, введите имя пользователя!';
+    }
+
+    if (!password) {
+      newErrors.password = 'Пожалуйста, введите пароль!';
+    }
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
   const handleLogin = (e) => {
     e.preventDefault();
 
-    // Здесь могут быть дополнительные проверки, например, проверка с сервером на соответствие имени пользователя и пароля
+    if (validateForm()) {
+      // Здесь могут быть дополнительные проверки, например, проверка с сервером на соответствие имени пользователя и пароля
 
-    // Проверка успешности аутентификации
-    if (username === 'admin' && password === 'password') {
-      // Выполнение необходимых действий после успешного входа
-      console.log('Успешный вход в систему');
-    } else {
-      console.log('Неверное имя пользователя или пароль');
+      // Проверка успешности аутентификации
+      if (username === 'admin' && password === 'password') {
+        // Выполнение необходимых действий после успешного входа
+        console.log('Успешный вход в систему');
+      } else {
+        console.log('Неверное имя пользователя или пароль');
+      }
     }
   };
 
@@ -43,6 +61,7 @@ const Login = () => {
           placeholder="Номер телефона"
           className={L.login_input}
         />
+        {errors.username && <div className={L.errors}>{errors.username}</div>}
         <input
           type="password"
           value={password}
@@ -50,6 +69,7 @@ const Login = () => {
           placeholder="Пароль"
           className={L.login_input}
         />
+        {errors.password && <div className={L.errors}>{errors.password}</div>}
         <span className={L.login_checkbox}>
           <input
             className={L.checkbox}

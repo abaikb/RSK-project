@@ -21,45 +21,45 @@ const RegistrationForm = () => {
 
   const validateForm = () => {
     const newErrors = {};
-  
+
     if (!formData.lastName) {
       newErrors.lastName = 'Пожалуйста, введите фамилию';
     }
-  
+
     if (!formData.firstName) {
       newErrors.firstName = 'Пожалуйста, введите имя';
     }
-  
+
     if (!formData.middleName) {
       newErrors.middleName = 'Пожалуйста, введите отчество';
     }
-  
+
     if (!formData.inn) {
       newErrors.inn = 'Пожалуйста, введите ИНН';
     } else if (formData.inn.length !== 10) {
       newErrors.inn = 'ИНН должен состоять из 10 цифр';
     }
-  
+
     if (!formData.phoneNumber) {
       newErrors.phoneNumber = 'Пожалуйста, введите номер телефона';
     } else if (!/^\d{10}$/.test(formData.phoneNumber)) {
       newErrors.phoneNumber = 'Номер телефона должен состоять из 10 цифр';
     }
-  
+
     if (!formData.password) {
       newErrors.password = 'Пожалуйста, введите пароль';
     } else if (formData.password.length < 6) {
       newErrors.password = 'Пароль должен содержать не менее 6 символов';
     }
-  
+
     if (formData.confirmPassword !== formData.password) {
       newErrors.confirmPassword = 'Пароли не совпадают';
     }
-  
+
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
-  
+
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -144,7 +144,11 @@ const RegistrationForm = () => {
             <span className={styles.error}>{errors.confirmPassword}</span>
           )}
         </div>
-          
+        <div>
+          <input className={styles.checkbox} type="checkbox" />
+          <div className={styles['forgot-title']}>Запомнить меня</div>
+          <label></label>
+        </div>
         <div className={styles.buttonContainer}>
           <button type="submit">Зарегистрироваться</button>
         </div>

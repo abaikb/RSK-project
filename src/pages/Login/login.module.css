@@ -6,7 +6,7 @@
 
 .login_form {
   position: absolute;
-  top: 150px;
+  top: 100px;
   right: 80px;
   font-family: "Roboto", sans-serif;
   display: flex;
@@ -26,11 +26,19 @@
   color: #6591b0;
 }
 
+
+.login_form input:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 4px rgba(0, 123, 255, 0.5);
+}
+
 .login_checkbox {
   display: flex;
   align-items: center;
   margin-top: 27px;
 }
+
 
 .login_checkbox input[type="checkbox"] {
   width: 21px;
@@ -73,6 +81,14 @@
   font-size: 20px;
   line-height: 150%;
   color: #ffffff;
+}
+.errors {
+  color: red;
+  background: #eaecf1;
+  border-radius: 8px;
+  width: 200px;
+  font-size: 10px;
+  padding: 3px;
 }
 
 @media screen and (max-width: 480px) {
