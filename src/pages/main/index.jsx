@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react';
 import style from "./main.module.css";
 import Image from "../../components/images/banner.png";
 import Image2 from "../../components/images/Group 56.png";
-import Exchange from "../../components/images/Group 48.png";
 import Money from "../../components/images/Group.png";
 import Footer from "../../components/footer/footer";
 import Market from "../../components/market";
@@ -33,7 +32,6 @@ export const MainPage = () => {
             <div className={style.main}>
                 <div className={style.containerImg}>
                     <img className={style.bankImg} src={Image} alt="image" />
-                    {/* <img className={style.exchange} src={Exchange} /> */}
                     <div className={style.exchange}>
                         <div>
                             <img src={Money} alt="$" />

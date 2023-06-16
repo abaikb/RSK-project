@@ -7,7 +7,7 @@ const links = [
   {
     id: 1,
     text: 'Главная',
-    route: '/main'
+    route: '/'
   },
   {
     id: 2,

@@ -9,8 +9,6 @@ export const Layout = () => {
 
       <Outlet />
 
-      <Market />
-
     </>
   )
 }
