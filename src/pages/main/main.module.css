@@ -145,6 +145,12 @@ tr:nth-of-type(odd) {
   margin: 10px 0 30px 0;
 }
 
+.btnShow:hover {
+  transition: transform 0.5s;
+  transform: scale(0.95);
+  cursor: pointer;
+}
+
 .servicePoints>input:first-of-type {
   margin-bottom: 17px;
 }
