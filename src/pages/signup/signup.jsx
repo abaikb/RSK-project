@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styles from './signup.module.css';
+import Image from "../../components/images/banner.png";
 
 const RegistrationForm = () => {
   const [formData, setFormData] = useState({
@@ -71,90 +72,93 @@ const RegistrationForm = () => {
   };
 
   return (
-    <div className={styles.signupContainer}>
-      <form className={styles.formContainer} onSubmit={handleSubmit}>
-        <div className={styles.inputGroup}>
-          <input
-            type="text"
-            name="lastName"
-            value={formData.lastName}
-            onChange={handleChange}
-            placeholder="Фамилия"
-          />
-          {errors.lastName && <span className={styles.error}>{errors.lastName}</span>}
-        </div>
-        <div className={styles.inputGroup}>
-          <input
-            type="text"
-            name="firstName"
-            value={formData.firstName}
-            onChange={handleChange}
-            placeholder="Имя"
-          />
-          {errors.firstName && <span className={styles.error}>{errors.firstName}</span>}
-        </div>
-        <div className={styles.inputGroup}>
-          <input
-            type="text"
-            name="middleName"
-            value={formData.middleName}
-            onChange={handleChange}
-            placeholder="Отчество"
-          />
-          {errors.middleName && <span className={styles.error}>{errors.middleName}</span>}
-        </div>
-        <div className={styles.inputGroup}>
-          <input
-            type="text"
-            name="inn"
-            value={formData.inn}
-            onChange={handleChange}
-            placeholder="ИНН"
-          />
-          {errors.inn && <span className={styles.error}>{errors.inn}</span>}
-        </div>
-        <div className={styles.inputGroup}>
-          <input
-            type="text"
-            name="phoneNumber"
-            value={formData.phoneNumber}
-            onChange={handleChange}
-            placeholder="Номер телефона"
-          />
-          {errors.phoneNumber && <span className={styles.error}>{errors.phoneNumber}</span>}
-        </div>
-        <div className={styles.inputGroup}>
-          <input
-            type="password"
-            name="password"
-            value={formData.password}
-            onChange={handleChange}
-            placeholder="Пароль"
-          />
-          {errors.password && <span className={styles.error}>{errors.password}</span>}
-        </div>
-        <div className={styles.inputGroup}>
-          <input
-            type="password"
-            name="confirmPassword"
-            value={formData.confirmPassword}
-            onChange={handleChange}
-            placeholder="Повторите пароль"
-          />
-          {errors.confirmPassword && (
-            <span className={styles.error}>{errors.confirmPassword}</span>
-          )}
-        </div>
-        <div>
-          <input className={styles.checkbox} type="checkbox" />
-          <div className={styles['forgot-title']}>Запомнить меня</div>
-          <label></label>
-        </div>
-        <div className={styles.buttonContainer}>
-          <button type="submit">Зарегистрироваться</button>
-        </div>
-      </form>
-    </div>
+    <>
+      <img className={styles.bankImg} src={Image} alt="image" />
+      <div className={styles.signupContainer}>
+        <form className={styles.formContainer} onSubmit={handleSubmit}>
+          <div className={styles.inputGroup}>
+            <input
+              type="text"
+              name="lastName"
+              value={formData.lastName}
+              onChange={handleChange}
+              placeholder="Фамилия"
+            />
+            {errors.lastName && <span className={styles.error}>{errors.lastName}</span>}
+          </div>
+          <div className={styles.inputGroup}>
+            <input
+              type="text"
+              name="firstName"
+              value={formData.firstName}
+              onChange={handleChange}
+              placeholder="Имя"
+            />
+            {errors.firstName && <span className={styles.error}>{errors.firstName}</span>}
+          </div>
+          <div className={styles.inputGroup}>
+            <input
+              type="text"
+              name="middleName"
+              value={formData.middleName}
+              onChange={handleChange}
+              placeholder="Отчество"
+            />
+            {errors.middleName && <span className={styles.error}>{errors.middleName}</span>}
+          </div>
+          <div className={styles.inputGroup}>
+            <input
+              type="text"
+              name="inn"
+              value={formData.inn}
+              onChange={handleChange}
+              placeholder="ИНН"
+            />
+            {errors.inn && <span className={styles.error}>{errors.inn}</span>}
+          </div>
+          <div className={styles.inputGroup}>
+            <input
+              type="text"
+              name="phoneNumber"
+              value={formData.phoneNumber}
+              onChange={handleChange}
+              placeholder="Номер телефона"
+            />
+            {errors.phoneNumber && <span className={styles.error}>{errors.phoneNumber}</span>}
+          </div>
+          <div className={styles.inputGroup}>
+            <input
+              type="password"
+              name="password"
+              value={formData.password}
+              onChange={handleChange}
+              placeholder="Пароль"
+            />
+            {errors.password && <span className={styles.error}>{errors.password}</span>}
+          </div>
+          <div className={styles.inputGroup}>
+            <input
+              type="password"
+              name="confirmPassword"
+              value={formData.confirmPassword}
+              onChange={handleChange}
+              placeholder="Повторите пароль"
+            />
+            {errors.confirmPassword && (
+              <span className={styles.error}>{errors.confirmPassword}</span>
+            )}
+          </div>
+          <div>
+            <input className={styles.checkbox} type="checkbox" />
+            <div className={styles['forgot-title']}>Запомнить меня</div>
+            <label></label>
+          </div>
+          <div className={styles.buttonContainer}>
+            <button type="submit">Зарегистрироваться</button>
+          </div>
+        </form>
+      </div>
+    </>
   );
 };
 

@@ -3,7 +3,7 @@ import Login from '../Login/login';
 
 export const OrderPage = () => {
   return (
-    <div className='order-container'>git 
+    <div className='order-container'>
         <Login/>
     </div>
   );
