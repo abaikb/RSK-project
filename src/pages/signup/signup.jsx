@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 import styles from './signup.module.css';
 import Image from "../../components/images/banner.png";
 
@@ -62,12 +63,17 @@ const RegistrationForm = () => {
     return Object.keys(newErrors).length === 0;
   };
 
-
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     if (validateForm()) {
-      // Ваш код обработки отправки формы
+      try {
+        const response = await axios.post('http://34.89.148.74/account/register/', formData);
+        console.log(response.data);
+        localStorage.setItem();
+      } catch (error) {
+        console.error(error);
+      }
     }
   };
 
