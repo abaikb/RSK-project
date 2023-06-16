@@ -87,17 +87,18 @@ const Login = () => {
               Забыли пароль?
             </a>
           </span>
-
-          <button type="submit" className={L.login_button}>
-            Войти
-          </button>
+          <Link to="./choose-person">
+            <button type="submit" className={L.login_button}>
+              Войти
+            </button>
+          </Link>
           <div className={L.login_links}>
             <Link className={L.link} to="./signup">
               <a className={L.link} href="#">Регистрация</a>
             </Link>
           </div>
         </form>
-      </div>
+      </div >
     </>
   );
 };

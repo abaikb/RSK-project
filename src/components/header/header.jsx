@@ -16,7 +16,7 @@ const links = [
   {
     id: 3,
     text: 'Онлайн очередь',
-    route: '/order'
+    route: '/login'
   }
 ]
 const Header = () => {

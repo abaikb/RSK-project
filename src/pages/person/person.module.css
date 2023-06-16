@@ -1,0 +1,12 @@
+.btnContainer {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+}
+
+.legal {
+    width: 285px;
+    height: 46px;
+    background: linear-gradient(176.23deg, #FFF8DF 3.09%, rgba(255, 248, 223, 0) 59.39%);
+    border-radius: 15px;
+}
