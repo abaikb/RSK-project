@@ -16,7 +16,7 @@ const Footer = () => {
                     <p className={style.yellow}>Телефон доверия</p>
                     <p className={style.white2}>+996 (312) 35-55-55</p>
                     <p className={style.yellow}>WhatsApp:</p>
-                    <p className={style.white2}>+996 706 911 111</p>
+                    <p ><a className={style.white2} href="https://wa.me/996706911111" target='_blanc'>+996 706 911 111</a></p>
                 </div>
             </div>
             <div className={style.thirdBlock}>
