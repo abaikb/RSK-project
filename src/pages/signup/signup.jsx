@@ -8,9 +8,9 @@ const RegistrationForm = () => {
     firstName: '',
     middleName: '',
     inn: '',
-    phoneNumber: '',
+    phone_number: '',
     password: '',
-    confirmPassword: ''
+    password2: ''
   });
 
   const [errors, setErrors] = useState({});
@@ -42,10 +42,10 @@ const RegistrationForm = () => {
       newErrors.inn = 'ИНН должен состоять из 10 цифр';
     }
 
-    if (!formData.phoneNumber) {
-      newErrors.phoneNumber = 'Пожалуйста, введите номер телефона';
-    } else if (!/^\d{10}$/.test(formData.phoneNumber)) {
-      newErrors.phoneNumber = 'Номер телефона должен состоять из 10 цифр';
+    if (!formData.phone_number) {
+      newErrors.phone_number = 'Пожалуйста, введите номер телефона';
+    } else if (!/^\d{10}$/.test(formData.phone_number)) {
+      newErrors.phone_number = 'Номер телефона должен состоять из 10 цифр';
     }
 
     if (!formData.password) {
@@ -54,8 +54,8 @@ const RegistrationForm = () => {
       newErrors.password = 'Пароль должен содержать не менее 6 символов';
     }
 
-    if (formData.confirmPassword !== formData.password) {
-      newErrors.confirmPassword = 'Пароли не совпадают';
+    if (formData.password2 !== formData.password) {
+      newErrors.password2 = 'Пароли не совпадают';
     }
 
     setErrors(newErrors);
@@ -69,13 +69,12 @@ const RegistrationForm = () => {
       try {
         const response = await axios.post('http://34.89.148.74/account/register/', formData);
         console.log(response.data);
-        localStorage.setItem();
+        localStorage.setItem('accessToken', response.data.token);
       } catch (error) {
         console.error(error);
       }
     }
   };
-
   return (
     <div className={styles.signupContainer}>
       <form className={styles.formContainer} onSubmit={handleSubmit}>
@@ -122,12 +121,12 @@ const RegistrationForm = () => {
         <div className={styles.inputGroup}>
           <input
             type="text"
-            name="phoneNumber"
-            value={formData.phoneNumber}
+            name="phone_number"
+            value={formData.phone_number}
             onChange={handleChange}
             placeholder="Номер телефона"
           />
-          {errors.phoneNumber && <span className={styles.error}>{errors.phoneNumber}</span>}
+          {errors.phoneNumber && <span className={styles.error}>{errors.phone_number}</span>}
         </div>
         <div className={styles.inputGroup}>
           <input
@@ -142,13 +141,13 @@ const RegistrationForm = () => {
         <div className={styles.inputGroup}>
           <input
             type="password"
-            name="confirmPassword"
-            value={formData.confirmPassword}
+            name="password2"
+            value={formData.password2}
             onChange={handleChange}
             placeholder="Повторите пароль"
           />
-          {errors.confirmPassword && (
-            <span className={styles.error}>{errors.confirmPassword}</span>
+          {errors.password2 && (
+            <span className={styles.error}>{errors.password2}</span>
           )}
         </div>
         <div>
