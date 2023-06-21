@@ -3,8 +3,8 @@
 }
 
 .bankImg {
-    width: 800px;
-    height: 800px;
+    width: 65%;
+    height: 100%;
     object-fit: cover;
 }
 
@@ -112,20 +112,21 @@ svg {
     stroke: #9cb29cC2;
 
 }
+
 /* ticket.module.css */
 
 .timePicker {
     display: inline-block;
-  }
-  
-  .timePicker input {
+}
+
+.timePicker input {
     width: 80px;
     padding: 8px;
     border: 1px solid #ccc;
     border-radius: 4px;
-  }
-  
-  .timePicker button {
+}
+
+.timePicker button {
     margin-left: 8px;
     padding: 8px;
     background-color: #ccc;
@@ -133,29 +134,29 @@ svg {
     border: none;
     border-radius: 4px;
     cursor: pointer;
-  }
-  
-  .timePicker .react-time-picker__clock {
+}
+
+.timePicker .react-time-picker__clock {
     margin-top: 8px;
     background-color: #fff;
     border: 1px solid #ccc;
     border-radius: 4px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  .timePicker .react-time-picker__clock .react-clock {
+}
+
+.timePicker .react-time-picker__clock .react-clock {
     width: 200px;
     height: 200px;
-  }
-  
-  .timePicker .react-time-picker__clock .react-clock__face {
+}
+
+.timePicker .react-time-picker__clock .react-clock__face {
     background-color: #f0f0f0;
-  }
-  
-  .timePicker .react-time-picker__clock .react-clock__hand {
+}
+
+.timePicker .react-time-picker__clock .react-clock__hand {
     background-color: #333;
-  }
-  
+}
+
 .btnCreate {
     width: 413px;
     height: 59px;

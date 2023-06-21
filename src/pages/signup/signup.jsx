@@ -162,7 +162,6 @@ const RegistrationForm = () => {
         </div>
         <div className={styles.market} ><Market /></div>
       </form>
-      <Market />
     </div>
   );
 };
