@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import L from "./login.module.css";
+import Image from "../../components/images/banner.png";
+
 
 const Login = () => {
   const [username, setUsername] = useState('');
@@ -52,48 +54,52 @@ const Login = () => {
   };
 
   return (
-    <div className={L.login_container}>
-      <form className={L.login_form} onSubmit={handleLogin}>
-        <input
-          type="text"
-          value={username}
-          onChange={handleUsernameChange}
-          placeholder="Номер телефона"
-          className={L.login_input}
-        />
-        {errors.username && <div className={L.errors}>{errors.username}</div>}
-        <input
-          type="password"
-          value={password}
-          onChange={handlePasswordChange}
-          placeholder="Пароль"
-          className={L.login_input}
-        />
-        {errors.password && <div className={L.errors}>{errors.password}</div>}
-        <span className={L.login_checkbox}>
+    <>
+      <img className={L.bankImg} src={Image} alt="image" />
+      <div className={L.login_container}>
+        <form className={L.login_form} onSubmit={handleLogin}>
           <input
-            className={L.checkbox}
-            type="checkbox"
-            checked={rememberMe}
-            onChange={handleRememberMeChange}
+            type="text"
+            value={username}
+            onChange={handleUsernameChange}
+            placeholder="Номер телефона"
+            className={L.login_input}
           />
-          <label></label>
-          <span>Запомнить меня</span>
-          <a className={L.forgot_link} href="#">
-            Забыли пароль?
-          </a>
-        </span>
-
-        <button type="submit" className={L.login_button}>
-          Войти
-        </button>
-        <div className={L.login_links}>
-          <Link className={L.link} to="./signup">
-            <a className={L.link} href="#">Регистрация</a>
+          {errors.username && <div className={L.errors}>{errors.username}</div>}
+          <input
+            type="password"
+            value={password}
+            onChange={handlePasswordChange}
+            placeholder="Пароль"
+            className={L.login_input}
+          />
+          {errors.password && <div className={L.errors}>{errors.password}</div>}
+          <span className={L.login_checkbox}>
+            <input
+              className={L.checkbox}
+              type="checkbox"
+              checked={rememberMe}
+              onChange={handleRememberMeChange}
+            />
+            <label></label>
+            <span>Запомнить меня</span>
+            <Link to="/forgot_password" className={L.forgot_link} href="#">
+              Забыли пароль?
+            </Link>
+          </span>
+          <Link to="./choose-person">
+            <button type="submit" className={L.login_button}>
+              Войти
+            </button>
           </Link>
-        </div>
-      </form>
-    </div>
+          <div className={L.login_links}>
+            <Link className={L.link} to="./signup">
+              <a className={L.link} href="#">Регистрация</a>
+            </Link>
+          </div>
+        </form>
+      </div >
+    </>
   );
 };
 
