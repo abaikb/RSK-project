@@ -1,0 +1,30 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+    padding-right: 150px;
+}
+
+.bankImg {
+    width: 828px;
+    height: 800px;
+    object-fit: cover;
+}
+
+.btnContainer {
+    display: flex;
+    flex-direction: column;
+    margin-top: 248px;
+    width: 300px;
+}
+
+.legal {
+    width: 285px;
+    height: 46px;
+    background: #ffcd29;
+    border-radius: 15px;
+    border: none;
+    font-size: 22px;
+    line-height: 150%;
+    color: #0F4F8D;
+    margin-bottom: 48px;
+}

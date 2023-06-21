@@ -5,11 +5,12 @@
 }
 
 .img_box img {
-    width: 100%;
+    width: 90%;
 }
 
 .text_box {
-    width: 34%;
+    width: 50%;
+    height: 700px;
     color: #fff;
     font-family: Roboto;
     font-size: 1em;

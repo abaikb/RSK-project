@@ -1,0 +1,170 @@
+.container {
+    display: flex;
+}
+
+.bankImg {
+    width: 800px;
+    height: 800px;
+    object-fit: cover;
+}
+
+.ticketContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.ticketContainer select {
+    width: 411px;
+    height: 50px;
+    background: #EEF8FF;
+    border-radius: 15px;
+}
+
+.ticketContainer>select {
+    font-size: 18px;
+    line-height: 150%;
+    color: #9CB2C2;
+    margin-bottom: 18px;
+    padding-left: 28px;
+}
+
+
+select option:active {
+    color: black
+}
+
+.pickerWrapper {
+    display: flex;
+}
+
+.datePickerWrapper {
+    position: relative;
+    cursor: pointer;
+}
+
+.dateContainer {
+    position: relative;
+    display: inline-block;
+}
+
+.dateIcon {
+    position: absolute;
+    top: 50%;
+    right: 65px;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+}
+
+.dateIcon:hover {
+    color: #0078d7;
+}
+
+
+
+.datePicker {
+    width: 194px;
+    height: 50px;
+    color: #9cb29cC2;
+    background: #EEF8FF;
+    border-radius: 15px;
+    border: none;
+    padding-left: 28px;
+    font-size: 18px;
+    line-height: 150%;
+    margin-right: 48px;
+}
+
+.datePickerCalendar {
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+}
+
+.timePicker {
+    width: 169px;
+    height: 50px;
+    background: #EEF8FF;
+    border-radius: 15px;
+    border: none;
+    padding-left: 28px;
+    font-size: 18px;
+    line-height: 150%;
+}
+
+.ticket_ticketContainer__8wbHq button {
+    width: 50px;
+    height: 50px;
+    background: #FFCD29;
+    border-radius: 15px;
+    border: none;
+    font-weight: 500;
+    font-size: 26px;
+    line-height: 150%;
+    color: #0F4F8D;
+    margin-top: 37px;
+}
+
+svg {
+    display: inherit;
+
+    stroke: #9cb29cC2;
+
+}
+/* ticket.module.css */
+
+.timePicker {
+    display: inline-block;
+  }
+  
+  .timePicker input {
+    width: 80px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .timePicker button {
+    margin-left: 8px;
+    padding: 8px;
+    background-color: #ccc;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .timePicker .react-time-picker__clock {
+    margin-top: 8px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .timePicker .react-time-picker__clock .react-clock {
+    width: 200px;
+    height: 200px;
+  }
+  
+  .timePicker .react-time-picker__clock .react-clock__face {
+    background-color: #f0f0f0;
+  }
+  
+  .timePicker .react-time-picker__clock .react-clock__hand {
+    background-color: #333;
+  }
+  
+.btnCreate {
+    width: 413px;
+    height: 59px;
+    background: #FFCD29;
+    border-radius: 15px;
+    border: none;
+    font-weight: 500;
+    font-size: 26px;
+    line-height: 150%;
+    color: #0F4F8D;
+    margin-top: 37px;
+}

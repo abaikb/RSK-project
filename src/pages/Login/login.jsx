@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import L from "./login.module.css";
 import Image from "../../components/images/banner.png";
+import Market from '../../components/market';
 
 
 const Login = () => {
@@ -87,10 +88,11 @@ const Login = () => {
               Забыли пароль?
             </a>
           </span>
-
-          <button type="submit" className={L.login_button}>
-            Войти
-          </button>
+          <Link to='/choose-person'>
+            <button type="submit" className={L.login_button}>
+              Войти
+            </button>
+          </Link>
           <div className={L.login_links}>
             <Link className={L.link} to="./signup">
               <a className={L.link} href="#">Регистрация</a>
@@ -98,6 +100,7 @@ const Login = () => {
           </div>
         </form>
       </div>
+      <Market />
     </>
   );
 };

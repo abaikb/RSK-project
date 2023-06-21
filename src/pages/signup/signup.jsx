@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import styles from './signup.module.css';
 import Image from "../../components/images/banner.png";
+import Market from '../../components/market';
 
 const RegistrationForm = () => {
   const [formData, setFormData] = useState({
@@ -158,6 +159,7 @@ const RegistrationForm = () => {
           </div>
         </form>
       </div>
+      <Market />
     </>
   );
 };

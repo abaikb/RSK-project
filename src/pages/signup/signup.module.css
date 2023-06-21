@@ -1,9 +1,7 @@
 .bankImg {
-  /* display: flex; */
-  width: 70%;
-  height: 100%;
+  width: 800px;
+  height: 800px;
   object-fit: cover;
-
 }
 
 .formContainer {
@@ -15,7 +13,9 @@
 }
 
 .inputGroup {
-  margin-bottom: 16px;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
 }
 
 .inputGroup input {
@@ -26,6 +26,7 @@
   color: rgb(63, 118, 177);
   width: 411px;
   height: 50px;
+  margin-bottom: 10px;
 }
 
 .inputGroup input:focus {
