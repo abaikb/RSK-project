@@ -83,9 +83,9 @@ const Login = () => {
             />
             <label></label>
             <span>Запомнить меня</span>
-            <a className={L.forgot_link} href="#">
+            <Link to="/forgot_password" className={L.forgot_link} href="#">
               Забыли пароль?
-            </a>
+            </Link>
           </span>
           <Link to="./choose-person">
             <button type="submit" className={L.login_button}>
