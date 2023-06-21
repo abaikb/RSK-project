@@ -71,6 +71,7 @@ export const MainPage = () => {
                             </div>
                             <p>Сеть подразделений РСК>БАНКа состоит из Головного офиса, <br /> 52 филиала, 37 стационарных сберкасс</p>
                             <select name="Все регионы" id="region">
+                                <option  selected>Все регионы</option>
                                 <option>Бишкек</option>
                                 <option>Чуйская область</option>
                                 <option>Ошская область</option>
@@ -80,7 +81,8 @@ export const MainPage = () => {
                                 <option>Баткенская область</option>
                                 <option>Джалал-Абадская область</option>
                             </select>
-                            <select name="Все тип точки" id="point">
+                            <select name="Выберите тип точки" id="point">
+                                <option selected>Выберите тип точки</option>
                                 <option value="">Отделения</option>
                                 <option value="">POS-терминалы</option>
                                 <option value="">Банкоматы</option>

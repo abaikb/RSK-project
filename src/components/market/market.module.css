@@ -4,15 +4,12 @@
     margin: 10px;
 }
 
-
 .img {
     width: 132px;
     height: 42px;
     object-fit: cover;
     margin: 10px;
 }
-
-
 
 .img:hover {
     transition: transform 0.5s;

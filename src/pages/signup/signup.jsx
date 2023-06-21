@@ -3,6 +3,7 @@ import axios from 'axios';
 import styles from './signup.module.css';
 import Image from "../../components/images/banner.png";
 import Market from '../../components/market';
+import Market from '../../components/market';
 
 const RegistrationForm = () => {
   const [formData, setFormData] = useState({
@@ -162,7 +163,9 @@ const RegistrationForm = () => {
           </div>
           <div className={styles.market} ><Market/></div>
         </form>
-    </div>
+      </div>
+      <Market />
+    </>
   );
 };
 

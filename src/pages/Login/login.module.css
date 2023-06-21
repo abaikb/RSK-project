@@ -1,11 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 
 .bankImg {
-  display: flex;
-  width: 70%;
-  height: 100%;
+    width: 800px;
+  height: 800px;
   object-fit: cover;
-
 }
 
 .login_form {

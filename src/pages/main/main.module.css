@@ -6,10 +6,9 @@
 
 .bankImg {
   display: flex;
-  width: 70%;
-  height: 100%;
+  width: 800px;
+  height: 800px;
   object-fit: cover;
-
 }
 
 .exchange {
@@ -128,7 +127,7 @@ tr:nth-of-type(odd) {
   font-size: 14.9877px;
   line-height: 21px;
   color: #0F4F8D;
-  padding-left: 10px;
+  padding-left: 28px;
   margin-bottom: 17px;
 }
 
