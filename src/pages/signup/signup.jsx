@@ -75,6 +75,7 @@ const RegistrationForm = () => {
       }
     }
   };
+
   return (
     <div className={styles.signupContainer}>
       <form className={styles.formContainer} onSubmit={handleSubmit}>
@@ -126,7 +127,7 @@ const RegistrationForm = () => {
             onChange={handleChange}
             placeholder="Номер телефона"
           />
-          {errors.phoneNumber && <span className={styles.error}>{errors.phone_number}</span>}
+          {errors.phone_number && <span className={styles.error}>{errors.phone_number}</span>}
         </div>
         <div className={styles.inputGroup}>
           <input
@@ -146,14 +147,11 @@ const RegistrationForm = () => {
             onChange={handleChange}
             placeholder="Повторите пароль"
           />
-          {errors.password2 && (
-            <span className={styles.error}>{errors.password2}</span>
-          )}
+          {errors.password2 && <span className={styles.error}>{errors.password2}</span>}
         </div>
         <div>
           <input className={styles.checkbox} type="checkbox" />
-          <div className={styles['forgot-title']}>Запомнить меня</div>
-          <label></label>
+          <label>Запомнить меня</label>
         </div>
         <div className={styles.buttonContainer}>
           <button type="submit">Зарегистрироваться</button>
