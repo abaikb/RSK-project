@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import styles from './signup.module.css';
 import Image from "../../components/images/banner.png";
+import Market from '../../components/market';
 
 const RegistrationForm = () => {
   const [formData, setFormData] = useState({
@@ -78,9 +79,8 @@ const RegistrationForm = () => {
   };
 
   return (
-    <>
+    <div className={styles.contain_signup}>
       <img className={styles.bankImg} src={Image} alt="image" />
-      <div className={styles.signupContainer}>
         <form className={styles.formContainer} onSubmit={handleSubmit}>
           <div className={styles.inputGroup}>
             <input
@@ -158,13 +158,11 @@ const RegistrationForm = () => {
             <input className={styles.checkbox} type="checkbox" />
             <div className={styles['forgot-title']}>Запомнить меня</div>
             <label></label>
+            <button className={styles.button} type="submit">Зарегистрироваться</button>
           </div>
-          <div className={styles.buttonContainer}>
-            <button type="submit">Зарегистрироваться</button>
-          </div>
+          <div className={styles.market} ><Market/></div>
         </form>
-      </div>
-    </>
+    </div>
   );
 };
 

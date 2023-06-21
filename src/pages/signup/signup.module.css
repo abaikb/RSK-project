@@ -1,20 +1,22 @@
+.contain_signup {
+  display: flex;
+  padding: 5px;
+}
+
 .bankImg {
-  /* display: flex; */
-  width: 70%;
+  width: 60%;
   height: 100%;
   object-fit: cover;
-
 }
 
 .formContainer {
-  position: absolute;
-  top: 130px;
-  right: 80px;
-  margin: 0 auto;
+  width: 100%;
   border-radius: 8px;
+  margin-top: 100px;
 }
 
 .inputGroup {
+  width: 100%;
   margin-bottom: 16px;
 }
 
@@ -34,14 +36,10 @@
   box-shadow: 0 0 4px rgba(0, 123, 255, 0.5);
 }
 
-.buttonContainer {
+.button {
   text-align: center;
-}
-
-.buttonContainer button {
   width: 393px;
   height: 59px;
-  padding: 10px 20px;
   background: #ffcd29;
   border-radius: 15px;
   color: #fff;
@@ -69,10 +67,77 @@
 }
 
 .forgot-title {
-  font-family: 'Roboto', sans-serif;
-  font-weight: 400;
+  font-family: "Roboto", sans-serif;
   color: #eef8ff;
   line-height: 150%;
   margin-left: 26px;
   margin-top: -25px;
+}
+
+.market {
+
+  margin-top: 55px;
+}
+@media only screen and (max-width: 1052px) {
+  .contain_signup {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 5px;
+  }
+  .bankImg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .formContainer {
+    width: 100%;
+    border-radius: 8px;
+    padding-left: 70px;
+    padding-right: 70px;
+    margin-top: -150px;
+  }
+  .inputGroup input {
+    width: 100%;
+  }
+
+  .button {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .bankImg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .formContainer {
+    width: 100%;
+    border-radius: 8px;
+    padding-left: 30px;
+    padding-right: 30px;
+
+  }
+
+  .inputGroup input {
+    width: 100%;
+  }
+
+  .button {
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .bankImg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .formContainer {
+    width: 100%;
+    border-radius: 8px;
+    margin-top: 0;
+
+  }
 }
