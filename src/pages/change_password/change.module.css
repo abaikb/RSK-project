@@ -82,6 +82,16 @@
     margin-top: 25px;
     margin-left: auto;
     margin-right: auto;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+
+  .button:hover {
+    background-color: #ffc700;
+  }
+  
+  .button:active {
+    background-color: #fcb400;
+    transform: scale(0.95);
   }
 
   @media (max-width: 913px) {
@@ -105,12 +115,12 @@
         object-fit: contain;
         max-height: 100%;
       }
-      .form {
+      /* .form {
         margin-right: 0;
       }
       form {
         margin-bottom: 20px;
-      }
+      } */
       
       .form h4 {
         margin-top: 0;
