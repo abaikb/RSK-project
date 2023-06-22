@@ -48,6 +48,11 @@ const Header = () => {
     fetchUserName();
   }, []);
 
+  const handleLogout = () => {
+    localStorage.removeItem('accessToken');
+    setUserName('');
+  };
+
   return (
     <>
       <div className={style.header_wrapper}>
@@ -65,6 +70,9 @@ const Header = () => {
           <option value="">KGZ</option>
           <option value="">EN</option>
         </select>
+        <button className={style.logout_btn} onClick={handleLogout}>
+          Выйти
+        </button>
       </div>
     </>
   );
