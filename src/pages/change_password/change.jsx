@@ -10,7 +10,6 @@ const ForgotPasswordForm = () => {
 
     const handleForgotPassword = (e) => {
         e.preventDefault();
-        // Выполнение запроса на сервер для восстановления пароля
         // Можно использовать fetch или axios для отправки данных
         const data = {
             email
