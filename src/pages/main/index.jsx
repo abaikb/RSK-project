@@ -1,12 +1,16 @@
-import { useState, useEffect } from 'react';
-import { Link } from "react-router-dom";
-import style from "./main.module.css";
-import Image from "../../components/images/banner.png";
-import Image2 from "../../components/images/Group 56.png";
-import Money from "../../components/images/Group.png";
-import Point from "../../components/images/Group 38.png";
-import Footer from "../../components/footer/footer";
-import Market from "../../components/market";
+import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { Carousel } from 'react-responsive-carousel';
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
+import style from './main.module.css';
+import Image1 from '../../components/images/slide1.png';
+import Image2 from '../../components/images/slide2.png';
+import Image3 from '../../components/images/slide3.png';
+import Image4 from '../../components/images/slide4.png';
+import Money from '../../components/images/money.png';
+import Point from '../../components/images/point.png';
+import Market from '../../components/market';
+import Footer from '../../components/footer/footer';
 
 export const MainPage = () => {
     const [currentDate, setCurrentDate] = useState('');
@@ -31,78 +35,94 @@ export const MainPage = () => {
 
     return (
         <>
-            <div className={style.main}>
-                <div className={style.containerImg}>
-                    <img className={style.bankImg} src={Image} alt="image" />
-                    <div>
-                        <div className={style.exchange}>
-                            <div>
-                                <img src={Money} alt="$" />
-                                <h3>Курсы валют</h3>
-                            </div>
-                            <p>по г.Бишкек с понедельника <br /> по пятницу</p>
-                            <p>Курс на {currentDate}</p>
-                            <table className={style.currencyTable}>
-                                <thead>
-                                    <tr>
-                                        <th>Валюта</th>
-                                        <th>Покупка</th>
-                                        <th>Продажа</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    {currencyData.map((data) => (
-                                        <tr key={data.currency}>
-                                            <td>{data.currency}</td>
-                                            <td>{data.buy}</td>
-                                            <td>{data.sell}</td>
-                                        </tr>
-                                    ))}
-                                </tbody>
-                            </table>
-                            <p>При конвертации валюты эквивалентом более 1 000 долларов США действуют договорные обменные курсы.</p>
+            <div className={style.container}>
+                <div className={style.carouselContainer}>
+                    <Carousel className={style.carousel} showArrows={true} infiniteLoop={true} showStatus={false} showThumbs={false}>
+                        <div>
+                            <img src={Image1} alt="image" />
                         </div>
-                        <div className={style.servicePoints}>
-                            <div>
-                                <div>
-                                    <img src={Point} alt="" />
-                                </div>
-                                <h3>Точки <br />обслуживания</h3>
-                            </div>
-                            <p>Сеть подразделений РСК>БАНКа состоит из Головного офиса, <br /> 52 филиала, 37 стационарных сберкасс</p>
-                            <select name="Все регионы" id="region">
-                                <option  selected>Все регионы</option>
-                                <option>Бишкек</option>
-                                <option>Чуйская область</option>
-                                <option>Ошская область</option>
-                                <option>Ыссык-кульская область</option>
-                                <option>Нарынская область</option>
-                                <option>Таласская область</option>
-                                <option>Баткенская область</option>
-                                <option>Джалал-Абадская область</option>
-                            </select>
-                            <select name="Выберите тип точки" id="point">
-                                <option selected>Выберите тип точки</option>
-                                <option value="">Отделения</option>
-                                <option value="">POS-терминалы</option>
-                                <option value="">Банкоматы</option>
-                            </select>
-                            <button className={style.btnShow}>Показать</button>
-                            <div>
-                                <a href="">Отделения</a>
-                                <a href="">Банкоматы</a>
-                            </div>
-                            <a href="">Карта банкоматов и отделений</a>
+                        <div>
+                            <img src={Image2} alt="image" />
                         </div>
+                        <div>
+                            <img src={Image3} alt="image" />
+                        </div>
+                        <div>
+                            <img src={Image4} alt="image" />
+                        </div>
+                    </Carousel>
+                    <div className={style.mainText}>
+                        <p>ОАО “РСК Банк” ОБНУЛЯЕТ ВСЕ КОМИССИИ на период действия режима чрезвычайной ситуации и чрезвычайного положения для пенсионеров и получателей социальных пособий в банкоматах Банка и pos-терминалах, расположенных в отделениях Кыргыз почтасы!
+                            Теперь вы можете получить ваши пенсии и пособия по картам Элкарт без комиссии, так как Банк обнуляет свои комиссии и берет на себя все расходы по компенсации комиссий Кыргыз почтасы.
+                            ВАЖНО! Комиссия будет сниматься автоматически. Однако, РСК Банк ГАРАНТИРУЕТ в кратчайшие сроки компенсировать сумму этой комиссии, перечислив ее на вашу карту.
+                            РСК Банк стремится поддерживать пенсионеров и получателей социальных пособий в дни ЧП и готов сделать все возможное, чтобы сохранить их средства в полном объеме!</p>
                     </div>
                 </div>
-                <p className={style.mainText}>ОАО “РСК Банк” ОБНУЛЯЕТ ВСЕ КОМИССИИ на период действия режима чрезвычайной ситуации и чрезвычайного положения для пенсионеров и получателей социальных пособий в банкоматах Банка и pos-терминалах, расположенных в отделениях Кыргыз почтасы!Теперь вы можете получить ваши пенсии и пособия по картам Элкарт без комиссии, так как Банк обнуляет свои комиссии и берет на себя все расходы по компенсации комиссий Кыргыз почтасы.ВАЖНО! Комиссия будет сниматься автоматически. Однако, РСК Банк ГАРАНТИРУЕТ в кратчайшие сроки компенсировать сумму этой комиссии, перечислив ее на вашу карту.РСК Банк стремится поддерживать пенсионеров и получателей социальных пособий в дни ЧП и готов сделать все возможное, чтобы сохранить их средства в полном объеме!</p>
-                <Link to="/login">
-                    <img src={Image2} alt="" />
-                </Link>
-                <Market />
-            </div>
-            <Footer />
+                <div>
+                    <div className={style.exchange}>
+                        <div>
+                            <img src={Money} alt="$" />
+                            <h3>Курсы валют</h3>
+                        </div>
+                        <p>по г.Бишкек с понедельника <br /> по пятницу</p>
+                        <p>Курс на {currentDate}</p>
+                        <table className={style.currencyTable}>
+                            <thead>
+                                <tr>
+                                    <th>Валюта</th>
+                                    <th>Покупка</th>
+                                    <th>Продажа</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {currencyData.map((data) => (
+                                    <tr key={data.currency}>
+                                        <td>{data.currency}</td>
+                                        <td>{data.buy}</td>
+                                        <td>{data.sell}</td>
+                                    </tr>
+                                ))}
+                            </tbody>
+                        </table>
+                        <p>При конвертации валюты эквивалентом более 1 000 долларов США действуют договорные обменные курсы.</p>
+                    </div>
+                    <div className={style.servicePoints}>
+                        <div>
+                            <div>
+                                <img src={Point} alt="point" />
+                            </div>
+                            <h3>Точки <br />обслуживания</h3>
+                        </div>
+                        <p>Сеть подразделений РСК>БАНКа состоит из Головного офиса, <br /> 52 филиала, 37 стационарных сберкасс</p>
+                        <select name="Все регионы" id="region">
+                            <option selected>Все регионы</option>
+                            <option>Бишкек</option>
+                            <option>Чуйская область</option>
+                            <option>Ошская область</option>
+                            <option>Ыссык-кульская область</option>
+                            <option>Нарынская область</option>
+                            <option>Таласская область</option>
+                            <option>Баткенская область</option>
+                            <option>Джалал-Абадская область</option>
+                        </select>
+                        <select name="Выберите тип точки" id="point">
+                            <option selected>Выберите тип точки</option>
+                            <option value="">Отделения</option>
+                            <option value="">POS-терминалы</option>
+                            <option value="">Банкоматы</option>
+                        </select>
+                        <button className={style.btnShow}>Показать</button>
+                        <div>
+                            <a href="">Отделения</a>
+                            <a href="">Банкоматы</a>
+                        </div>
+                        <a href="">Карта банкоматов и отделений</a>
+                    </div>
+                    <Market />
+
+                </div>
+            </div >
+            < Footer />
         </>
     );
 };
