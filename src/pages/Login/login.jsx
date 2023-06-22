@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import LoginStyle from './login.module.css';
-import Image from '../../components/images/banner.png';
+import Image from '../../components/images/slide1.png';
 import Market from '../../components/market';
 
 const Login = () => {

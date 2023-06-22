@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Image from "../../components/images/banner.png";
+import Image from "../../components/images/slide1.png";
 import changePass from "./change.module.css"
 import Market from '../../components/market';
 
@@ -10,7 +10,6 @@ const ForgotPasswordForm = () => {
 
     const handleForgotPassword = (e) => {
         e.preventDefault();
-        // Выполнение запроса на сервер для восстановления пароля
         // Можно использовать fetch или axios для отправки данных
         const data = {
             email
