@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from "react-router-dom";
 import style from './ticket.module.css';
-import Image from '../../components/images/banner.png';
+import Image from '../../components/images/slide1.png';
 import Market from '../../components/market';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';

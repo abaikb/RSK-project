@@ -1,5 +1,5 @@
 import style from './footer.module.css'
-import LogoSmall from '../images/Logo_small.png'
+import LogoSmall from '../images/logo_small.png'
 
 const Footer = () => {
     return (

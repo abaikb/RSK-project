@@ -1,5 +1,5 @@
 import style from './person.module.css'
-import Image from "../../components/images/banner.png";
+import Image from "../../components/images/slide1.png";
 import Market from '../../components/market';
 import { Link } from 'react-router-dom';
 
