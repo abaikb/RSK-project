@@ -11,6 +11,7 @@ import ForgotPasswordForm from "./pages/change_password/change";
 import CreateTicket from "./pages/create-ticket";
 import Ticket from "./pages/ticket";
 
+
 const App = () => {
   return (
     <div>
@@ -31,5 +32,4 @@ const App = () => {
     </div>
   );
 };
-
-export default App;
+export default App
