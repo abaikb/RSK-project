@@ -43,8 +43,8 @@ const RegistrationForm = () => {
 
     if (!formData.pin) {
       newErrors.pin = 'Пожалуйста, введите ИНН';
-    } else if (formData.pin.length !== 10) {
-      newErrors.pin = 'ИНН должен состоять из 10 цифр';
+    } else if (formData.pin.length !== 14) {
+      newErrors.pin = 'ИНН должен состоять из 14 цифр';
     }
 
     if (!formData.phone_number) {

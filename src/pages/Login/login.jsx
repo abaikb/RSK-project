@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import L from "./login.module.css";
-import Image from "../../components/images/banner.png";
+import axios from 'axios';
+import L from './login.module.css';
+import Image from '../../components/images/banner.png';
 import Market from '../../components/market';
-
 
 const Login = () => {
   const [username, setUsername] = useState('');
@@ -38,17 +38,23 @@ const Login = () => {
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleLogin = (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
 
     if (validateForm()) {
-      // Здесь могут быть дополнительные проверки, например, проверка с сервером на соответствие имени пользователя и пароля
+      try {
+        const response = await axios.post('https://petshackaton.ru/account/login/', {
+          phone_number: username,
+          password: password,
+        });
 
-      // Проверка успешности аутентификации
-      if (username === 'admin' && password === 'password') {
-        // Выполнение необходимых действий после успешного входа
+        // Assuming the server returns a success status and a token
+        const token = response.data.token;
+
+        // Perform any necessary actions after successful login
+
         console.log('Успешный вход в систему');
-      } else {
+      } catch (error) {
         console.log('Неверное имя пользователя или пароль');
       }
     }
@@ -95,7 +101,9 @@ const Login = () => {
           </Link>
           <div className={L.login_links}>
             <Link className={L.link} to="./signup">
-              <a className={L.link} href="#">Регистрация</a>
+              <a className={L.link} href="#">
+                Регистрация
+              </a>
             </Link>
           </div>
         </form>
