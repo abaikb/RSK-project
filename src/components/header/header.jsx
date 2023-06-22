@@ -3,6 +3,9 @@ import { NavLink } from 'react-router-dom';
 import axios from 'axios';
 import Logo from '../images/logo.png';
 import style from './header.module.css';
+import avatar from '../images/Ellipse 171.png';
+
+
 
 
 
@@ -39,7 +42,7 @@ const Header = () => {
           }
         });
 
-        const { name } = response.data[0]; 
+        const { name } = response.data[0];
 
         setUserName(name);
       } catch (error) {
@@ -67,11 +70,14 @@ const Header = () => {
           ))}
         </div>
         <div className={style.username_box}>
-        <div className={style.user_name}>{userName}</div>
-        <button className={style.logout_btn} onClick={handleLogout}>
-          Выйти
-        </button>
+          <div>
+            <img className={style.avatar} src={avatar} alt="" />
+            <div className={style.user_name}>{userName}</div>
+            </div>
         </div>
+        <button className={style.logout_btn} onClick={handleLogout}>
+            Выйти
+          </button>
         <select className={style.lang_btn} name="lang" id="lang">
           <option value="">RU</option>
           <option value="">KGZ</option>
