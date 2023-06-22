@@ -1,7 +1,11 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import styles from './signup.module.css';
+<<<<<<< HEAD
 import bannerImage from '../../components/images/banner.png';
+=======
+import Image from "../../components/images/slide1.png";
+>>>>>>> samat
 import Market from '../../components/market';
 
 const RegistrationForm = () => {

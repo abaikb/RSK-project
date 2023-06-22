@@ -1,5 +1,5 @@
-import IOS from "../images/апп стор иконка .png"
-import Android from "../images/Гугл плэй иконка .png"
+import IOS from "../images/google-play.png"
+import Android from "../images/google-play.png"
 import style from "./market.module.css"
 
 const Market = () => {
