@@ -1,6 +1,6 @@
 import React from 'react'
 import p from './personal.module.css'
-import Banner from '../../components/images/banner.png'
+import slide1 from '../../components/images/slide1.png'
 import Avatar from '../../components/images/Ellipse 171.png'
 import Pen from '../../components/images/pen.svg'
 import wPen from '../../components/images/white_pen.svg'
@@ -9,7 +9,7 @@ export const Personal = () => {
   return (
     <div className={p.container}>
       <div className={p.img_box}>
-        <img src={Banner} alt="" />
+        <img src={slide1} alt="" />
       </div>
       <div className={p.info_table}>
         <h2>Личный кабинет</h2>
