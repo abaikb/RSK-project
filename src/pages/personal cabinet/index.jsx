@@ -5,6 +5,8 @@ import Avatar from '../../components/images/Ellipse 171.png'
 import Pen from '../../components/images/pen.svg'
 import wPen from '../../components/images/white_pen.svg'
 import pin from '../../components/images/pin.svg'
+import arrow from '../../components/images/right_arrow.svg'
+import white_arrow from '../../components/images/white-arrow.svg'
 
 export const Personal = () => {
   return (
@@ -37,8 +39,13 @@ export const Personal = () => {
               <span>12/06</span>
               <span>09:00</span>
             </div>
+            <img src={arrow} alt="" />
           </div>
+          <div className={p.history_box}>
           <a className={p.history} href="#">История</a>
+          <img src={white_arrow} alt="" />
+
+          </div>
         </div>
       </div>
     </div>

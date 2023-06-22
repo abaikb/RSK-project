@@ -20,6 +20,7 @@
     flex-direction: column;
     color: white;
     margin-top: 100px;
+    margin-right: 80px;
 }
 .name_box {
     position: relative;
@@ -42,7 +43,7 @@
 .name_box .pen {
     position: absolute;
     bottom: 13px;
-    right: 48px;
+    right: 80px;
 }
 .container input {
     content: url(../../components/images/pen.svg);
@@ -75,24 +76,56 @@
 }
 
 .ticket {
-    width: 411px;
+    cursor: pointer;
+    width: 90%;
     height: 70px;
     border-radius: 15px;
     background-color: #FFCD29;
     margin-bottom: 26px;
     display: flex;
+    align-items: center;
+    justify-content: space-around;
     transition: 0.5s;
+    color: #0F4F8D;
+}
+
+.ticket img {
+    margin: 0 20px;
+}
+
+.adress {
+    display: flex;
+    flex-direction: column;
+    margin-right: 29px;
+}
+
+.data {
+    display: flex;
+    flex-direction: column;
 }
 
 .ticket:hover {
-    scale: 1.2;
+    scale: 1.1;
 }
 
 .ticket:active {
-    scale: 0.7;
+    scale: 0.9;
 }
+
+.history_box {
+ display: flex;
+ align-items: center;
+}
+
 .history {
     color: white;
 }
+.history_box img {
+    width: 10px;
+    height: 15px;
+    margin-left: 10px;
+}
+
+
 
 
