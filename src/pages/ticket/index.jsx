@@ -1,8 +1,9 @@
 import style from "./show-ticket.module.css"
-import Image from '../../components/images/banner.png';
+import Image from '../../components/images/slide1.png';
 import Skan from "../../components/images/skan.png"
-import Point from "../../components/images/Group 38.png";
+import Point from "../../components/images/point.png";
 import Market from "../../components/market";
+import Sign from "../../components/images/sign.png"
 
 
 const Ticket = () => {
@@ -42,6 +43,13 @@ const Ticket = () => {
                 </div>
                 <button className={style.btnDelete}>Удалить</button>
                 <button className={style.btnChange}>Изменить</button>
+                <div className={style.warning}>
+                    <img src={Sign} alt="!"/>
+                    <p>Внимание, во избежании пропуска, рекомендуется
+                        прийти за 10 минут до забронированного времени
+                    </p>
+                </div>
+
             </div>
             <Market />
         </div>

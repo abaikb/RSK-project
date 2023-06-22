@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styles from './signup.module.css';
-import Image from "../../components/images/banner.png";
+import Image from "../../components/images/slide1.png";
 import Market from '../../components/market';
 
 const RegistrationForm = () => {

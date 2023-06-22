@@ -182,4 +182,27 @@
     font-size: 18px;
     line-height: 150%;
     color: #0F4F8D;
+    margin-bottom: 28px;
+}
+
+.warning {
+    width: 413px;
+    height: 64px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 14px;
+    border-radius: 15px;
+    background: #EEF8FF;
+    color: #0F4F8D;
+    font-size: 15px;
+    font-family: Roboto;
+    font-weight: 600;
+    line-height: 131.5%;
+}
+
+.warning img {
+    padding-right: 6px;
+    width: 14px;
+    height: 36px;
 }

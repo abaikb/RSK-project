@@ -1,14 +1,17 @@
-.containerImg {
+.container {
   display: flex;
   padding: 0 80px 0 0;
   justify-content: space-between;
 }
 
-.bankImg {
-  display: flex;
-  width: 800px;
-  height: 800px;
-  object-fit: cover;
+.carousel {
+  width: 95%;
+}
+
+.carousel div img {
+  width: 100%;
+  object-fit: contain;
+  height: 50vw;
 }
 
 .exchange {
@@ -94,6 +97,7 @@ tr:nth-of-type(odd) {
   padding: 35px 30px 27px 30px;
   display: flex;
   flex-direction: column;
+  margin-bottom: 63px;
 }
 
 .servicePoints>div {
@@ -131,6 +135,21 @@ tr:nth-of-type(odd) {
   margin-bottom: 17px;
 }
 
+.servicePoints>input:first-of-type {
+  margin-bottom: 17px;
+}
+
+.servicePoints>div>a {
+  font-size: 16px;
+  color: #0F4F8D;
+  margin: 0 30px 10px 0;
+}
+
+.servicePoints>a {
+  font-size: 16px;
+  color: #0F4F8D;
+}
+
 .btnShow {
   width: 234px;
   height: 32px;
@@ -150,21 +169,6 @@ tr:nth-of-type(odd) {
   cursor: pointer;
 }
 
-.servicePoints>input:first-of-type {
-  margin-bottom: 17px;
-}
-
-.servicePoints>div>a {
-  font-size: 16px;
-  color: #0F4F8D;
-  margin: 0 30px 10px 0;
-}
-
-.servicePoints>a {
-  font-size: 16px;
-  color: #0F4F8D;
-}
-
 .mainText {
   width: 787px;
   height: 479px;
@@ -173,5 +177,5 @@ tr:nth-of-type(odd) {
   line-height: 150%;
   color: #FFFFFF;
   padding: 0 0 0 80px;
-  margin-bottom: 50px;
+  margin-bottom: 100px;
 }

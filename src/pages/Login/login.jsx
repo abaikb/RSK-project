@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import L from "./login.module.css";
-import Image from "../../components/images/banner.png";
+import Image from "../../components/images/slide1.png";
 import Market from '../../components/market';
 
 
