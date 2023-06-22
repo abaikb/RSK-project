@@ -54,6 +54,7 @@
     border-radius: 15px;
     border: none;
     color: #0F4F8D;
+    transition: 0.5s;
 }
 
 .container input::-webkit-inner-spin-button {
@@ -80,12 +81,16 @@
     background-color: #FFCD29;
     margin-bottom: 26px;
     border: none;
+    transition: 0.5s;
 }
 
 .ticket:hover {
-    
+    scale: 1.2;
 }
 
+.ticket:active {
+    scale: 0.7;
+}
 .history {
     color: white;
 }
