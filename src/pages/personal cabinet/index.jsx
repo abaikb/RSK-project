@@ -1,6 +1,6 @@
 import React from 'react'
 import p from './personal.module.css'
-import Banner from '../../components/images/banner.png'
+import Banner from '../../components/images/slide1.png'
 import Avatar from '../../components/images/Ellipse 171.png'
 import Pen from '../../components/images/pen.svg'
 import wPen from '../../components/images/white_pen.svg'

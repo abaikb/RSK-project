@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Image from "../../components/images/banner.png";
+import Image from "../../components/images/slide1.png";
 import changePass from "./change.module.css"
 import Market from '../../components/market';
 
