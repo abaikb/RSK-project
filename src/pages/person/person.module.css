@@ -8,15 +8,14 @@
 .btnContainer {
     display: flex;
     flex-direction: column;
-    background-color: #fff;
-    margin-top: 248px;
+    margin-top: 150px;
     width: 300px;
 }
 
 
 .bankImg {
-    width: 828px;
-    height: 800px;
+    width: 65%;
+    height: 100%;
     object-fit: cover;
 }
 

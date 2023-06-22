@@ -5,9 +5,8 @@
 }
 
 .bankImg {
-  display: flex;
-  width: 800px;
-  height: 800px;
+  width: 65%;
+  height: 100%;
   object-fit: cover;
 }
 

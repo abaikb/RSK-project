@@ -42,8 +42,8 @@ const Ticket = () => {
                 </div>
                 <button className={style.btnDelete}>Удалить</button>
                 <button className={style.btnChange}>Изменить</button>
+                <Market />
             </div>
-            <Market />
         </div>
     )
 }
