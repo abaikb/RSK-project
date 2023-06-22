@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import axios from 'axios';
-import Logo from '../images/Лого РСК.png';
+import Logo from '../images/logo.png';
 import style from './header.module.css';
 
 const links = [

@@ -1,14 +1,8 @@
 import React, { useState } from 'react';
-<<<<<<< HEAD
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import LoginStyle from './login.module.css';
 import Image from '../../components/images/banner.png';
-=======
-import { Link } from 'react-router-dom';
-import L from "./login.module.css";
-import Image from "../../components/images/slide1.png";
->>>>>>> samat
 import Market from '../../components/market';
 
 const Login = () => {
