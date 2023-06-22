@@ -119,7 +119,6 @@ export const MainPage = () => {
                         <a href="">Карта банкоматов и отделений</a>
                     </div>
                     <Market />
-
                 </div>
             </div >
             < Footer />
