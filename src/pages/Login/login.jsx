@@ -106,7 +106,7 @@ const Login = () => {
             Войти
           </button>
           <div className={LoginStyle.login_links}>
-            <Link className={LoginStyle.link} to="./signup">
+            <Link className={LoginStyle.link} to="/signup">
               <a className={LoginStyle.link} href="#">
                 Регистрация
               </a>

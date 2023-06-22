@@ -3,6 +3,9 @@ import { NavLink } from 'react-router-dom';
 import axios from 'axios';
 import Logo from '../images/logo.png';
 import style from './header.module.css';
+import avatar from '../images/';
+
+
 
 const links = [
   {
@@ -64,15 +67,17 @@ const Header = () => {
             </NavLink>
           ))}
         </div>
+        <div className={style.username_box}>
         <div className={style.user_name}>{userName}</div>
+        <button className={style.logout_btn} onClick={handleLogout}>
+          Выйти
+        </button>
+        </div>
         <select className={style.lang_btn} name="lang" id="lang">
           <option value="">RU</option>
           <option value="">KGZ</option>
           <option value="">EN</option>
         </select>
-        <button className={style.logout_btn} onClick={handleLogout}>
-          Выйти
-        </button>
       </div>
     </>
   );
