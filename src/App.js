@@ -10,6 +10,8 @@ import ChoosePerson from "./pages/person/index"
 import ForgotPasswordForm from "./pages/change_password/change";
 import CreateTicket from "./pages/create-ticket";
 import Ticket from "./pages/ticket";
+import { Personal } from "./pages/personal cabinet/index";
+
 
 const App = () => {
   return (
@@ -25,11 +27,11 @@ const App = () => {
             <Route path="/choose-person" element={<ChoosePerson />} />
             <Route path="/create-ticket" element={<CreateTicket />} />
             <Route path="/ticket" element={<Ticket />} />
+            <Route path="/personal" element={<Personal />} />
           </Route>
         </Routes>
       </BrowserRouter>
     </div>
   );
 };
-
-export default App;
+export default App
