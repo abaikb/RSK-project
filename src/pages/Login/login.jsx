@@ -55,8 +55,8 @@ const Login = () => {
         localStorage.setItem('refreshToken', refresh);
 
         console.log('Успешный вход в систему');
-        window.location.reload();
         navigate('/choose-person');
+        window.location.reload();
       } catch (error) {
         if (error.response && error.response.data && error.response.data.detail) {
           setErrorMessage(error.response.data.detail);
