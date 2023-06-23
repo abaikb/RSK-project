@@ -82,9 +82,7 @@ const Header = () => {
       </div>
       <div className={style.modal_buttons}>
       <button onClick={closeModal} className={style.modal_btn}>x</button>
-        <button className={style.logout_btn} onClick={handleLogout}>
-          Выйти
-        </button>
+        <button className={style.logout_btn} onClick={handleLogout}> <a href="http://localhost:3000">Выйти</a></button>
       </div>
     </div>
   );
