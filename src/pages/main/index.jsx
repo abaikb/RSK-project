@@ -37,7 +37,7 @@ export const MainPage = () => {
         <>
             <div className={style.container}>
                 <div className={style.carouselContainer}>
-                    <Carousel className={style.carousel} showArrows={true} infiniteLoop={true} showStatus={false} showThumbs={false}>
+                    <Carousel className={style.carousel} showArrows={false} infiniteLoop={true} showStatus={false} showThumbs={false}>
                         <div>
                             <img src={Image1} alt="image" />
                         </div>
