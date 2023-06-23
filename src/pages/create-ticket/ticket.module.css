@@ -1,5 +1,7 @@
 .container {
     display: flex;
+    justify-content: space-between;
+    padding: 0 80px 0 0;
 }
 
 .bankImg {
@@ -169,3 +171,7 @@ svg {
     color: #0F4F8D;
     margin-top: 37px;
 }
+select option:checked {
+    background-color: red;
+    color: white;
+  }

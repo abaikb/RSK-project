@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import Image from "../../components/images/slide1.png";
 import changePass from "./change.module.css"
+import CarouselComponent from '../../components/carousel/index';
 import Market from '../../components/market';
 
 
@@ -23,7 +23,7 @@ const ForgotPasswordForm = () => {
 
     return (
         <div className={changePass.contain_forgotPassword}>
-            <img className={changePass.bankImg} src={Image} alt="image" />
+            <div className={changePass.bankImg} ><CarouselComponent /></div>
             <div className={changePass.box}>
                 {resetRequested ? (
                     <div className={changePass.answer}>

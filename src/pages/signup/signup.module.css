@@ -1,6 +1,7 @@
 .contain_signup {
   display: flex;
-  padding: 5px;
+  justify-content: space-between;
+  padding: 0 80px 0 0;
 }
 
 .bankImg {
@@ -10,7 +11,6 @@
 }
 
 .formContainer {
-  width: 100%;
   border-radius: 8px;
   margin-top: 100px;
 }

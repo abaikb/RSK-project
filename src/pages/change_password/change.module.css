@@ -1,17 +1,14 @@
 .contain_forgotPassword {
     display: flex;
-    justify-content: center;
-    width: 100%;
-    min-height: auto;
-    padding: 10px;
-    padding-bottom: 50px;
+    justify-content: space-between;
+    /* width: 100%; */
+    padding: 0 80px 50px 0;
   }
   
   .bankImg {
-    width: 70%;
-    height: auto;
+    width: 65%;
+    height: 100%;
     object-fit: contain;
-    max-height: 100%;
   }
 
   .answer {
@@ -24,10 +21,6 @@
     margin-top: 230px;
     padding: 10px;
     font-style: italic;
-  }
-  
-  .form {
-    margin-right: 10px;
   }
   
   .form h4 {
