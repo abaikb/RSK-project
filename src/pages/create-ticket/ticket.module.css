@@ -172,6 +172,6 @@ svg {
     margin-top: 37px;
 }
 select option:checked {
-    background-color: red;
-    color: white;
+    background-color: rgb(67, 184, 230);
+    color: rgb(15, 14, 14);
   }
