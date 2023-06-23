@@ -1,18 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import { Carousel } from 'react-responsive-carousel';
-import 'react-responsive-carousel/lib/styles/carousel.min.css';
+import CarouselComponent from '../../components/carousel/index';
 import style from './main.module.css';
-import Image1 from '../../components/images/slide1.png';
-import Image2 from '../../components/images/slide2.png';
-import Image3 from '../../components/images/slide3.png';
-import Image4 from '../../components/images/slide4.png';
 import Money from '../../components/images/money.png';
 import Point from '../../components/images/point.png';
 import Market from '../../components/market';
 import Footer from '../../components/footer/footer';
 
 export const MainPage = () => {
+
     const [currentDate, setCurrentDate] = useState('');
 
     useEffect(() => {
@@ -37,20 +32,7 @@ export const MainPage = () => {
         <>
             <div className={style.container}>
                 <div className={style.carouselContainer}>
-                    <Carousel className={style.carousel} showArrows={true} infiniteLoop={true} showStatus={false} showThumbs={false}>
-                        <div>
-                            <img src={Image1} alt="image" />
-                        </div>
-                        <div>
-                            <img src={Image2} alt="image" />
-                        </div>
-                        <div>
-                            <img src={Image3} alt="image" />
-                        </div>
-                        <div>
-                            <img src={Image4} alt="image" />
-                        </div>
-                    </Carousel>
+                    <div className={style.bankImg} ><CarouselComponent /></div>
                     <div className={style.mainText}>
                         <p>ОАО “РСК Банк” ОБНУЛЯЕТ ВСЕ КОМИССИИ на период действия режима чрезвычайной ситуации и чрезвычайного положения для пенсионеров и получателей социальных пособий в банкоматах Банка и pos-терминалах, расположенных в отделениях Кыргыз почтасы!
                             Теперь вы можете получить ваши пенсии и пособия по картам Элкарт без комиссии, так как Банк обнуляет свои комиссии и берет на себя все расходы по компенсации комиссий Кыргыз почтасы.

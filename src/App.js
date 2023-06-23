@@ -5,7 +5,7 @@ import { Layout } from "./components/layout";
 import { AboutPage } from "./pages/about_us";
 import { MainPage } from "./pages/main/index";
 import RegistrationForm from "./pages/signup/signup";
-import Login from "./pages/Login/login";
+import Login from "./pages/login/login";
 import ChoosePerson from "./pages/person/index"
 import ForgotPasswordForm from "./pages/change_password/change";
 import CreateTicket from "./pages/create-ticket";

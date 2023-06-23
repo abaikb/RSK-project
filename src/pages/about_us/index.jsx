@@ -1,6 +1,6 @@
 import React from "react";
 import style from "./about.module.css"
-import Phone from "../../components/images/slide2.png"
+import Phone from "../../components/images/slide4.png"
 
 export const AboutPage = () => {
   return (
