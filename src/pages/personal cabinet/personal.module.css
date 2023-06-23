@@ -46,7 +46,10 @@
     right: 80px;
 }
 .container input {
-    content: url(../../components/images/pen.svg);
+    background-image: url(../../components//images/pen.svg);
+    background-repeat: no-repeat;
+    background-position-x: 97%;
+    background-position-y: 50%;
     width: 90%;
     height: 50px;
     list-style: none;
