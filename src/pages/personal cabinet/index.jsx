@@ -1,4 +1,6 @@
 import React from 'react'
+import { useEffect, useState } from 'react';
+import axios from 'axios';
 import style from './personal.module.css'
 import slide1 from '../../components/images/slide1.png'
 import Avatar from '../../components/images/Ellipse 171.png'
@@ -7,20 +9,48 @@ import wPen from '../../components/images/white_pen.svg'
 import pin from '../../components/images/pin.svg'
 import arrow from '../../components/images/right_arrow.svg'
 import white_arrow from '../../components/images/white-arrow.svg'
+import CarouselComponent from '../../components/carousel/index';
+
 
 export const Personal = () => {
+  const [userName, setUserName] = useState('');
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+
+  useEffect(() => {
+    const fetchUserName = async () => {
+      try {
+        const accessToken = localStorage.getItem('accessToken');
+
+        if (accessToken) {
+          const response = await axios.get('https://petshackaton.ru/account/profile/', {
+            headers: {
+              accept: 'application/json',
+              'X-CSRFToken': 'gwaaCwoB13ErqqM8lrTB0QoaATVfx6HS4SwAVyqONj2HZa8olN1QhxCEftONpehs',
+              Authorization: `Bearer ${accessToken}`
+            }
+          });
+
+          const { name } = response.data[0];
+          setUserName(name);
+        } else {
+          setIsLoggedIn(false);
+        }
+      } catch (error) {
+        console.error('Error fetching user profile:', error);
+      }
+    };
+
+    fetchUserName();
+  }, []);
   return (
     <div className={style.container}>
-      <div className={style.img_box}>
-        <img src={slide1} alt="" />
-      </div>
+      <div className={style.bankImg} ><CarouselComponent /></div>
       <div className={style.info_table}>
         <h2>Личный кабинет</h2>
         <div className={style.name_box}>
           <img className={style.avatar} src={Avatar} alt="#" />
-          <h3 className={style.name}>Жамалидинов
-            Бектур
-            Русланович</h3>
+          <h3 className={style.name}>{userName}</h3>
           <img className={style.pen} src={wPen} alt="" />
         </div>
         <input type="number" placeholder='22209196000535' src={Pen} />
