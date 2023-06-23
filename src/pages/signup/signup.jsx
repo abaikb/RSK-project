@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import styles from './signup.module.css';
-import Image from "../../components/images/slide1.png";
+import CarouselComponent from '../../components/carousel/index';
 import Market from '../../components/market';
 
 const RegistrationForm = () => {
@@ -120,7 +120,7 @@ const RegistrationForm = () => {
 
   return (
     <div className={styles.contain_signup}>
-      <img className={styles.bankImg} src={Image} alt="i" />
+      <div className={styles.bankImg} ><CarouselComponent /></div>
 
       {showForm && (
         <form className={styles.formContainer} onSubmit={handleSubmit}>

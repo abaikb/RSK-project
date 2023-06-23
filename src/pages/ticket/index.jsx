@@ -4,12 +4,13 @@ import Skan from "../../components/images/skan.png"
 import Point from "../../components/images/point.png";
 import Market from "../../components/market";
 import Sign from "../../components/images/sign.png"
+import CarouselComponent from '../../components/carousel/index';
 
 
 const Ticket = () => {
     return (
         <div className={style.container}>
-            <img className={style.bankImg} src={Image} alt="image" />
+            <div className={style.bankImg} ><CarouselComponent /></div>
             <div>
                 <h1>Ваш билет</h1>
                 <div>
@@ -44,7 +45,7 @@ const Ticket = () => {
                 <button className={style.btnDelete}>Удалить</button>
                 <button className={style.btnChange}>Изменить</button>
                 <div className={style.warning}>
-                    <img src={Sign} alt="!"/>
+                    <img src={Sign} alt="!" />
                     <p>Внимание, во избежании пропуска, рекомендуется
                         прийти за 10 минут до забронированного времени
                     </p>

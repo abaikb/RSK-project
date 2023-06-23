@@ -4,14 +4,19 @@
   justify-content: space-between;
 }
 
-.carousel {
-  width: 95%;
+.carouselContainer {
+  width: 65%;
 }
 
-.carousel div img {
+.bankImg {
   width: 100%;
   object-fit: contain;
-  height: 50vw;
+}
+
+.exchange div {
+  display: flex;
+  margin-bottom: 20px;
+  width: 30%;
 }
 
 .exchange {
@@ -23,10 +28,6 @@
   border-radius: 15px;
 }
 
-.exchange div {
-  display: flex;
-  margin-bottom: 20px;
-}
 
 .exchange h3 {
   font-weight: 500;

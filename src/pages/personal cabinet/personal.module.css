@@ -58,13 +58,6 @@
   transition: 0.5s;
 }
 
-.button {
-  width: 90%;
-  height: 50px;
-  background: #ffcd29;
-  border-radius: 15px;
-  border: none;
-}
 
 .container input::-webkit-inner-spin-button {
   -webkit-appearance: none;

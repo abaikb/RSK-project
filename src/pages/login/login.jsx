@@ -2,8 +2,9 @@ import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import LoginStyle from './login.module.css';
-import Image from '../../components/images/slide1.png';
 import Market from '../../components/market';
+import CarouselComponent from '../../components/carousel/index';
+
 
 const Login = () => {
   const [username, setUsername] = useState('');
@@ -69,7 +70,7 @@ const Login = () => {
 
   return (
     <div className={LoginStyle.container_login}>
-      <img className={LoginStyle.bankImg} src={Image} alt="image" />
+     <div className={LoginStyle.bankImg} ><CarouselComponent  /></div> 
       <div className={LoginStyle.login_container}>
         <form className={LoginStyle.login_form} onSubmit={handleLogin}>
           <input

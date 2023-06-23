@@ -90,11 +90,11 @@ export const Personal = () => {
   }
 
   return (
-    <div className={p.container}>
-      <div className={p.img_box}>
+    <div className={style.container}>
+      <div className={style.img_box}>
         <img src={slide1} alt="" />
       </div>
-      <div className={p.info_table}>
+      <div className={style.info_table}>
         <h2>Личный кабинет</h2>
         <div className={p.name_box}>
           <img className={p.avatar} src={Avatar} alt="#" />
@@ -145,7 +145,7 @@ export const Personal = () => {
         />
         <div className={p.ticket_box}>
           <h3>Текущий билет</h3>
-          <div className={p.ticket}>
+          <div className={style.ticket}>
             <img src={pin} alt="#" />
             <div className={p.address}>
               <span>{userData.ticket?.address}</span>
