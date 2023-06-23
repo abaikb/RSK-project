@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import p from './personal.module.css';
+import style from './personal.module.css';
 import slide1 from '../../components/images/slide1.png';
 import Avatar from '../../components/images/Ellipse 171.png';
 import Pen from '../../components/images/pen.svg';
@@ -94,9 +94,9 @@ export const Personal = () => {
       <div className={style.bankImg} ><CarouselComponent /></div>
       <div className={style.info_table}>
         <h2>Личный кабинет</h2>
-        <div className={p.name_box}>
-          <img className={p.avatar} src={Avatar} alt="#" />
-          <h3 className={p.name}>
+        <div className={style.name_box}>
+          <img className={style.avatar} src={Avatar} alt="#" />
+          <h3 className={style.name}>
             {editing ? (
               <input
                 type="text"
@@ -108,7 +108,7 @@ export const Personal = () => {
               `${userData.name} ${userData.last_name}`
             )}
           </h3>
-          {editing && <img className={p.pen} src={wPen} alt="" />}
+          {editing && <img className={style.pen} src={wPen} alt="" />}
         </div>
         <input
           type="number"
@@ -141,22 +141,22 @@ export const Personal = () => {
           src={Pen}
           readOnly={!editing}
         />
-        <div className={p.ticket_box}>
+        <div className={style.ticket_box}>
           <h3>Текущий билет</h3>
           <div className={style.ticket}>
             <img src={pin} alt="#" />
-            <div className={p.address}>
+            <div className={style.address}>
               <span>{userData.ticket?.address}</span>
               <span>{userData.ticket?.city}</span>
             </div>
-            <div className={p.data}>
+            <div className={style.data}>
               <span>{userData.ticket?.date}</span>
               <span>{userData.ticket?.time}</span>
             </div>
             <img src={arrow} alt="" />
           </div>
-          <div className={p.history_box}>
-            <a className={p.history} href="#">
+          <div className={style.history_box}>
+            <a className={style.history} href="#">
               История
             </a>
             <img src={white_arrow} alt="" />
