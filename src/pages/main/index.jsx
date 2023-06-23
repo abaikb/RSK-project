@@ -88,7 +88,7 @@ export const MainPage = () => {
                             <option>Джалал-Абадская область</option>
                         </select>
                         <select name="Выберите тип точки" id="point">
-                            <option selected>Выберите тип точки</option>
+                            <option disabled>Выберите тип точки</option>
                             <option value="">Отделения</option>
                             <option value="">POS-терминалы</option>
                             <option value="">Банкоматы</option>
