@@ -9,6 +9,8 @@ import pin from '../../components/images/pin.svg';
 import arrow from '../../components/images/right_arrow.svg';
 import white_arrow from '../../components/images/white-arrow.svg';
 import Loader from '../../components/Loader/Loader';
+import CarouselComponent from '../../components/carousel/index';
+
 
 export const Personal = () => {
   const [userData, setUserData] = useState(null);
@@ -34,7 +36,7 @@ export const Personal = () => {
         setLoading(false);
       } catch (error) {
         console.error('Error fetching user data:', error);
-        setError('загрузка не успешно');
+        setError('загрузка не успешна');
         setLoading(false);
       }
     };
