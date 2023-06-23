@@ -8,11 +8,14 @@ import wPen from '../../components/images/white_pen.svg';
 import pin from '../../components/images/pin.svg';
 import arrow from '../../components/images/right_arrow.svg';
 import white_arrow from '../../components/images/white-arrow.svg';
+import Loader from '../../components/Loader/Loader';
 
 export const Personal = () => {
   const [userData, setUserData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
+  const [editing, setEditing] = useState(false);
+  const [editedData, setEditedData] = useState({});
 
   useEffect(() => {
     const fetchData = async () => {
@@ -31,7 +34,7 @@ export const Personal = () => {
         setLoading(false);
       } catch (error) {
         console.error('Error fetching user data:', error);
-        setError('Error fetching user data');
+        setError('загрузка не успешно');
         setLoading(false);
       }
     };
@@ -39,8 +42,47 @@ export const Personal = () => {
     fetchData();
   }, []);
 
+  const handleEdit = () => {
+    setEditing(true);
+  };
+
+  const handleInputChange = (e) => {
+    setEditedData({ ...editedData, [e.target.name]: e.target.value });
+  };
+
+  const handleCancel = () => {
+    setEditing(false);
+    setEditedData({});
+  };
+
+  const handleSave = async () => {
+    try {
+      const accessToken = localStorage.getItem('accessToken');
+      await axios.put('https://petshackaton.ru/account/profile/', editedData, {
+        headers: {
+          accept: 'application/json',
+          'X-CSRFToken': 'bnPmGdG6tsDTGlSGQJTnf2hEM4FALppTZJbMZfIjfI19f5eWQ51CwJv8rEy8DxZt',
+          Authorization: `Bearer ${accessToken}`
+        }
+      });
+      setUserData(editedData);
+      setEditing(false);
+    } catch (error) {
+      console.error('Error updating user data:', error);
+      setError('Failed to update user data');
+    }
+  };
+
+  const handleLogout = () => {
+    if (window.confirm('Сохранить изменения перед выходом?')) {
+      handleSave();
+    } else {
+      handleCancel();
+    }
+  };
+
   if (loading) {
-    return <div>Loading...</div>;
+    return <Loader />;
   }
 
   if (error) {
@@ -56,13 +98,51 @@ export const Personal = () => {
         <h2>Личный кабинет</h2>
         <div className={p.name_box}>
           <img className={p.avatar} src={Avatar} alt="#" />
-          <h3 className={p.name}>{`${userData.name} ${userData.last_name}`}</h3>
-          <img className={p.pen} src={wPen} alt="" />
+          <h3 className={p.name}>
+            {editing ? (
+              <input
+                type="text"
+                name="name"
+                value={editedData.name || userData.name}
+                onChange={handleInputChange}
+              />
+            ) : (
+              `${userData.name} ${userData.last_name}`
+            )}
+          </h3>
+          {editing && <img className={p.pen} src={wPen} alt="" />}
         </div>
-        <input type="number" value={userData.pin} src={Pen} />
-        <input type="number" value={userData.phone_number} src={Pen} />
-        <input type="email" value={userData.email} src={Pen} />
-        <input type="text" placeholder="Изменить пароль" src={Pen} />
+        <input
+          type="number"
+          name="pin"
+          value={editing ? editedData.pin || userData.pin : userData.pin}
+          onChange={handleInputChange}
+          readOnly={!editing}
+        />
+        <input
+          type="number"
+          name="phone_number"
+          value={
+            editing
+              ? editedData.phone_number || userData.phone_number
+              : userData.phone_number
+          }
+          onChange={handleInputChange}
+          readOnly={!editing}
+        />
+        <input
+          type="email"
+          name="email"
+          value={editing ? editedData.email || userData.email : userData.email}
+          onChange={handleInputChange}
+          readOnly={!editing}
+        />
+        <input
+          type="text"
+          placeholder="Изменить пароль"
+          src={Pen}
+          readOnly={!editing}
+        />
         <div className={p.ticket_box}>
           <h3>Текущий билет</h3>
           <div className={p.ticket}>
@@ -84,8 +164,15 @@ export const Personal = () => {
             <img src={white_arrow} alt="" />
           </div>
         </div>
+        {editing ? (
+          <>
+            <button onClick={handleSave}>Сохранить</button>
+            <button onClick={handleCancel}>Отменить</button>
+          </>
+        ) : (
+          <button onClick={handleLogout}>Выход</button>
+        )}
       </div>
     </div>
-
   );
 };
