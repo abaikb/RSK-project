@@ -5,10 +5,6 @@ import Logo from '../images/logo.png';
 import style from './header.module.css';
 import avatar from '../images/Ellipse 171.png';
 
-
-
-
-
 const links = [
   {
     id: 1,
@@ -29,22 +25,28 @@ const links = [
 
 const Header = () => {
   const [userName, setUserName] = useState('');
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   useEffect(() => {
     const fetchUserName = async () => {
       try {
         const accessToken = localStorage.getItem('accessToken');
-        const response = await axios.get('https://petshackaton.ru/account/profile/', {
-          headers: {
-            accept: 'application/json',
-            'X-CSRFToken': 'gwaaCwoB13ErqqM8lrTB0QoaATVfx6HS4SwAVyqONj2HZa8olN1QhxCEftONpehs',
-            Authorization: `Bearer ${accessToken}`
-          }
-        });
 
-        const { name } = response.data[0];
+        if (accessToken) {
+          const response = await axios.get('https://petshackaton.ru/account/profile/', {
+            headers: {
+              accept: 'application/json',
+              'X-CSRFToken': 'gwaaCwoB13ErqqM8lrTB0QoaATVfx6HS4SwAVyqONj2HZa8olN1QhxCEftONpehs',
+              Authorization: `Bearer ${accessToken}`
+            }
+          });
 
-        setUserName(name);
+          const { name } = response.data[0];
+          setUserName(name);
+          setIsLoggedIn(true);
+        } else {
+          setIsLoggedIn(false);
+        }
       } catch (error) {
         console.error('Error fetching user profile:', error);
       }
@@ -56,6 +58,7 @@ const Header = () => {
   const handleLogout = () => {
     localStorage.removeItem('accessToken');
     setUserName('');
+    setIsLoggedIn(false);
   };
 
   return (
@@ -69,15 +72,17 @@ const Header = () => {
             </NavLink>
           ))}
         </div>
-        <div className={style.username_box}>
-          <div>
-            <img className={style.avatar} src={avatar} alt="" />
-            <div className={style.user_name}>{userName}</div>
+        {isLoggedIn ? (
+          <div className={style.username_box}>
+            <div>
+              <img className={style.avatar} src={avatar} alt="" />
+              <div className={style.user_name}>{userName}</div>
             </div>
-        </div>
-        <button className={style.logout_btn} onClick={handleLogout}>
-            Выйти
-          </button>
+            <button className={style.logout_btn} onClick={handleLogout}>
+              Выйти
+            </button>
+          </div>
+        ) : null}
         <select className={style.lang_btn} name="lang" id="lang">
           <option value="">RU</option>
           <option value="">KGZ</option>
