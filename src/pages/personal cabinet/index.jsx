@@ -48,10 +48,6 @@ export const Personal = () => {
         });
         const ticketData = response.data[0];
         setTicketData(ticketData);
-
-        const ticketDate = new Date(ticketData?.date);
-        const day = ticketDate.getDate(); 
-        const month = ticketDate.toLocaleString('default', { month: 'long' });
       } catch (error) {
         console.error('Error fetching ticket data:', error);
       }
@@ -76,15 +72,15 @@ export const Personal = () => {
   const handleSaveClick = async () => {
     try {
       const accessToken = localStorage.getItem('accessToken');
-      const response = await axios.put('https://petshackaton.ru/account/profile/', editedData, {
+      await axios.patch('https://petshackaton.ru/account/edit_profile/', editedData, {
         headers: {
           accept: 'application/json',
-          'X-CSRFToken': 'bnPmGdG6tsDTGlSGQJTnf2hEM4FALppTZJbMZfIjfI19f5eWQ51CwJv8rEy8DxZt',
+          'X-CSRFToken': 'ndWiJX9FHuG0oGWdak8cO2l6nsXn3aSnbziI2ZbStK4gXqitaGgr5JzA22QVVisX',
           Authorization: `Bearer ${accessToken}`
         }
       });
 
-      const updatedUserData = response.data;
+      const updatedUserData = { ...userData, ...editedData };
       setUserData(updatedUserData);
       setEditing(false);
     } catch (error) {
@@ -132,8 +128,10 @@ export const Personal = () => {
           <input
             type="email"
             name="email"
+            placeholder={userData.email}
             value={editedData.email || ''}
             onChange={handleInputChange}
+            readOnly={!editing}
           />
         ) : (
           <input
@@ -144,27 +142,40 @@ export const Personal = () => {
             readOnly={!editing}
           />
         )}
-        <input
-          type="password"
-          placeholder="Изменить пароль"
-        />
+        <input type="password" placeholder="Изменить пароль" />
 
         {editing ? (
-          <button className={style.change_button} onClick={handleSaveClick}>Сохранить</button>
+          <button className={style.change_button} onClick={handleSaveClick}>
+            Сохранить
+          </button>
         ) : (
-          <button className={style.change_button} onClick={handleEditClick}>Редактировать</button>
+          <button className={style.change_button} onClick={handleEditClick}>
+            Редактировать
+          </button>
         )}
         <div className={style.ticket_box}>
           <h3>Текущий билет</h3>
           <div className={style.ticket}>
             <img src={pin} alt="#" />
             <div className={style.address}>
-              <span>{ticketData?.area}</span>
-              <span>{ticketData?.department}</span>
+              <span className={style.titleCity}>{ticketData?.city}</span>
+              <span className={style.department}>{ticketData?.department}</span>
             </div>
             <div className={style.data}>
-            <span>{ticketData.date}</span>
-              <span>{ticketData?.time}</span>
+              <span>
+                {ticketData?.date &&
+                  new Intl.DateTimeFormat('en-US', {
+                    month: '2-digit',
+                    day: '2-digit'
+                  }).format(new Date(ticketData.date))}
+              </span>
+              <span>
+                {ticketData?.time &&
+                  new Intl.DateTimeFormat('ru-RU', {
+                    hour: '2-digit',
+                    minute: '2-digit'
+                  }).format(new Date(`2000-01-01T${ticketData.time}`))}
+              </span>
             </div>
             <img src={arrow} alt="" />
           </div>

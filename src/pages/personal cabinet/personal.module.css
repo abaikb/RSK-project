@@ -53,7 +53,6 @@
   transition: 0.5s;
 }
 
-
 .container input::-webkit-inner-spin-button {
   -webkit-appearance: none;
 }
@@ -83,6 +82,7 @@
   justify-content: space-around;
   transition: 0.5s;
   color: #0f4f8d;
+  padding: 3px;
 }
 
 .ticket img {
@@ -98,6 +98,16 @@
 .data {
   display: flex;
   flex-direction: column;
+}
+
+.titleCity {
+  font-size: 18px;
+  line-height: 150%;
+}
+
+.department {
+  font-size: 10px;
+  line-height: 150%;
 }
 
 .ticket:hover {
