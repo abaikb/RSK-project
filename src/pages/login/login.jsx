@@ -7,7 +7,7 @@ import Market from '../../components/market';
 import CarouselComponent from '../../components/carousel/index';
 
 const Login = () => {
-  const [username, setUsername] = useState('');
+  const [phone_number, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [rememberMe, setRememberMe] = useState(false);
   const [errors, setErrors] = useState({});
@@ -30,8 +30,8 @@ const Login = () => {
   const validateForm = () => {
     const newErrors = {};
 
-    if (!username) {
-      newErrors.username = 'Пожалуйста, введите номер телефона!';
+    if (!phone_number) {
+      newErrors.phone_number = 'Пожалуйста, введите номер телефона!';
     }
 
     if (!password) {
@@ -48,7 +48,7 @@ const Login = () => {
     if (validateForm()) {
       try {
         const response = await axios.post('https://petshackaton.ru/account/login/', {
-          phone_number: username,
+          phone_number: phone_number,
           password: password,
         });
 
@@ -80,7 +80,7 @@ const Login = () => {
         <form className={LoginStyle.login_form} onSubmit={handleLogin}>
           <input
             type="text"
-            value={username}
+            value={phone_number}
             onChange={handleUsernameChange}
             placeholder="Номер телефона"
             className={LoginStyle.login_input}

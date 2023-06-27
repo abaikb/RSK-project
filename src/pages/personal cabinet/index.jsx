@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import style from './personal.module.css';
 import Avatar from '../../components/images/Ellipse 171.png';
-import Pen from '../../components/images/pen.svg';
 import wPen from '../../components/images/white_pen.svg';
 import pin from '../../components/images/pin.svg';
 import arrow from '../../components/images/right_arrow.svg';
@@ -49,6 +48,10 @@ export const Personal = () => {
         });
         const ticketData = response.data[0];
         setTicketData(ticketData);
+
+        const ticketDate = new Date(ticketData?.date);
+        const day = ticketDate.getDate(); 
+        const month = ticketDate.toLocaleString('default', { month: 'long' });
       } catch (error) {
         console.error('Error fetching ticket data:', error);
       }
@@ -107,16 +110,7 @@ export const Personal = () => {
         <div className={style.name_box}>
           <img className={style.avatar} src={Avatar} alt="#" />
           <h3 className={style.name}>
-            {editing ? (
-              <input
-                type="text"
-                name="name"
-                value={editedData.name || ''}
-                onChange={handleInputChange}
-              />
-            ) : (
-              `${userData.name} ${userData.last_name}`
-            )}
+            {userData.name} {userData.last_name}
           </h3>
           {editing && <img className={style.pen} src={wPen} alt="" />}
         </div>
@@ -153,8 +147,6 @@ export const Personal = () => {
         <input
           type="password"
           placeholder="Изменить пароль"
-          src={Pen}
-          readOnly={!editing}
         />
 
         {editing ? (
@@ -171,7 +163,7 @@ export const Personal = () => {
               <span>{ticketData?.department}</span>
             </div>
             <div className={style.data}>
-              <span>{ticketData.date}</span>
+            <span>{ticketData.date}</span>
               <span>{ticketData?.time}</span>
             </div>
             <img src={arrow} alt="" />
