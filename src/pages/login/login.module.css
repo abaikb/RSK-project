@@ -195,8 +195,8 @@
 
 .password_icon {
   position: absolute;
-  top: 50%;
-  right: 10px;
+  top: 55%;
+  right: 20px;
   transform: translateY(-50%);
   cursor: pointer;
   color: #999;
