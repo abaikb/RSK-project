@@ -1,5 +1,6 @@
 .container {
   width: 100%;
+  height: 120vh;
   height: auto;
   display: flex;
   justify-content: space-between;
@@ -14,7 +15,7 @@
   display: flex;
   flex-direction: column;
   color: white;
-  margin-top: 100px;
+  margin-top: 60px;
 }
 .name_box {
   position: relative;
@@ -88,7 +89,7 @@
   margin: 0 20px;
 }
 
-.adress {
+.address {
   display: flex;
   flex-direction: column;
   margin-right: 29px;
@@ -119,6 +120,14 @@
   width: 10px;
   height: 15px;
   margin-left: 10px;
+}
+
+.change_button {
+  width: 90%;
+  height: 50px;
+  background-color: #ffcd29;
+  border-radius: 15px;
+  border: none;
 }
 
 .btn_editpassword {
