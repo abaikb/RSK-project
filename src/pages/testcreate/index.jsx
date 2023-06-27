@@ -6,7 +6,6 @@ const apiBaseUrl = 'https://petshackaton.ru';
 
 const SelectOptions = ({ options, label, onChange }) => (
   <div>
-    <label htmlFor={label}>{label}:</label>
     <select
       name={label.toLowerCase()}
       id={label.toLowerCase()}
@@ -128,7 +127,6 @@ function TicketForm() {
 
   return (
     <div className={styles['ticket-form-container']}>
-      <h1>Создание билета</h1>
       <form onSubmit={handleSubmit} className={styles['ticket-form']}>
         <div className={styles['form-group']}>
           <SelectOptions
@@ -176,6 +174,7 @@ function TicketForm() {
           />
           <input
             type="time"
+            
             name="time"
             id="time"
             value={time}
@@ -183,9 +182,7 @@ function TicketForm() {
             required
           />
         </div>
-        <div className={styles['form-group']}>
-          
-        </div>
+        <div className={styles['form-group']}></div>
         <button type="submit">Создать билет</button>
       </form>
     </div>
