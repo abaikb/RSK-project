@@ -10,6 +10,18 @@
     object-fit: cover;
 }
 
+.cont {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-bottom: 39px;
+}
+
+.ticketContainer {
+    display: flex;
+    flex-direction: column;
+}
+
 .container h1 {
     font-weight: 500;
     font-size: 26px;
@@ -78,7 +90,7 @@
     height: 42px;
 }
 
-.container>div>p {
+.ticketContainer>p {
     font-size: 14px;
     line-height: 150%;
     color: #EEF8FF;
@@ -196,9 +208,9 @@
     background: #EEF8FF;
     color: #0F4F8D;
     font-size: 15px;
-    font-family: Roboto;
     font-weight: 600;
     line-height: 131.5%;
+    margin-bottom: 60px;
 }
 
 .warning img {
@@ -207,3 +219,7 @@
     height: 36px;
 }
 
+.cont > div {
+    display: flex;
+    justify-content: end;
+}

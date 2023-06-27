@@ -12,7 +12,12 @@
 
 .formContainer {
   border-radius: 8px;
+<<<<<<< HEAD
   margin-top: 30px;
+=======
+  margin-top: 50px;
+  padding-bottom: 39px;
+>>>>>>> samat
 }
 
 .inputGroup {
@@ -78,7 +83,6 @@
 }
 
 .forgot-title {
-  font-family: "Roboto", sans-serif;
   color: #eef8ff;
   line-height: 150%;
   margin-left: 26px;
