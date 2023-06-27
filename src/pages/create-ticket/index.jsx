@@ -107,11 +107,6 @@ const CreateTicket = () => {
     'Банковское сопровождение',
   ];
 
-  // const handleDepartmentChange = (event) => {
-  //   const selectedDepartmentValue = event.target.value;
-  //   setSelectedDepartment(selectedDepartmentValue);
-  // };
-
   const departmentKeys = Object.keys(departments);
 
   const departmentValues = Object.values(departments).flatMap((values) => values);
