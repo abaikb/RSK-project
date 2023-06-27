@@ -11,7 +11,7 @@ import ForgotPasswordForm from "./pages/change_password/change";
 import CreateTicket from "./pages/create-ticket";
 import Ticket from "./pages/ticket";
 import { Personal } from "./pages/personal cabinet/index";
-import TicketForm from "./pages/testcreate";
+import TicketForm from "./pages/create-ticket";
 
 
 const App = () => {
