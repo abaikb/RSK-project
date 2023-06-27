@@ -1,15 +1,12 @@
 import React, { useState } from 'react';
 import { Link } from "react-router-dom";
 import style from './ticket.module.css';
-import Image from '../../components/images/slide1.png';
 import Market from '../../components/market';
 import DatePicker from 'react-datepicker';
-import 'react-datepicker/dist/react-datepicker.css';
 import TimePicker from 'react-time-picker';
-import 'react-time-picker/dist/TimePicker.css';
+import 'react-datepicker/dist/react-datepicker.css';
 import 'react-time-picker/dist/TimePicker.css';
 import CarouselComponent from '../../components/carousel/index';
-
 import DateIcon from "../../components/images/Group 31.png";
 
 const CreateTicket = () => {
@@ -88,72 +85,89 @@ const CreateTicket = () => {
     "Банковское сопровождение"
   ];
 
+  const generateTimeOptions = () => {
+    const timeOptions = [];
+    for (let hour = 0; hour < 24; hour++) {
+      for (let minute = 0; minute < 60; minute += 15) {
+        const time = `${hour.toString().padStart(2, '0')}:${minute.toString().padStart(2, '0')}`;
+        timeOptions.push(time);
+      }
+    }
+    return timeOptions;
+  };
+
+  const timeOptions = generateTimeOptions();
 
   return (
     <div className={style.container}>
-      <div className={style.bankImg} ><CarouselComponent /></div>
-      <div className={style.ticketContainer}>
-        <select name="region" id="region" value={selectedRegion} onChange={handleRegionChange}>
-          <option value="">Область</option>
-          {region.map((el, index) => (
-            <option key={index} value={el}>
-              {el}
-            </option>
-          ))}
-        </select>
-        <select name="city" id="city" value={selectedCity} onChange={handleCityChange}>
-          <option value="">Город</option>
-          {selectedRegion &&
-            cities[selectedRegion].map((el, index) => (
+      <div className={style.bankImg}><CarouselComponent /></div>
+      <div className={style.cont}>
+        <div className={style.ticketContainer}>
+          {/* Region */}
+          <select name="region" id="region" value={selectedRegion} onChange={handleRegionChange}>
+            <option value="">Область</option>
+            {region.map((el, index) => (
               <option key={index} value={el}>
                 {el}
               </option>
             ))}
-        </select>
-        <select name="department" id="department" value={selectedDepartment} onChange={handleDepartmentChange}>
-          <option value="">Отделение</option>
-          {selectedCity &&
-            departments[selectedCity].map((el, index) => (
-              <option key={index} value={el}>
+          </select>
+          {/* City */}
+          <select name="city" id="city" value={selectedCity} onChange={handleCityChange}>
+            <option value="">Город</option>
+            {selectedRegion &&
+              cities[selectedRegion].map((el, index) => (
+                <option key={index} value={el}>
+                  {el}
+                </option>
+              ))}
+          </select>
+          {/* Department */}
+          <select name="department" id="department" value={selectedDepartment} onChange={handleDepartmentChange}>
+            <option value="">Отделение</option>
+            {selectedCity &&
+              departments[selectedCity].map((el, index) => (
+                <option key={index} value={el}>
+                  {el}
+                </option>
+              ))}
+          </select>
+          {/* Operation */}
+          <select name="" id="" value={selectedOperation} onChange={handleOperationChange}>
+            <option disabled>Тип операции</option>
+            {operations.map((el, id) => (
+              <option key={id} value={el}>
                 {el}
               </option>
             ))}
-        </select>
-        <select name="" id="" value={selectedOperation} onChange={handleOperationChange}>
-          <option disabled>Тип операции</option>
-          {operations.map((el, id) => (
-            <option key={id} value={el}>
-              {el}
-            </option>
-          ))}
-        </select>
-        {/* Остальные <select> элементы */}
-        <div className={style.pickerWrapper}>
-          <div className={style.dateContainer}>
-            <DatePicker
-              selected={selectedDate}
-              onChange={handleDateChange}
-              dateFormat="dd-MM-yyyy"
-              placeholderText="Выберите дату"
-              className={style.datePicker}
-              wrapperClassName={style.datePickerWrapper}
-              calendarClassName={style.datePickerCalendar}
-            />
-            <img src={DateIcon} alt="date icon" className={style.dateIcon} />
+          </select>
+          {/* Date and Time */}
+          <div className={style.pickerWrapper}>
+            <div className={style.dateContainer}>
+              <DatePicker
+                selected={selectedDate}
+                onChange={handleDateChange}
+                dateFormat="dd-MM-yyyy"
+                placeholderText="Выберите дату"
+                className={style.datePicker}
+                wrapperClassName={style.datePickerWrapper}
+                calendarClassName={style.datePickerCalendar}
+              />
+              <img src={DateIcon} alt="date icon" className={style.dateIcon} />
+            </div>
+            <select className={style.timePicker} value={selectedTime} onChange={(e) => handleTimeChange(e.target.value)}>
+              {timeOptions.map((time, index) => (
+                <option key={index} value={time}>
+                  {time}
+                </option>
+              ))}
+            </select>
           </div>
-          <TimePicker
-            value={selectedTime}
-            onChange={handleTimeChange}
-            format="HH:mm"
-            clearIcon={false}
-            clockClassName={style.timePickerClock}
-            className={style.timePicker}
-          />
+          <Link to="/ticket">
+            <button className={style.btnCreate}>Создать билет</button>
+          </Link>
         </div>
-        <Link to='/ticket'>
-          <button className={style.btnCreate}>Создать билет</button>
-        </Link>
-        <Market />
+        <div><Market /></div>
       </div>
     </div>
   );

@@ -15,8 +15,8 @@
 
 .exchange div {
   display: flex;
+  flex-direction: row;
   margin-bottom: 20px;
-  width: 30%;
 }
 
 .exchange {
@@ -30,8 +30,9 @@
 
 
 .exchange h3 {
+  width: 174px;
   font-weight: 500;
-  font-size: 24px;
+  font-size: 20px;
   line-height: 150%;
   text-transform: uppercase;
   color: #0F4F8D;
