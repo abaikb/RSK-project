@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import { IoEye, IoEyeOff } from 'react-icons/io5';
 import LoginStyle from './login.module.css';
 import Market from '../../components/market';
 import CarouselComponent from '../../components/carousel/index';
-
 
 const Login = () => {
   const [username, setUsername] = useState('');
@@ -12,6 +12,7 @@ const Login = () => {
   const [rememberMe, setRememberMe] = useState(false);
   const [errors, setErrors] = useState({});
   const [errorMessage, setErrorMessage] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
 
   const handleUsernameChange = (e) => {
@@ -68,9 +69,13 @@ const Login = () => {
     }
   };
 
+  const toggleShowPassword = () => {
+    setShowPassword(!showPassword);
+  };
+
   return (
     <div className={LoginStyle.container_login}>
-     <div className={LoginStyle.bankImg} ><CarouselComponent  /></div> 
+      <div className={LoginStyle.bankImg}><CarouselComponent /></div>
       <div className={LoginStyle.login_container}>
         <form className={LoginStyle.login_form} onSubmit={handleLogin}>
           <input
@@ -81,13 +86,18 @@ const Login = () => {
             className={LoginStyle.login_input}
           />
           {errors.username && <div className={LoginStyle.errors}>{errors.username}</div>}
-          <input
-            type="password"
-            value={password}
-            onChange={handlePasswordChange}
-            placeholder="Пароль"
-            className={LoginStyle.login_input}
-          />
+          <div className={LoginStyle.password_input_container}>
+            <input
+              type={showPassword ? 'text' : 'password'}
+              value={password}
+              onChange={handlePasswordChange}
+              placeholder="Пароль"
+              className={LoginStyle.login_input}
+            />
+            <div className={LoginStyle.password_icon} onClick={toggleShowPassword}>
+              {showPassword ? <IoEyeOff /> : <IoEye />}
+            </div>
+          </div>
           {errors.password && <div className={LoginStyle.errors}>{errors.password}</div>}
           {errorMessage && <div className={LoginStyle.errors}>{errorMessage}</div>}
           <span className={LoginStyle.login_checkbox}>
