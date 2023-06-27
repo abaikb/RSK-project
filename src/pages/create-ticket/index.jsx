@@ -3,12 +3,12 @@ import { Link } from 'react-router-dom';
 import style from './ticket.module.css';
 import Market from '../../components/market';
 import DatePicker from 'react-datepicker';
-import 'react-datepicker/dist/react-datepicker.css';
 import TimePicker from 'react-time-picker';
 import 'react-time-picker/dist/TimePicker.css';
+import 'react-datepicker/dist/react-datepicker.css';
 import CarouselComponent from '../../components/carousel/index';
 import axios from 'axios';
-import DateIcon from '../../components/images/Group 31.png';
+import DateIcon from "../../components/images/Group 31.png";
 
 const CreateTicket = () => {
   const [selectedDate, setSelectedDate] = useState(new Date());
@@ -163,12 +163,32 @@ const CreateTicket = () => {
                 {el}
               </option>
             ))}
-        </select>
-        <select name="department" id="department" value={selectedDepartment} onChange={handleDepartmentChange}>
-          <option value="">Отделение</option>
-          {selectedCity &&
-            departments[selectedCity].map((el, index) => (
-              <option key={index} value={el}>
+          </select>
+          {/* City */}
+          <select name="city" id="city" value={selectedCity} onChange={handleCityChange}>
+            <option value="">Город</option>
+            {selectedRegion &&
+              cities[selectedRegion].map((el, index) => (
+                <option key={index} value={el}>
+                  {el}
+                </option>
+              ))}
+          </select>
+          {/* Department */}
+          <select name="department" id="department" value={selectedDepartment} onChange={handleDepartmentChange}>
+            <option value="">Отделение</option>
+            {selectedCity &&
+              departments[selectedCity].map((el, index) => (
+                <option key={index} value={el}>
+                  {el}
+                </option>
+              ))}
+          </select>
+          {/* Operation */}
+          <select name="" id="" value={selectedOperation} onChange={handleOperationChange}>
+            <option disabled>Тип операции</option>
+            {operations.map((el, id) => (
+              <option key={id} value={el}>
                 {el}
               </option>
             ))}
@@ -195,21 +215,16 @@ const CreateTicket = () => {
             />
             <img src={DateIcon} alt="date icon" className={style.dateIcon} />
           </div>
-          <TimePicker
-            value={selectedTime}
-            onChange={handleTimeChange}
-            format="HH:mm"
-            clearIcon={false}
-            clockClassName={style.timePickerClock}
-            className={style.timePicker}
-          />
+          <Link to="/ticket">
+            <button className={style.btnCreate}>Создать билет</button>
+          </Link>
         </div>
         <Link to="/ticket">
           <button className={style.btnCreate} onClick={handleCreateTicket}>
             Создать билет
           </button>
         </Link>
-        <Market />
+        <div><Market /></div>
       </div>
     </div>
   );

@@ -13,9 +13,10 @@
 }
 
 .login_form {
-  margin-top: 130px;
+  margin-top: 100px;
   display: flex;
   flex-direction: column;
+  padding-bottom: 39px;
 }
 
 .login_form input {
@@ -186,4 +187,17 @@
   }
 
   
+}
+
+.password_input_container {
+  position: relative;
+}
+
+.password_icon {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #999;
 }
