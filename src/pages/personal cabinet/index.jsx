@@ -106,7 +106,7 @@ export const Personal = () => {
         <div className={style.name_box}>
           <img className={style.avatar} src={Avatar} alt="#" />
           <h3 className={style.name}>
-            {userData.name} {userData.last_name}
+            {userData.last_name} {userData.name}  {userData.otchestvo}
           </h3>
           {editing && <img className={style.pen} src={wPen} alt="" />}
         </div>
