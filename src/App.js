@@ -11,7 +11,7 @@ import ForgotPasswordForm from "./pages/change_password/change";
 import CreateTicket from "./pages/create-ticket";
 import Ticket from "./pages/ticket";
 import { Personal } from "./pages/personal cabinet/index";
-import TicketForm from "./pages/create-ticket";
+import Points from "./pages/service_points";
 
 
 const App = () => {
@@ -29,7 +29,7 @@ const App = () => {
             <Route path="/create-ticket" element={<CreateTicket />} />
             <Route path="/ticket" element={<Ticket />} />
             <Route path="/personal" element={<Personal />} />
-            <Route path="/test" element={<TicketForm />} />
+            <Route path="/points" element={<Points />} />
           </Route>
         </Routes>
       </BrowserRouter>

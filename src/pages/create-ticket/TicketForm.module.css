@@ -11,10 +11,10 @@
 }
 
 .cont {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 50px 0 39px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 50px 0 39px 0;
 }
 
 
@@ -32,21 +32,7 @@
   margin-bottom: 20px;
 }
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD:src/pages/create-ticket/TicketForm.module.css
->>>>>>> main
-/* .ticket-form {
-  display: flex;
-  flex-direction: column;
-  justify-content: end;
-} */
 
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 0a15cb145aba530a2e86ad0da45688b35cc95a45:src/pages/testcreate/TicketForm.module.css
->>>>>>> main
 .form-group-time {
   display: flex;
   justify-content: space-between;
@@ -85,6 +71,8 @@ input[type="time"] {
   padding: 12px;
   border-radius: 15px;
   border: none;
+  color: #9CB2C2;
+  padding-left: 29px;
 }
 
 button[type="submit"] {
