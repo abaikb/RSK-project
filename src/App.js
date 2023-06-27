@@ -11,8 +11,11 @@ import ForgotPasswordForm from "./pages/change_password/change";
 import CreateTicket from "./pages/create-ticket";
 import Ticket from "./pages/ticket";
 import { Personal } from "./pages/personal cabinet/index";
-import TicketForm from "./pages/testcreate";
 import AdminLogin from "./pages/admin/login";
+<<<<<<< HEAD
+=======
+// import TicketForm from "./pages/create-ticket";
+>>>>>>> 9f449fb68d466a2e9e5338cbded6fd1961c1e076
 
 
 const App = () => {
@@ -30,7 +33,7 @@ const App = () => {
             <Route path="/create-ticket" element={<CreateTicket />} />
             <Route path="/ticket" element={<Ticket />} />
             <Route path="/personal" element={<Personal />} />
-            <Route path="/test" element={<TicketForm />} />
+            {/* <Route path="/test" element={<TicketForm />} /> */}
           </Route>
         </Routes>
         <Routes>
