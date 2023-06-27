@@ -1,7 +1,25 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 80px 0 0;
+}
+
+.bankImg {
+  width: 65%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cont {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 50px 0 39px 0;
+}
+
+
 .ticket-form-container {
-  width: 450px;
-  margin: 0 auto;
-  padding: 20px;
+  width: 411px;
   background-color: transparent;
   color: #fff;
   border: none;
@@ -55,11 +73,10 @@ input[type="time"] {
   border: none;
 }
 
-.submit {
+button[type="submit"] {
   width: 411px;
-  height: 50px;
+  height: 59px;
   font-size: 16px;
-  font-weight: bold;
   color: #0f4f8d;
   font-size: 26px;
   line-height: 150%;
@@ -67,6 +84,12 @@ input[type="time"] {
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  margin-top: 19px;
+}
+
+button[type="submit"]:hover {
+  background-color: #ffcd29;
 }
 
 .submit:active {
