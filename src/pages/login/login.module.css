@@ -2,7 +2,7 @@
 
 .container_login {
   display: flex;
-  padding: 0 80px 0 0;
+  padding: 0 80px 39px 0;
   justify-content: space-between;
 }
 
@@ -187,4 +187,17 @@
   }
 
   
+}
+
+.password_input_container {
+  position: relative;
+}
+
+.password_icon {
+  position: absolute;
+  top: 55%;
+  right: 20px;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #999;
 }

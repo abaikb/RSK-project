@@ -32,12 +32,21 @@
   margin-bottom: 20px;
 }
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD:src/pages/create-ticket/TicketForm.module.css
+>>>>>>> main
 /* .ticket-form {
   display: flex;
   flex-direction: column;
   justify-content: end;
 } */
 
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 0a15cb145aba530a2e86ad0da45688b35cc95a45:src/pages/testcreate/TicketForm.module.css
+>>>>>>> main
 .form-group-time {
   display: flex;
   justify-content: space-between;
