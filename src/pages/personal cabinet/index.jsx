@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import style from './personal.module.css';
-import slide1 from '../../components/images/slide1.png';
 import Avatar from '../../components/images/Ellipse 171.png';
 import Pen from '../../components/images/pen.svg';
 import wPen from '../../components/images/white_pen.svg';
@@ -11,13 +10,12 @@ import white_arrow from '../../components/images/white-arrow.svg';
 import Loader from '../../components/Loader/Loader';
 import CarouselComponent from '../../components/carousel/index';
 
-
 export const Personal = () => {
   const [userData, setUserData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
-  const [editing, setEditing] = useState(false);
   const [editedData, setEditedData] = useState({});
+  const [editing, setEditing] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -30,13 +28,12 @@ export const Personal = () => {
             Authorization: `Bearer ${accessToken}`
           }
         });
-
         const userData = response.data[0];
         setUserData(userData);
         setLoading(false);
       } catch (error) {
         console.error('Error fetching user data:', error);
-        setError('загрузка не успешна');
+        setError('Не удалось загрузить данные');
         setLoading(false);
       }
     };
@@ -44,42 +41,34 @@ export const Personal = () => {
     fetchData();
   }, []);
 
-  const handleEdit = () => {
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setEditedData((prevData) => ({
+      ...prevData,
+      [name]: value
+    }));
+  };
+
+  const handleEditClick = () => {
     setEditing(true);
   };
 
-  const handleInputChange = (e) => {
-    setEditedData({ ...editedData, [e.target.name]: e.target.value });
-  };
-
-  const handleCancel = () => {
-    setEditing(false);
-    setEditedData({});
-  };
-
-  const handleSave = async () => {
+  const handleSaveClick = async () => {
     try {
       const accessToken = localStorage.getItem('accessToken');
-      await axios.put('https://petshackaton.ru/account/profile/', editedData, {
+      const response = await axios.put('https://petshackaton.ru/account/profile/', editedData, {
         headers: {
           accept: 'application/json',
           'X-CSRFToken': 'bnPmGdG6tsDTGlSGQJTnf2hEM4FALppTZJbMZfIjfI19f5eWQ51CwJv8rEy8DxZt',
           Authorization: `Bearer ${accessToken}`
         }
       });
-      setUserData(editedData);
+
+      const updatedUserData = response.data;
+      setUserData(updatedUserData);
       setEditing(false);
     } catch (error) {
       console.error('Error updating user data:', error);
-      setError('Failed to update user data');
-    }
-  };
-
-  const handleLogout = () => {
-    if (window.confirm('Сохранить изменения перед выходом?')) {
-      handleSave();
-    } else {
-      handleCancel();
     }
   };
 
@@ -93,7 +82,9 @@ export const Personal = () => {
 
   return (
     <div className={style.container}>
-      <div className={style.bankImg} ><CarouselComponent /></div>
+      <div className={style.bankImg}>
+        <CarouselComponent />
+      </div>
       <div className={style.info_table}>
         <h2>Личный кабинет</h2>
         <div className={style.name_box}>
@@ -103,7 +94,7 @@ export const Personal = () => {
               <input
                 type="text"
                 name="name"
-                value={editedData.name || userData.name}
+                value={editedData.name || ''}
                 onChange={handleInputChange}
               />
             ) : (
@@ -115,30 +106,35 @@ export const Personal = () => {
         <input
           type="number"
           name="pin"
-          value={editing ? editedData.pin || userData.pin : userData.pin}
+          placeholder={userData.pin}
           onChange={handleInputChange}
           readOnly={!editing}
         />
         <input
           type="number"
           name="phone_number"
-          value={
-            editing
-              ? editedData.phone_number || userData.phone_number
-              : userData.phone_number
-          }
+          placeholder={userData.phone_number}
           onChange={handleInputChange}
           readOnly={!editing}
         />
+        {editing ? (
+          <input
+            type="email"
+            name="email"
+            value={editedData.email || ''}
+            onChange={handleInputChange}
+          />
+        ) : (
+          <input
+            type="email"
+            name="email"
+            placeholder={userData.email}
+            onChange={handleInputChange}
+            readOnly={!editing}
+          />
+        )}
         <input
-          type="email"
-          name="email"
-          value={editing ? editedData.email || userData.email : userData.email}
-          onChange={handleInputChange}
-          readOnly={!editing}
-        />
-        <input
-          type="text"
+          type="password"
           placeholder="Изменить пароль"
           src={Pen}
           readOnly={!editing}
@@ -164,13 +160,11 @@ export const Personal = () => {
             <img src={white_arrow} alt="" />
           </div>
         </div>
+
         {editing ? (
-          <>
-            <button onClick={handleSave}>Сохранить</button>
-            <button onClick={handleCancel}>Отменить</button>
-          </>
+          <button onClick={handleSaveClick}>Сохранить</button>
         ) : (
-          <button onClick={handleLogout}>Выход</button>
+          <button onClick={handleEditClick}>Редактировать</button>
         )}
       </div>
     </div>

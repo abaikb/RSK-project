@@ -1,13 +1,13 @@
 .icons {
     display: flex;
-    justify-content: space-between;
+    justify-content: end;
 }
 
 .img {
     width: 132px;
     height: 42px;
     object-fit: cover;
-    margin-left: 10px;
+    margin-left: 26px;
 }
 
 .img:hover {
