@@ -12,10 +12,6 @@ import CreateTicket from "./pages/create-ticket";
 import Ticket from "./pages/ticket";
 import { Personal } from "./pages/personal cabinet/index";
 import AdminLogin from "./pages/admin/login";
-<<<<<<< HEAD
-=======
-// import TicketForm from "./pages/create-ticket";
->>>>>>> 9f449fb68d466a2e9e5338cbded6fd1961c1e076
 
 
 const App = () => {
