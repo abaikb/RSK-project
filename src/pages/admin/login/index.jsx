@@ -56,7 +56,7 @@ const AdminLogin = () => {
                 localStorage.setItem('refreshToken', refresh);
 
                 console.log('Успешный вход в систему');
-                navigate('/choose-person');
+                navigate('/admin/main');
                 window.location.reload();
             } catch (error) {
                 if (error.response && error.response.data && error.response.data.detail) {
@@ -95,7 +95,7 @@ const AdminLogin = () => {
                                     placeholder="Пароль"
                                     className={style.login_input}
                                 />
-                                <div className={style.password_icon} onClick={toggleShowPassword}>
+                                <div className={style.password_icons} onClick={toggleShowPassword}>
                                     {showPassword ? <IoEyeOff /> : <IoEye />}
                                 </div>
                             </div>

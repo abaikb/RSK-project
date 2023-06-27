@@ -13,7 +13,6 @@ import Ticket from "./pages/ticket";
 import { Personal } from "./pages/personal cabinet/index";
 import TicketForm from "./pages/testcreate";
 import AdminLogin from "./pages/admin/login";
-import TicketForm from "./pages/create-ticket";
 
 
 const App = () => {

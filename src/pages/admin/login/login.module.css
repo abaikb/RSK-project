@@ -67,9 +67,9 @@
     position: relative;
 }
 
-.password_icon {
+.password_icons {
     position: absolute;
-    top: 35%;
+    top: 40%;
     right: 20px;
     transform: translateY(-50%);
     cursor: pointer;
