@@ -194,6 +194,8 @@
 }
 
 .password_icon {
+  width: 20px;
+  height: 30px;
   position: absolute;
   top: 55%;
   right: 20px;

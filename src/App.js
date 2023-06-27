@@ -12,6 +12,7 @@ import CreateTicket from "./pages/create-ticket";
 import Ticket from "./pages/ticket";
 import { Personal } from "./pages/personal cabinet/index";
 import TicketForm from "./pages/testcreate";
+import AdminLogin from "./pages/admin/login";
 
 
 const App = () => {
@@ -32,6 +33,10 @@ const App = () => {
             <Route path="/test" element={<TicketForm />} />
           </Route>
         </Routes>
+        <Routes>
+        <Route path="/admin/login" element={<AdminLogin />} />
+        </Routes>
+
       </BrowserRouter>
     </div>
   );
