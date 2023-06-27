@@ -1,48 +1,51 @@
 .ticket-form-container {
-    width: 400px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #0F4F8D;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
+  width: 450px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: transparent;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+}
 
-  .ticket-form-container h1 {
-    font-size: 24px;
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  
-  .ticket-form {
-    display: flex;
-    flex-direction: column;
-  }
+.ticket-form-container h1 {
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 20px;
+}
 
-  .form-group-time {
-    display: flex;
-    justify-content: space-around;
-  }
-  
-  .form-group {
-    margin-bottom: 15px;
-  }
-  
-  .ticket-form-container label {
-    font-size: 14px;
-    font-weight: bold;
-  }
-  
-  .ticket-form-container select {
-    width: 100%;
-    padding: 8px;
-    font-size: 14px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    box-shadow: none;
-  }
+.form-group-time {
+  display: flex;
+  justify-content: space-between;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.ticket-form-container label {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+select,
+input[type="date"],
+input[type="time"]:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 4px rgba(0, 123, 255, 0.5);
+}
+
+.ticket-form-container select {
+  width: 411px;
+  height: 50px;
+  padding: 12px;
+  font-size: 14px;
+  background: #eef8ff;
+  border-radius: 15px;
+  color: #9cb2c2;
+  box-shadow: none;
+}
 
   .ticket-form-container input[type='date'],
   input[type='time'] {
