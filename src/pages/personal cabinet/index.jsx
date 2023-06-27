@@ -16,9 +16,10 @@ export const Personal = () => {
   const [error, setError] = useState('');
   const [editedData, setEditedData] = useState({});
   const [editing, setEditing] = useState(false);
+  const [ticketData, setTicketData] = useState(null);
 
   useEffect(() => {
-    const fetchData = async () => {
+    const fetchUserData = async () => {
       try {
         const accessToken = localStorage.getItem('accessToken');
         const response = await axios.get('https://petshackaton.ru/account/profile/', {
@@ -38,7 +39,23 @@ export const Personal = () => {
       }
     };
 
-    fetchData();
+    const fetchTicketData = async () => {
+      try {
+        const response = await axios.get('https://petshackaton.ru/ticket/get_ticket/', {
+          headers: {
+            accept: 'application/json',
+            'X-CSRFToken': 'UJIGPN4u8OBpMSQaNU5VvU6kJrKlf1vJI5468P6HU4ZFlCcqNgdaMBkOo1DT795j'
+          }
+        });
+        const ticketData = response.data[0];
+        setTicketData(ticketData);
+      } catch (error) {
+        console.error('Error fetching ticket data:', error);
+      }
+    };
+
+    fetchUserData();
+    fetchTicketData();
   }, []);
 
   const handleInputChange = (e) => {
@@ -139,17 +156,23 @@ export const Personal = () => {
           src={Pen}
           readOnly={!editing}
         />
+
+        {editing ? (
+          <button className={style.change_button} onClick={handleSaveClick}>Сохранить</button>
+        ) : (
+          <button className={style.change_button} onClick={handleEditClick}>Редактировать</button>
+        )}
         <div className={style.ticket_box}>
           <h3>Текущий билет</h3>
           <div className={style.ticket}>
             <img src={pin} alt="#" />
             <div className={style.address}>
-              <span>{userData.ticket?.address}</span>
-              <span>{userData.ticket?.city}</span>
+              <span>{ticketData?.area}</span>
+              <span>{ticketData?.department}</span>
             </div>
             <div className={style.data}>
-              <span>{userData.ticket?.date}</span>
-              <span>{userData.ticket?.time}</span>
+              <span>{ticketData.date}</span>
+              <span>{ticketData?.time}</span>
             </div>
             <img src={arrow} alt="" />
           </div>
@@ -160,12 +183,6 @@ export const Personal = () => {
             <img src={white_arrow} alt="" />
           </div>
         </div>
-
-        {editing ? (
-          <button onClick={handleSaveClick}>Сохранить</button>
-        ) : (
-          <button onClick={handleEditClick}>Редактировать</button>
-        )}
       </div>
     </div>
   );
