@@ -1,4 +1,4 @@
-import IOS from "../images/google-play.png"
+import IOS from "../images/app-store.png"
 import Android from "../images/google-play.png"
 import style from "./market.module.css"
 
