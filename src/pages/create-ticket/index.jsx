@@ -400,7 +400,7 @@ function TicketForm() {
               />
             </div>
             <div className={styles['form-group']}></div>
-            <button type="submit">Создать билет</button>
+            <button className={styles.button_create} type="submit">Создать билет</button>
           </form>
         </div>
         <div><Market /></div>

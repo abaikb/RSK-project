@@ -3,6 +3,7 @@ import axios from 'axios';
 import styles from './signup.module.css';
 import CarouselComponent from '../../components/carousel/index';
 import Market from '../../components/market';
+import Loader from '../../components/Loader/Loader';
 
 const RegistrationForm = () => {
   const [formData, setFormData] = useState({
@@ -19,6 +20,8 @@ const RegistrationForm = () => {
   const [errors, setErrors] = useState({});
   const [registrationMessage, setRegistrationMessage] = useState('');
   const [showForm, setShowForm] = useState(true);
+  const [loading, setLoading] = useState(true);
+
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -114,10 +117,15 @@ const RegistrationForm = () => {
         } else {
           console.error(error);
         }
+        if (loading) {
+          return <Loader />;
+        }
       }
     }
   };
+  
 
+  
   return (
     <div className={styles.contain_signup}>
       <div className={styles.bankImg} ><CarouselComponent /></div>

@@ -73,7 +73,7 @@ input[type="time"] {
   border: none;
 }
 
-button[type="submit"] {
+.button_create {
   width: 411px;
   height: 59px;
   font-size: 16px;
@@ -88,7 +88,7 @@ button[type="submit"] {
   margin-top: 19px;
 }
 
-button[type="submit"]:hover {
+.button_create:hover {
   background-color: #ffcd29;
 }
 
