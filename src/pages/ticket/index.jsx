@@ -16,7 +16,7 @@ const Ticket = () => {
         const accessToken = localStorage.getItem('accessToken');
         const refreshToken = localStorage.getItem('refreshToken');
   
-        const response = await axios.get('https://petshackaton.ru/ticket/get_my_ticket/', {
+        const response = await axios.get(`https://petshackaton.ru/ticket/get_ticket/`, {
           headers: {
             accept: 'application/json',
             Authorization: `Bearer ${accessToken}`,
@@ -34,7 +34,12 @@ const Ticket = () => {
     fetchTicketData();
   }, []);
   
-
+  
+  
+  
+  
+  
+  
   return (
     <div className={style.container}>
       <div className={style.bankImg}>
@@ -61,14 +66,20 @@ const Ticket = () => {
           )}
           <p>Адрес филиала</p>
           <div className={style.address}>
+          {ticketData && (
             <div>
-              <p>Сберкасса № 36-56</p>
-              <p>г.Бишкек ул.Киевская №165</p>
-            </div>
+            <p>{ticketData.city}</p>
+            <p>{ticketData.department}</p>
+            <p>{ticketData.address}</p>
+          </div>
+          )}
+            
             <img src={Point} alt="#" />
           </div>
           <p>Услуга</p>
-          <div className={style.service}>Денежные переводы</div>
+          {ticketData && (
+            <div className={style.service}>{ticketData.transaction}</div>
+          )}
           <p>Дата и время</p>
           {ticketData && (
             <div>

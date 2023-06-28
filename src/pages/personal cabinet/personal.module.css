@@ -85,6 +85,10 @@
   padding: 3px;
 }
 
+.link_ticket {
+  outline: none;
+}
+
 .ticket img {
   margin: 0 20px;
 }
@@ -134,10 +138,24 @@
 
 .change_button {
   width: 90%;
-  height: 50px;
+  height: 45px;
+  color: #0f4f8d;
+  font-size: 26px;
+  line-height: 150%;
   background-color: #ffcd29;
   border-radius: 15px;
   border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.change_button:hover {
+  background-color: #ffc000;
+}
+
+.change_button:active {
+  background-color: #ffa500;
+  transform: scale(0.95);
 }
 
 .btn_editpassword {

@@ -20,8 +20,7 @@ const RegistrationForm = () => {
   const [errors, setErrors] = useState({});
   const [registrationMessage, setRegistrationMessage] = useState('');
   const [showForm, setShowForm] = useState(true);
-  const [loading, setLoading] = useState(true);
-
+  const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -80,6 +79,8 @@ const RegistrationForm = () => {
     e.preventDefault();
 
     if (validateForm()) {
+      setLoading(true);
+
       try {
         const response = await axios.post('https://petshackaton.ru/account/register/', formData);
         localStorage.setItem('accessToken', response.data.token);
@@ -117,18 +118,15 @@ const RegistrationForm = () => {
         } else {
           console.error(error);
         }
-        if (loading) {
-          return <Loader />;
-        }
       }
+
+      setLoading(false);
     }
   };
-  
 
-  
   return (
     <div className={styles.contain_signup}>
-      <div className={styles.bankImg} ><CarouselComponent /></div>
+      <div className={styles.bankImg}><CarouselComponent /></div>
 
       {showForm && (
         <form className={styles.formContainer} onSubmit={handleSubmit}>
@@ -230,7 +228,7 @@ const RegistrationForm = () => {
             <label></label>
             <button className={styles.signupButton} type="submit">Зарегистрироваться</button>
           </div>
-          <div className={styles.market} ><Market /></div>
+          <div className={styles.market}><Market /></div>
         </form>
       )}
 
@@ -239,6 +237,8 @@ const RegistrationForm = () => {
           Вы успешно зарегистрировались. Вам отправлено письмо с активацией на вашу почту.
         </div>
       )}
+
+      {loading && <Loader />}
     </div>
   );
 };

@@ -9,7 +9,7 @@ import Login from "./pages/login/login";
 import ChoosePerson from "./pages/person/index"
 import ForgotPasswordForm from "./pages/change_password/change";
 import CreateTicket from "./pages/create-ticket";
-import Ticket from "./pages/ticket";
+import Ticket from "./pages/ticket/index";
 import { Personal } from "./pages/personal cabinet/index";
 import AdminLogin from "./pages/admin/login";
 
@@ -29,7 +29,6 @@ const App = () => {
             <Route path="/create-ticket" element={<CreateTicket />} />
             <Route path="/ticket" element={<Ticket />} />
             <Route path="/personal" element={<Personal />} />
-            {/* <Route path="/test" element={<TicketForm />} /> */}
           </Route>
         </Routes>
         <Routes>
