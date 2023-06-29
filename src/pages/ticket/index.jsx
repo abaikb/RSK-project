@@ -45,7 +45,7 @@ const Ticket = () => {
       <div className={style.bankImg}>
         <CarouselComponent />
       </div>
-      <div className={style.cont}>
+      <div className={style.box_ticket}>
         <div className={style.ticketContainer}>
           <h1>Ваш билет</h1>
           {ticketData && (
@@ -92,7 +92,7 @@ const Ticket = () => {
             <button className={style.btnChange}>Изменить</button>
           </div>
           <div className={style.warning}>
-            <img src={Sign} alt="!" />
+            <img src={Sign} alt="" />
             <p>
               Внимание, во избежании пропуска, рекомендуется прийти за 10 минут до забронированного времени
             </p>
