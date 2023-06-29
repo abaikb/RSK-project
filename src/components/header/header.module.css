@@ -1,6 +1,5 @@
 .header_wrapper {
   width: 100%;
-  height: 100px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -35,20 +34,6 @@
   color: #ffffff;
 }
 
-@media (max-width: 768px) {
-  .header_wrapper {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 20px;
-    padding-bottom: 0;
-    height: auto;
-  }
-
-  .link {
-    font-size: 5vw;
-  }
-}
-
 .logo {
   width: 169px;
   height: 30px;
@@ -58,19 +43,6 @@
   display: flex;
   justify-content: space-between;
   width: 50%;
-}
-
-@media (max-width: 1024px) {
-  .header_wrapper {
-    padding-bottom: 0;
-  }
-
-  .links_container {
-    margin-left: 0;
-    width: auto;
-    flex-wrap: wrap;
-    gap: 20px;
-  }
 }
 
 .link {
@@ -93,12 +65,11 @@
   border-radius: 3px;
   font-size: 15px;
   color: #ffffff;
-  background: #0f4f8d;
+  background: transparent;
 }
 
 .modal_container {
   height: 150px;
-  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -138,17 +109,16 @@
 
 .modal {
   position: absolute;
-  top: 23%;
+  margin-top: 100px;
+  top: 50%;
   left: 50%;
-  transform: translate(100%, -50%);
+  transform: translate(-50%, -50%);
   background-color: #0f4f8d;
   color: #ffffff;
   border-radius: 5px;
   width: 350px;
-  transform: translateX(100%);
   animation: slideIn 0.5s ease-out forwards;
 }
-
 @keyframes slideIn {
   0% {
     top: -100%;
@@ -169,6 +139,7 @@
   align-items: center;
   justify-content: center;
   animation: fadeIn 0.5s ease-out forwards;
+  /* overflow: auto; */
 }
 
 @keyframes fadeIn {
@@ -177,5 +148,45 @@
   }
   100% {
     opacity: 1;
+  }
+}
+
+@media (max-width: 1140px) {
+  .header_wrapper {
+    padding-bottom: 0;
+    flex-wrap: wrap;
+  }
+
+  .links_container {
+    margin-left: 0;
+    width: auto;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+}
+@media (max-width: 768px) {
+  .header_wrapper {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+    padding-bottom: 0;
+    height: auto;
+  }
+  .link {
+    margin-top: 5px;
+    font-size: 4vw;
+  }
+  .lang_btn {
+    position: absolute;
+    right: 24px;
+    top: 24px;
+  }
+  .avatar {
+    width: 34px;
+    height: 34px;
+    object-fit: cover;
+    position: absolute;
+    right: 84px;
+    top: 24px;
   }
 }
