@@ -15,7 +15,7 @@ const Ticket = () => {
       try {
         const accessToken = localStorage.getItem('accessToken');
         const refreshToken = localStorage.getItem('refreshToken');
-  
+
         const response = await axios.get(`https://petshackaton.ru/ticket/get_ticket/`, {
           headers: {
             accept: 'application/json',
@@ -23,23 +23,23 @@ const Ticket = () => {
             'X-CSRFToken': refreshToken,
           },
         });
-  
+
         const ticketData = response.data[0];
         setTicketData(ticketData);
       } catch (error) {
         console.error('Error fetching ticket data:', error);
       }
     };
-  
+
     fetchTicketData();
   }, []);
-  
-  
-  
-  
-  
-  
-  
+
+
+
+
+
+
+
   return (
     <div className={style.container}>
       <div className={style.bankImg}>
@@ -66,14 +66,14 @@ const Ticket = () => {
           )}
           <p>Адрес филиала</p>
           <div className={style.address}>
-          {ticketData && (
-            <div>
-            <p>{ticketData.city}</p>
-            <p>{ticketData.department}</p>
-            <p>{ticketData.address}</p>
-          </div>
-          )}
-            
+            {ticketData && (
+              <div>
+                <p>{ticketData.city}</p>
+                <p>{ticketData.department}</p>
+                <p>{ticketData.address}</p>
+              </div>
+            )}
+
             <img src={Point} alt="#" />
           </div>
           <p>Услуга</p>
@@ -83,8 +83,25 @@ const Ticket = () => {
           <p>Дата и время</p>
           {ticketData && (
             <div>
-              <div className={style.date}>{ticketData.date}</div>
-              <div className={style.time}>{ticketData.time}</div>
+              <div className={style.date}>
+                {ticketData?.date && (
+                  <div>
+                    {new Intl.DateTimeFormat('ru-RU', {
+                      weekday: 'long',
+                      month: 'long',
+                      day: 'numeric',
+
+                    }).format(new Date(ticketData.date))}
+                  </div>
+                )}
+              </div>
+              <div className={style.time}>
+                {ticketData?.time &&
+                  new Intl.DateTimeFormat('ru-RU', {
+                    hour: '2-digit',
+                    minute: '2-digit'
+                  }).format(new Date(`2000-01-01T${ticketData.time}`))}
+              </div>
             </div>
           )}
           <div>
