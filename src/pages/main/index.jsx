@@ -100,7 +100,7 @@ export const MainPage = () => {
                         </div>
                         <a href="">Карта банкоматов и отделений</a>
                     </div>
-                    <Market />
+                   <div className={style.market}> <Market /></div>
                 </div>
             </div >
             < Footer />

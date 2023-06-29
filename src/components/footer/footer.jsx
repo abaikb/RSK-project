@@ -3,7 +3,7 @@ import LogoSmall from '../images/logo_small.png'
 
 const Footer = () => {
     return (
-        <footer>
+        <footer className={style.footer}>
             <div className={style.container}>
                 <div>
                     <p className={style.yellow}>Центральный офис:</p>
