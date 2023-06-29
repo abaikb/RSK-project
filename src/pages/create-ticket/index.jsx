@@ -136,8 +136,8 @@ function TicketForm() {
         <CarouselComponent />
       </div>
       <div className={styles.cont}>
-        <div className={styles['ticket-form-container']}>
-          <form onSubmit={handleSubmit} className={styles['ticket-form']}>
+        <div className={styles.ticket_form_container}>
+          <form onSubmit={handleSubmit} className={styles.ticket_form}>
             <div className={styles['form-group']}>
               <SelectOptions
                 options={regionOptions}
@@ -195,7 +195,7 @@ function TicketForm() {
             <button className={styles.button_create} type="submit">Создать билет</button>
           </form>
         </div>
-        <div><Market /></div>
+        <div className={styles.market}><Market /></div>
       </div>
     </div>
   );

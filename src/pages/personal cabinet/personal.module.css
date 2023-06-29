@@ -1,13 +1,14 @@
 .container {
   width: 100%;
-  height: 120vh;
-  height: auto;
+  height: 100vh;
   display: flex;
   justify-content: space-between;
+  padding: 0 20px;
 }
 
 .bankImg {
   width: 55%;
+  height: auto;
 }
 
 .info_table {
@@ -15,31 +16,33 @@
   display: flex;
   flex-direction: column;
   color: white;
-  margin-top: 60px;
+  margin-top: 10px;
 }
+
 .name_box {
   position: relative;
   display: flex;
-  height: auto;
-  margin: 42px 0;
+  align-items: center;
+  margin: 20px 0;
 }
+
 .avatar {
   width: 80px;
   height: 80px;
   border-radius: 50%;
   margin-right: 42px;
 }
+
 .name {
-  width: 30px;
-  font-style: 24px;
-  font-weight: 500;
-  line-height: 135%;
+  font-size: 24px;
 }
+
 .name_box .pen {
   position: absolute;
   bottom: 13px;
   right: 80px;
 }
+
 .container input {
   content: url(../../components/images/pen.svg);
   width: 90%;
@@ -64,13 +67,16 @@
 .ticket_box {
   display: flex;
   flex-direction: column;
+  margin-top: 10px;
 }
+
 .ticket_box h3 {
   font-size: 22px;
   margin-bottom: 17px;
 }
 
 .ticket {
+  
   cursor: pointer;
   width: 90%;
   height: 70px;
@@ -115,11 +121,11 @@
 }
 
 .ticket:hover {
-  scale: 1.1;
+  transform: scale(1.1);
 }
 
 .ticket:active {
-  scale: 0.9;
+  transform: scale(0.9);
 }
 
 .history_box {
@@ -129,11 +135,15 @@
 
 .history {
   color: white;
+  margin-bottom: 30px;
+
 }
+
 .history_box img {
   width: 10px;
   height: 15px;
   margin-left: 10px;
+  margin-bottom: 30px;
 }
 
 .change_button {
@@ -164,3 +174,90 @@
   border-radius: 15px;
   border: none;
 }
+
+/* Media Queries */
+
+@media (max-width: 1189px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+  }
+
+  .bankImg {
+    width: 100%;
+  }
+
+  .info_table {
+    width: 90%;
+    margin-top: 0;
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+
+  .name {
+    margin-left: 90px;
+  }
+
+  .name_box {
+    margin: 20px 0;
+    width: 90%;
+  }
+
+  .avatar {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+
+  .name_box .pen {
+    position: static;
+    margin-top: 10px;
+  }
+
+  .container input {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+
+  .ticket {
+    width: 100%;
+    height: 60px;
+    margin-bottom: 20px;
+  }
+
+  .ticket img {
+    margin: 0 10px;
+  }
+
+  .address {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+
+  .change_button {
+    width: 100%;
+  }
+
+  .btn_editpassword {
+    width: 100%;
+  }
+}
+@media (max-width: 673px) {
+  .info_table {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
+@media (max-width: 410px) {
+  .name {
+    margin-left: 30px;
+    font-size: 24px;
+  }
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  select:focus, textarea:focus, input:focus {
+          font-size: 16px;
+      }
+  }
