@@ -1,19 +1,17 @@
 .icons {
-    display: flex;
-    justify-content: end;
+  display: flex;
+  justify-content: center;
 }
 
 .img {
-    width: 132px;
-    height: 42px;
-    object-fit: cover;
-    margin-left: 26px;
+  width: 132px;
+  height: 42px;
+  object-fit: cover;
+  margin: 10px;
 }
 
- 
-
 .img:hover {
-    transition: transform 0.5s;
-    transform: scale(1.05);
-    cursor: pointer;
+  transition: transform 0.5s;
+  transform: scale(1.05);
+  cursor: pointer;
 }
