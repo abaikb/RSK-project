@@ -215,6 +215,10 @@
     margin-top: 9px;
     padding-right: 10px;
   }
+  .login_checkbox input[type="checkbox"] {
+    width: 15px;
+    height: 15px;
+  }
 
   
 }

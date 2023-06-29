@@ -74,6 +74,9 @@
   color: #00aeff;
   margin-top: 8px;
 }
+.logo {
+    object-fit: cover;
+}
 
 @media (max-width: 822px) {
   .footer {
