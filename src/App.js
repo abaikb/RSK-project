@@ -12,6 +12,8 @@ import CreateTicket from "./pages/create-ticket";
 import Ticket from "./pages/ticket/index";
 import { Personal } from "./pages/personal cabinet/index";
 import AdminLogin from "./pages/admin/login";
+import { AdminLayout } from "./components/admin/layout";
+import { AdminMainPage } from "./pages/admin/main";
 import ChangePassword from "./pages/password_edit/password_edit";
 
 
