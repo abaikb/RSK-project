@@ -131,7 +131,7 @@ input[type="time"] {
   .ticket_form_container select {
     width: 100%;
     height: 50px;
-    padding: 12px;
+    padding-left: 22px;
     font-size: 14px;
     background: #eef8ff;
     border-radius: 15px;
