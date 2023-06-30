@@ -2,6 +2,7 @@
   display: flex;
   padding: 0 80px 0 0;
   justify-content: space-between;
+  overflow: hidden;
 }
 
 .carouselContainer {
@@ -27,7 +28,6 @@
   background: #EEF8FF;
   border-radius: 15px;
 }
-
 
 .exchange h3 {
   width: 174px;
@@ -114,7 +114,6 @@ tr:nth-of-type(odd) {
   text-transform: uppercase;
   color: #0F4F8D;
   margin-left: 15px;
-
 }
 
 .servicePoints>p {
@@ -172,12 +171,72 @@ tr:nth-of-type(odd) {
 }
 
 .mainText {
-  width: 787px;
-  height: 479px;
+  width: 100%;
+  max-width: 787px;
+  height: auto;
   font-weight: 500;
   font-size: 24px;
   line-height: 150%;
   color: #FFFFFF;
   padding: 0 0 0 80px;
   margin-bottom: 100px;
+}
+
+@media (max-width: 1000px) {
+  .container {
+    flex-direction: column;
+    padding: 0;
+  }
+
+  .carouselContainer {
+    width: 100%;
+  }
+
+  .exchange,
+  .servicePoints {
+    width: 80%;
+    height: auto;
+    margin: auto;
+    padding: 20px;
+  }
+  .mainText  {
+    font-size: 70%;
+  }
+
+  .exchange {
+    margin-bottom: 20px;
+  }
+
+  .exchange h3,
+  .exchange>p:first-of-type,
+  .exchange>p:nth-of-type(2n),
+  .exchange>p:last-of-type,
+  th,
+  tr:nth-of-type(even),
+  tr:nth-of-type(odd),
+  .servicePoints h3,
+  .servicePoints>p,
+  .servicePoints>select,
+  .servicePoints>input:first-of-type,
+  .servicePoints>div>a,
+  .servicePoints>a,
+  .btnShow {
+    margin: 10px;
+  }
+
+  .exchange h3 {
+    width: 50%;
+    margin-left: 0;
+  }
+
+  .mainText {
+    padding: 0 20px;
+    margin-bottom: 50px;
+  }
+  .market {
+    margin-top: 100px;
+  }
+  .exchange img {
+    object-fit: contain;
+  }
 }

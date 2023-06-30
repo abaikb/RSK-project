@@ -1,6 +1,8 @@
 const Points = () => {
     return (
-
+      <div>
+        sevis
+      </div>
     )
 }
 

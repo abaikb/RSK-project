@@ -13,6 +13,7 @@ const Login = () => {
   const [errors, setErrors] = useState({});
   const [errorMessage, setErrorMessage] = useState('');
   const [showPassword, setShowPassword] = useState(false);
+  const [isLoading, setIsLoading] = useState(false); // Added isLoading state
   const navigate = useNavigate();
 
   const handleUsernameChange = (e) => {
@@ -46,6 +47,8 @@ const Login = () => {
     e.preventDefault();
 
     if (validateForm()) {
+      setIsLoading(true); // Show loader
+
       try {
         const response = await axios.post('https://petshackaton.ru/account/login/', {
           phone_number: phone_number,
@@ -66,6 +69,8 @@ const Login = () => {
           setErrorMessage('Произошла ошибка входа. Пожалуйста, попробуйте еще раз.');
         }
       }
+
+      setIsLoading(false); // Hide loader
     }
   };
 
@@ -114,7 +119,7 @@ const Login = () => {
             </Link>
           </span>
           <button type="submit" className={LoginStyle.login_button}>
-            Войти
+            {isLoading ? 'Загрузка...' : 'Войти'} 
           </button>
           <div className={LoginStyle.login_links}>
             <Link className={LoginStyle.link} to="/signup">

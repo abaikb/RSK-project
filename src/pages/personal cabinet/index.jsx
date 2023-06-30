@@ -8,6 +8,7 @@ import arrow from '../../components/images/right_arrow.svg';
 import white_arrow from '../../components/images/white-arrow.svg';
 import Loader from '../../components/Loader/Loader';
 import CarouselComponent from '../../components/carousel/index';
+import { Link } from 'react-router-dom';
 
 export const Personal = () => {
   const [userData, setUserData] = useState(null);
@@ -106,7 +107,9 @@ export const Personal = () => {
         <div className={style.name_box}>
           <img className={style.avatar} src={Avatar} alt="#" />
           <h3 className={style.name}>
-            {userData.last_name} {userData.name}  {userData.otchestvo}
+            <div>{userData.last_name}</div>
+             <div>{userData.name}</div> <div> 
+              {userData.otchestvo}</div>
           </h3>
           {editing && <img className={style.pen} src={wPen} alt="" />}
         </div>
@@ -128,7 +131,7 @@ export const Personal = () => {
           <input
             type="email"
             name="email"
-            placeholder={userData.email}
+            placeholder="Email"
             value={editedData.email || ''}
             onChange={handleInputChange}
             readOnly={!editing}
@@ -155,30 +158,32 @@ export const Personal = () => {
         )}
         <div className={style.ticket_box}>
           <h3>Текущий билет</h3>
-          <div className={style.ticket}>
-            <img src={pin} alt="#" />
-            <div className={style.address}>
-              <span className={style.titleCity}>{ticketData?.city}</span>
-              <span className={style.department}>{ticketData?.department}</span>
+          <Link className={style.link_ticket} to="/ticket">
+            <div className={style.ticket}>
+              <img src={pin} alt="#" />
+              <div className={style.address}>
+                <div className={style.titleCity}>{ticketData?.city}</div>
+                <div className={style.department}>{ticketData?.department}</div>
+              </div>
+              <div className={style.data}>
+                <span>
+                  {ticketData?.date &&
+                    new Intl.DateTimeFormat('en-US', {
+                      month: '2-digit',
+                      day: '2-digit'
+                    }).format(new Date(ticketData.date))}
+                </span>
+                <span>
+                  {ticketData?.time &&
+                    new Intl.DateTimeFormat('ru-RU', {
+                      hour: '2-digit',
+                      minute: '2-digit'
+                    }).format(new Date(`2000-01-01T${ticketData.time}`))}
+                </span>
+              </div>
+              <img src={arrow} alt="" />
             </div>
-            <div className={style.data}>
-              <span>
-                {ticketData?.date &&
-                  new Intl.DateTimeFormat('en-US', {
-                    month: '2-digit',
-                    day: '2-digit'
-                  }).format(new Date(ticketData.date))}
-              </span>
-              <span>
-                {ticketData?.time &&
-                  new Intl.DateTimeFormat('ru-RU', {
-                    hour: '2-digit',
-                    minute: '2-digit'
-                  }).format(new Date(`2000-01-01T${ticketData.time}`))}
-              </span>
-            </div>
-            <img src={arrow} alt="" />
-          </div>
+          </Link>
           <div className={style.history_box}>
             <a className={style.history} href="#">
               История
@@ -187,6 +192,7 @@ export const Personal = () => {
           </div>
         </div>
       </div>
-    </div>
+    </div >
   );
 };
+
