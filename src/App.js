@@ -38,7 +38,7 @@ const App = () => {
         <Routes>
           <Route path="/admin" element={<AdminLayout />}>
             <Route path="/admin/login" element={<AdminLogin />} />
-            <Route path="/admin/main" element={<AdminMainPage />} />
+            <Route path="/admin" element={<AdminMainPage />} />
           </Route>
         </Routes>
       </BrowserRouter>
