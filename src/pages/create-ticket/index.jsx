@@ -169,7 +169,7 @@ function TicketForm() {
             <div className={styles['form-group']}>
               <SelectOptions
                 options={transactionOptions}
-                label="Транзакция"
+                label="Транзакцию"
                 onChange={handleTransactionChange}
               />
             </div>

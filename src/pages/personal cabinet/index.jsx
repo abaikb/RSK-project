@@ -131,7 +131,7 @@ export const Personal = () => {
           <input
             type="email"
             name="email"
-            placeholder={userData.email}
+            placeholder="Email"
             value={editedData.email || ''}
             onChange={handleInputChange}
             readOnly={!editing}
@@ -162,8 +162,8 @@ export const Personal = () => {
             <div className={style.ticket}>
               <img src={pin} alt="#" />
               <div className={style.address}>
-                <span className={style.titleCity}>{ticketData?.city}</span>
-                <span className={style.department}>{ticketData?.department}</span>
+                <div className={style.titleCity}>{ticketData?.city}</div>
+                <div className={style.department}>{ticketData?.department}</div>
               </div>
               <div className={style.data}>
                 <span>
@@ -181,8 +181,8 @@ export const Personal = () => {
                     }).format(new Date(`2000-01-01T${ticketData.time}`))}
                 </span>
               </div>
+              <img src={arrow} alt="" />
             </div>
-            <img src={arrow} alt="" />
           </Link>
           <div className={style.history_box}>
             <a className={style.history} href="#">

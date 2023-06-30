@@ -1,6 +1,6 @@
 .footer {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   padding: 26px 80px;
   background-color: #074684;
 }

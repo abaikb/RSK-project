@@ -48,7 +48,7 @@
   width: 90%;
   height: 50px;
   list-style: none;
-  margin-bottom: 21px;
+  margin-bottom: 20px;
   padding: 10px 20px;
   border-radius: 15px;
   border: none;
@@ -61,7 +61,7 @@
 }
 
 .container input:last-of-type {
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 
 .ticket_box {
@@ -103,6 +103,7 @@
   display: flex;
   flex-direction: column;
   margin-right: 29px;
+  outline: none;
 }
 
 .data {
@@ -148,7 +149,7 @@
 
 .change_button {
   width: 90%;
-  height: 45px;
+  height: 50px;
   color: #0f4f8d;
   font-size: 26px;
   line-height: 150%;
@@ -175,7 +176,10 @@
   border: none;
 }
 
-/* Media Queries */
+.link_ticket {
+  text-decoration: none;
+}
+
 
 @media (max-width: 1189px) {
   .container {
@@ -191,8 +195,8 @@
   .info_table {
     width: 90%;
     margin-top: 0;
-    padding-left: 100px;
-    padding-right: 100px;
+    padding-left: 150px;
+    padding-right: 150px;
   }
 
   .name {
@@ -206,7 +210,6 @@
 
   .avatar {
     margin-right: 0;
-    margin-bottom: 20px;
   }
 
   .name_box .pen {
@@ -227,11 +230,10 @@
 
   .ticket img {
     margin: 0 10px;
-  }
+  } 
 
   .address {
     margin-right: 0;
-    margin-bottom: 20px;
   }
 
   .change_button {
@@ -242,7 +244,7 @@
     width: 100%;
   }
 }
-@media (max-width: 673px) {
+@media (max-width: 720px) {
   .info_table {
     padding-left: 10px;
     padding-right: 10px;

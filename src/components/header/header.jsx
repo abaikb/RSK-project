@@ -78,7 +78,7 @@ const Header = () => {
     <div className={style.modal_container}>
       <h2 className={style.modal_name}>{userName}</h2>
       <div className={style.modal_box}>
-        <Link to="/personal" className={style.modal_link}>Личный кабинет</Link>
+        <Link to="/personal" onClick={closeModal} className={style.modal_link}>Личный кабинет</Link>
       </div>
       <div className={style.modal_buttons}>
         <button onClick={closeModal} className={style.modal_btn}>x</button>
