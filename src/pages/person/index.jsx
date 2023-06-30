@@ -9,8 +9,12 @@ const ChoosePerson = () => {
             <div className={style.bankImg} ><CarouselComponent /></div>
             <div className={style.btnContainer}>
                 <Link to="/create-ticket">
-                    <button className={style.legal}>Физическое лицо</button>
-                    <button className={style.legal}>Юридическое лицо</button>
+                    <div className={style.legal_gradient}>
+                        <button className={style.legal}>Физическое лицо</button>
+                    </div>
+                    <div className={style.legal_gradient}>
+                        <button className={style.legal}>Юридическое лицо</button>
+                    </div>
                 </Link>
                 <div><Market /></div>
             </div>
