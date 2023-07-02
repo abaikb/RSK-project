@@ -23,19 +23,19 @@ const Login = () => {
     navigate('/login');
   };
 
-  useEffect(() => {
-    const accessToken = localStorage.getItem('accessToken');
-    if (accessToken) {
-      navigate('/choose-person');
-    } else {
-      const id = setTimeout(logout, 10 * 60 * 1000); 
-      setTimeoutId(id);
-    }
+  // useEffect(() => {
+  //   const accessToken = localStorage.getItem('accessToken');
+  // //   if (accessToken) {
+  // //     navigate('/choose-person');
+  // //   } else {
+  // //     const id = setTimeout(logout, 10 * 60 * 1000); 
+  // //     setTimeoutId(id);
+  // //   }
 
-    return () => {
-      clearTimeout(timeoutId);
-    };
-  }, [navigate, timeoutId]);
+  // //   return () => {
+  // //     clearTimeout(timeoutId);
+  // //   };
+  // // }, [navigate, timeoutId]);
 
   const handleUsernameChange = (e) => {
     setUsername(e.target.value);
