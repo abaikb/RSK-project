@@ -10,14 +10,10 @@ const ChangePassword = () => {
 
     const PasswordChange = (e) => {
         e.preventDefault();
-        // Можно использовать fetch или axios для отправки данных
         const data = {
             email
         };
 
-        // Здесь выполняется отправка данных на сервер
-
-        // Обработка успешной отправки запроса на восстановление пароля
         setResetRequested(true);
     };
 
