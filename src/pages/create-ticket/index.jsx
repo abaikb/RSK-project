@@ -6,6 +6,9 @@ import CarouselComponent from '../../components/carousel/index';
 
 
 
+
+
+
 const apiBaseUrl = 'https://petshackaton.ru';
 
 const SelectOptions = ({ options, label, onChange }) => (
@@ -25,7 +28,6 @@ const SelectOptions = ({ options, label, onChange }) => (
     </select>
   </div>
 );
-
 function TicketForm() {
   const [date, setDate] = useState('');
   const [time, setTime] = useState('');

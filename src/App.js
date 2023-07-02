@@ -13,6 +13,7 @@ import Ticket from "./pages/ticket/index";
 import { Personal } from "./pages/personal cabinet/index";
 import AdminLogin from "./pages/admin/login";
 import ChangePassword from "./pages/password_edit/password_edit";
+import PasswordResetCompleteForm from "./pages/pasword_code/paswordCode";
 
 
 const App = () => {
@@ -31,6 +32,7 @@ const App = () => {
             <Route path="/ticket" element={<Ticket />} />
             <Route path="/personal" element={<Personal />} />
             <Route path="/change_password" element={<ChangePassword />} />
+            <Route path="/reset_password" element={<PasswordResetCompleteForm />} />
           </Route>
         </Routes>
         <Routes>
