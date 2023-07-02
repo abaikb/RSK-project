@@ -12,6 +12,7 @@ import CreateTicket from "./pages/create-ticket";
 import Ticket from "./pages/ticket/index";
 import { Personal } from "./pages/personal cabinet/index";
 import AdminLogin from "./pages/admin/login";
+import Points from "./pages/service_points";
 
 
 const App = () => {
@@ -29,6 +30,7 @@ const App = () => {
             <Route path="/create-ticket" element={<CreateTicket />} />
             <Route path="/ticket" element={<Ticket />} />
             <Route path="/personal" element={<Personal />} />
+            <Route path="/points" element={<Points />} />
           </Route>
         </Routes>
         <Routes>
