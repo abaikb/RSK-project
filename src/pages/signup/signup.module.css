@@ -214,6 +214,16 @@
     height: 43px;
     font-size: 20px;
   }
+  .error {
+    color: red;
+    background: #eaecf1;
+    border-radius: 5px;
+    width: 200px;
+    height: 20.72px;
+    font-size: 8px;
+    padding: 3px;
+  }
+  
   
 }
 

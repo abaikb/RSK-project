@@ -53,12 +53,11 @@
   margin-bottom: 15px;
 }
 
-.exchange>table {
+.currencyTable {
   border-collapse: collapse;
   width: 100%;
 }
-
-th {
+.currencyTable > thead> tr> th {
   font-size: 14px;
   line-height: 21px;
   text-align: center;
@@ -66,7 +65,7 @@ th {
   background: #EEF8FF;
 }
 
-tr:nth-of-type(even) {
+.currencyTable > tbody > tr:nth-of-type(even) {
   background: #EEF8FF;
   font-weight: 600;
   font-size: 14px;
@@ -75,7 +74,7 @@ tr:nth-of-type(even) {
   color: #0F4F8D;
 }
 
-tr:nth-of-type(odd) {
+.currencyTable > tbody > tr:nth-of-type(odd) {
   background: #0F4F8D;
   font-weight: 600;
   font-size: 14px;

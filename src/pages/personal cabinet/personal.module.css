@@ -56,6 +56,22 @@
   transition: 0.5s;
 }
 
+.change_btn_pass {
+  width: 90%;
+  height: 50px;
+  padding: 10px 20px;
+  border-radius: 15px;
+  color: #0f4f8d;
+  border: none;
+  margin-bottom: 20px;
+  font-size: 26px;
+}
+
+.change_btn_pass:active {
+  background-color: #ffa500;
+  transform: scale(0.95);
+}
+
 .container input::-webkit-inner-spin-button {
   -webkit-appearance: none;
 }
@@ -189,6 +205,9 @@
   }
 
   .bankImg {
+    width: 100%;
+  }
+  .change_btn_pass {
     width: 100%;
   }
 

@@ -1,369 +1,448 @@
 .container {
-    display: flex;
-    justify-content: space-between;
-    padding-right: 80px;
-  }
-  
-  .bankImg {
-    width: 65%;
-    height: 100%;
-    object-fit: cover;
-  }
-  
-  .cont {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding-bottom: 39px;
-  }
-  
-  .ticketContainer {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .container h1 {
-    font-weight: 500;
-    font-size: 26px;
-    line-height: 150%;
-    align-items: center;
-    color: #EEF8FF;
-    margin-bottom: 19px;
-  }
-  
-  .container div>div {
-    display: flex;
-  }
-  
-  .code {
-    width: 138px;
-    height: 89px;
-    background: #EEF8FF;
-    border-radius: 15px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .code p {
-    font-size: 14px;
-    line-height: 150%;
-    color: #9CB2C2;
-  }
-  
-  .code h3 {
-    font-weight: 600;
-    font-size: 32px;
-    line-height: 150%;
-    color: #0F4F8D;
-  }
-  
-  .code>h2 {
-    font-weight: 600;
-    font-size: 32px;
-    line-height: 150%;
-    color: #96A0A9;
-  }
-  
-  .scan {
-    width: 86px;
-    height: 89px;
-    background: #EEF8FF;
-    border-radius: 15px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 0 25px 0;
-  }
-  
-  .scan p {
-    font-size: 14px;
-    line-height: 150%;
-    text-align: center;
-    color: #9CB2C2;
-  }
-  
-  .scan img {
-    width: 42px;
-    height: 42px;
-  }
-  
-  .ticketContainer>p {
-    font-size: 14px;
-    line-height: 150%;
-    color: #EEF8FF;
-    margin: 19px 0 11px 0;
-  }
-  
-  .address {
+  display: flex;
+  justify-content: space-between;
+  padding-right: 80px;
+}
+
+.bankImg {
+  width: 65%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cont {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-bottom: 39px;
+}
+
+.ticketContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.container h1 {
+  font-weight: 500;
+  font-size: 26px;
+  line-height: 150%;
+  align-items: center;
+  color: #eef8ff;
+  margin-bottom: 19px;
+}
+
+.container div > div {
+  display: flex;
+}
+
+.code {
+  width: 138px;
+  height: 89px;
+  background: #eef8ff;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.code p {
+  font-size: 14px;
+  line-height: 150%;
+  color: #9cb2c2;
+}
+
+.code h3 {
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 150%;
+  color: #0f4f8d;
+}
+
+.code > h2 {
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 150%;
+  color: #96a0a9;
+}
+
+.scan {
+  width: 86px;
+  height: 89px;
+  background: #eef8ff;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 25px 0;
+}
+
+.scan p {
+  font-size: 14px;
+  line-height: 150%;
+  text-align: center;
+  color: #9cb2c2;
+}
+
+.scan img {
+  width: 42px;
+  height: 42px;
+}
+
+.ticketContainer > p {
+  font-size: 14px;
+  line-height: 150%;
+  color: #eef8ff;
+  margin: 19px 0 11px 0;
+}
+
+.address {
+  width: 100%;
+  max-width: 411px;
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #eef8ff;
+  border-radius: 15px;
+  padding: 0 25px 0 27px;
+}
+
+.address div {
+  display: flex;
+  flex-direction: column;
+}
+
+.address p {
+  font-size: 22px;
+  line-height: 150%;
+  color: #0f4f8d;
+}
+
+.address p:nth-of-type(2n) {
+  font-size: 14px;
+  line-height: 150%;
+  color: #0f4f8d;
+}
+
+.address img {
+  width: 19px;
+  height: 30px;
+}
+
+.service {
+  width: 100%;
+  max-width: 411px;
+  height: 58px;
+  display: flex;
+  align-items: center;
+  background: #eef8ff;
+  border-radius: 15px;
+  font-size: 22px;
+  line-height: 150%;
+  color: #0f4f8d;
+  padding-left: 27px;
+}
+
+.date {
+  width: 205px;
+  height: 50px;
+  background: #eef8ff;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 22px;
+  line-height: 150%;
+  color: #0f4f8d;
+  margin-right: 20px;
+}
+
+.time {
+  width: 110px;
+  height: 50px;
+  background: #eef8ff;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 22px;
+  line-height: 150%;
+  color: #0f4f8d;
+  margin-bottom: 35px;
+}
+
+.btnDelete {
+  width: 196px;
+  height: 41px;
+  background: #e14927;
+  border-radius: 15px;
+  border: none;
+  font-size: 18px;
+  line-height: 150%;
+  color: #eef8ff;
+  margin-right: 22px;
+}
+
+.btnChange {
+  width: 196px;
+  height: 41px;
+  background: #ffcd29;
+  border-radius: 15px;
+  border: none;
+  font-size: 18px;
+  line-height: 150%;
+  color: #0f4f8d;
+  margin-bottom: 28px;
+}
+
+.warning {
+  width: 100%;
+  max-width: 413px;
+  height: 64px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 14px;
+  border-radius: 15px;
+  background: #eef8ff;
+  color: #0f4f8d;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 131.5%;
+  margin-bottom: 60px;
+}
+
+.warning img {
+  padding-right: 6px;
+  width: 14px;
+  height: 36px;
+}
+
+.box_ticket > div {
+  display: flex;
+  justify-content: center;
+}
+
+.modalContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  z-index: 1;
+}
+
+.modalContent {
+  text-align: left;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  background-color: #0f4f8d;
+  padding: 20px;
+  border-radius: 4px;
+}
+
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.formContainer select {
+  margin-top: 10px;
+  border-radius: 15px;
+  padding: 10px 20px;
+  border: none;
+  width: 100%;
+  height: 45px;
+}
+
+.formContainer input {
+  width: 40%;
+  border: none;
+  border-radius: 15px;
+}
+
+.formContainer div {
+  margin-top: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.buttonContainer {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.btnCancel {
+  color: #0f4f8d;
+  font-size: 18px;
+  width: 150px;
+  margin-right: 10px;
+  padding: 10px 20px;
+  background-color: #ccc;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.btnSave {
+  color: #0f4f8d;
+  font-size: 18px;
+  width: 150px;
+  padding: 10px 20px;
+  background: #FFCD29;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 1180px) {
+  .container {
     width: 100%;
-    max-width: 411px;
-    height: 70px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: #EEF8FF;
-    border-radius: 15px;
-    padding: 0 25px 0 27px;
-  }
-  
-  .address div {
     display: flex;
     flex-direction: column;
-  }
-  
-  .address p {
-    font-size: 22px;
-    line-height: 150%;
-    color: #0F4F8D;
-  }
-  
-  .address p:nth-of-type(2n) {
-    font-size: 14px;
-    line-height: 150%;
-    color: #0F4F8D;
-  }
-  
-  .address img {
-    width: 19px;
-    height: 30px;
-  }
-  
-  .service {
-    width: 100%;
-    max-width: 411px;
-    height: 58px;
-    display: flex;
     align-items: center;
-    background: #EEF8FF;
-    border-radius: 15px;
-    font-size: 22px;
-    line-height: 150%;
-    color: #0F4F8D;
-    padding-left: 27px;
+    padding: 0;
   }
-  
-  .date {
-    width: 205px;
-    height: 50px;
-    background: #EEF8FF;
-    border-radius: 15px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 22px;
-    line-height: 150%;
-    color: #0F4F8D;
-    margin-right: 20px;
-  }
-  
-  .time {
-    width: 110px;
-    height: 50px;
-    background: #EEF8FF;
-    border-radius: 15px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 22px;
-    line-height: 150%;
-    color: #0F4F8D;
-    margin-bottom: 35px;
-  }
-  
-  .btnDelete {
-    width: 196px;
-    height: 41px;
-    background: #E14927;
-    border-radius: 15px;
-    border: none;
-    font-size: 18px;
-    line-height: 150%;
-    color: #EEF8FF;
-    margin-right: 22px;
-  }
-  
-  .btnChange {
-    width: 196px;
-    height: 41px;
-    background: #FFCD29;
-    border-radius: 15px;
-    border: none;
-    font-size: 18px;
-    line-height: 150%;
-    color: #0F4F8D;
-    margin-bottom: 28px;
-  }
-  
-  .warning {
-    width: 100%;
-    max-width: 413px;
-    height: 64px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 14px;
-    border-radius: 15px;
-    background: #EEF8FF;
-    color: #0F4F8D;
-    font-size: 15px;
-    font-weight: 600;
-    line-height: 131.5%;
-    margin-bottom: 60px;
-  }
-  
-  .warning img {
-    padding-right: 6px;
-    width: 14px;
-    height: 36px;
-  }
-  
-  .box_ticket>div {
-    display: flex;
-    justify-content: center;
+}
+.bankImg {
+  width: 100%;
+  height: auto;
+  padding: 10px;
+}
+
+.box_ticket {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.address,
+.service {
+  max-width: none;
+  width: 100%;
+}
+
+.ticket_data {
+  font-size: 16px;
+}
+
+@media only screen and (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    padding-right: 0;
   }
 
-  @media only screen and (max-width: 1180px) {
-    .container {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 0;
-      }
-  }
   .bankImg {
     width: 100%;
     height: auto;
+  }
+
+  .address,
+  .service {
+    max-width: none;
+    width: 100%;
+  }
+  .box_ticket {
     padding: 10px;
   }
+}
 
-  .box_ticket {
-    display: flex;
-    justify-content: center;
+@media only screen and (max-width: 448px) {
+  .container h1 {
+    font-size: 22px;
+    margin-bottom: 15px;
+  }
+
+  .code,
+  .scan {
+    width: 100%;
+  }
+
+  .code h3,
+  .code > h2 {
+    font-size: 20px;
+  }
+
+  .scan img {
+    width: 32px;
+    height: 32px;
+  }
+
+  .ticketContainer > p {
+    font-size: 12px;
+    margin: 15px 0 8px;
+  }
+
+  .address {
+    max-width: 100%;
+    padding: 0 10px;
+  }
+
+  .address p {
+    font-size: 18px;
+  }
+
+  .address p:nth-of-type(2n) {
+    font-size: 12px;
+  }
+
+  .address img {
+    width: 15px;
+    height: 24px;
+  }
+
+  .service {
+    max-width: 100%;
+    font-size: 18px;
+    padding-left: 10px;
+  }
+
+  .date {
+    width: 100%;
+    margin-right: 0;
+  }
+
+  .time {
+    width: 100%;
+    margin-bottom: 25px;
+    margin-left: 10px;
+  }
+
+  .btnDelete {
+    width: 50%;
+
+    margin-right: 10px;
+    margin-bottom: 15px;
+  }
+
+  .warning {
+    max-width: 100%;
+    padding: 10px;
+    font-size: 13px;
+    line-height: 120%;
+    margin-bottom: 40px;
+  }
+
+  .warning img {
+    padding-right: 4px;
+    width: 10px;
+    height: 26px;
+  }
+
+  .box_ticket > div {
     flex-direction: column;
   }
-  .address,
-    .service {
-      max-width: none;
-      width: 100%;
-    }
-  
-  
-  @media only screen and (max-width: 768px) {
-    .container {
-      flex-direction: column;
-      padding-right: 0;
-    }
-  
-    .bankImg {
-      width: 100%;
-      height: auto;
-    }
-  
-    .address,
-    .service {
-      max-width: none;
-      width: 100%;
-    }
-    .box_ticket {
-        padding: 10px;
-    }
+  .date {
+    font-size: 15px;
   }
-
-  @media only screen and (max-width: 448px) {
-   
-  
-    .container h1 {
-      font-size: 22px;
-      margin-bottom: 15px;
-    }
-  
-  
-    .code,
-    .scan {
-      width: 100%;
-    }
-  
-    .code h3,
-    .code > h2 {
-      font-size: 20px;
-    }
-  
-    .scan img {
-      width: 32px;
-      height: 32px;
-    }
-  
-    .ticketContainer > p {
-      font-size: 12px;
-      margin: 15px 0 8px;
-    }
-  
-    .address {
-      max-width: 100%;
-      padding: 0 10px;
-    }
-  
-    .address p {
-      font-size: 18px;
-    }
-  
-    .address p:nth-of-type(2n) {
-      font-size: 12px;
-    }
-  
-    .address img {
-      width: 15px;
-      height: 24px;
-    }
-  
-    .service {
-      max-width: 100%;
-      font-size: 18px;
-      padding-left: 10px;
-    }
-  
-    .date {
-      width: 100%;
-      margin-right: 0;
-    }
-  
-    .time {
-      width: 100%;
-      margin-bottom: 25px;
-      margin-left: 10px;
-    }
-  
-    .btnDelete {
-      width: 50%;
-
-      margin-right: 10px;
-      margin-bottom: 15px;
-    }
-  
-    .warning {
-      max-width: 100%;
-      padding: 10px;
-      font-size: 13px;
-      line-height: 120%;
-      margin-bottom: 40px;
-    }
-  
-    .warning img {
-      padding-right: 4px;
-      width: 10px;
-      height: 26px;
-    }
-  
-    .box_ticket > div {
-      flex-direction: column;
-    }
-    .date {
-        font-size: 15px;
-    }
-  }
-  
-    
+}

@@ -12,9 +12,12 @@ import CreateTicket from "./pages/create-ticket";
 import Ticket from "./pages/ticket/index";
 import { Personal } from "./pages/personal cabinet/index";
 import AdminLogin from "./pages/admin/login";
+import Points from "./pages/service_points";
 import { AdminLayout } from "./components/admin/layout";
 import { AdminMainPage } from "./pages/admin/main";
 import ChangePassword from "./pages/password_edit/password_edit";
+import PasswordResetCompleteForm from "./pages/pasword_code/paswordCode";
+import Chat from "./components/admin/chat";
 
 
 const App = () => {
@@ -32,13 +35,16 @@ const App = () => {
             <Route path="/create-ticket" element={<CreateTicket />} />
             <Route path="/ticket" element={<Ticket />} />
             <Route path="/personal" element={<Personal />} />
+            <Route path="/points" element={<Points />} />
             <Route path="/change_password" element={<ChangePassword />} />
+            <Route path="/reset_password" element={<PasswordResetCompleteForm />} />
           </Route>
         </Routes>
         <Routes>
           <Route path="/admin" element={<AdminLayout />}>
             <Route path="/admin/login" element={<AdminLogin />} />
             <Route path="/admin" element={<AdminMainPage />} />
+            <Route path="/admin/chat" element={<Chat />} />
           </Route>
         </Routes>
       </BrowserRouter>

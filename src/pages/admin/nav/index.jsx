@@ -1,6 +1,6 @@
 import React from 'react'
 import style from './nav.module.css'
-import { Link, NavLink } from 'react-router-dom';
+import { Link, } from 'react-router-dom';
 import avatar from '../../../components/images/Ellipse 171.png'
 import historyIcon from '../../../components/admin/img/history-icon.svg'
 import statIcon from '../../../components/admin/img/stat-icon.svg'
@@ -27,7 +27,7 @@ export const AdminNav = () => {
             </Link>
             <Link to="/Statistic"> <img src={statIcon} alt="#" />Статистика 
             </Link>
-            <Link to="/chat"> <img src={chatIcon} alt="#" />Чат
+            <Link to="/admin/chat"> <img src={chatIcon} alt="#" />Чат
             </Link>
             <Link to="/settings"> <img src={settingsIcon} alt="#" />Настройки 
             </Link>
