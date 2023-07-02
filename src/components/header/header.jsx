@@ -89,7 +89,7 @@ const Header = () => {
   return (
     <>
       <div className={style.header_wrapper}>
-        <img className={style.logo} src={Logo} alt="logo rsk" />
+        <Link to='/'> <img className={style.logo} src={Logo} alt="logo rsk" /></Link>
         <div className={style.links_container}>
           {links.map((link) => (
             <NavLink className={style.link} key={link.id} to={link.route}>
