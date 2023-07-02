@@ -130,9 +130,9 @@ const Login = () => {
           </button>
           <div className={LoginStyle.login_links}>
             <Link className={LoginStyle.link} to="/signup">
-              <a className={LoginStyle.link} href="#">
-                Регистрация
-              </a>
+             <p className={LoginStyle.link}>
+              Регистрация
+             </p>
             </Link>
           </div>
           <div className={LoginStyle.market}><Market /></div>

@@ -188,10 +188,10 @@ export const Personal = () => {
               <img src={arrow} alt="" />
             </div>
           </Link>
-          <div className={style.history_box}>2
-            <a className={style.history} href="#">
+          <div className={style.history_box}>
+            <div className={style.history}>
               История
-            </a>
+            </div>
             <img src={white_arrow} alt="" />
           </div>
         </div>
