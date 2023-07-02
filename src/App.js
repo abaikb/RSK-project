@@ -17,6 +17,7 @@ import { AdminLayout } from "./components/admin/layout";
 import { AdminMainPage } from "./pages/admin/main";
 import ChangePassword from "./pages/password_edit/password_edit";
 import PasswordResetCompleteForm from "./pages/pasword_code/paswordCode";
+import Chat from "./components/admin/chat";
 
 
 const App = () => {
@@ -43,6 +44,7 @@ const App = () => {
           <Route path="/admin" element={<AdminLayout />}>
             <Route path="/admin/login" element={<AdminLogin />} />
             <Route path="/admin" element={<AdminMainPage />} />
+            <Route path="/admin/chat" element={<Chat />} />
           </Route>
         </Routes>
       </BrowserRouter>
