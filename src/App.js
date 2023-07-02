@@ -18,6 +18,8 @@ import { AdminMainPage } from "./pages/admin/main";
 import ChangePassword from "./pages/password_edit/password_edit";
 import PasswordResetCompleteForm from "./pages/pasword_code/paswordCode";
 import Chat from "./components/admin/chat";
+import historyTicket from "./pages/history/history";
+
 
 
 const App = () => {
@@ -38,6 +40,7 @@ const App = () => {
             <Route path="/points" element={<Points />} />
             <Route path="/change_password" element={<ChangePassword />} />
             <Route path="/reset_password" element={<PasswordResetCompleteForm />} />
+            <Route path="/history_ticket" element={<historyTicket />} />
           </Route>
         </Routes>
         <Routes>

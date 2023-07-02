@@ -28,7 +28,7 @@ const Login = () => {
     if (accessToken) {
       navigate('/choose-person');
     } else {
-      const id = setTimeout(logout, 10 * 60 * 1000); // 10 minutes in milliseconds
+      const id = setTimeout(logout, 10 * 60 * 1000); 
       setTimeoutId(id);
     }
 
