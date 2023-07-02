@@ -215,7 +215,17 @@
     margin-top: 9px;
     padding-right: 10px;
   }
+  .login_checkbox input[type="checkbox"] {
+    width: 15px;
+    height: 15px;
+  }
 
   
 }
+
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  select:focus, textarea:focus, input:focus {
+          font-size: 16px;
+      }
+  }
 

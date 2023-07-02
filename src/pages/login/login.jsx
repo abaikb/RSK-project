@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { IoEye, IoEyeOff } from 'react-icons/io5';
@@ -13,8 +13,15 @@ const Login = () => {
   const [errors, setErrors] = useState({});
   const [errorMessage, setErrorMessage] = useState('');
   const [showPassword, setShowPassword] = useState(false);
-  const [isLoading, setIsLoading] = useState(false); // Added isLoading state
+  const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const accessToken = localStorage.getItem('accessToken');
+    if (accessToken) {
+      navigate('/choose-person');
+    }
+  }, [navigate]);
 
   const handleUsernameChange = (e) => {
     setUsername(e.target.value);
@@ -47,7 +54,7 @@ const Login = () => {
     e.preventDefault();
 
     if (validateForm()) {
-      setIsLoading(true); // Show loader
+      setIsLoading(true);
 
       try {
         const response = await axios.post('https://petshackaton.ru/account/login/', {
@@ -70,7 +77,7 @@ const Login = () => {
         }
       }
 
-      setIsLoading(false); // Hide loader
+      setIsLoading(false);
     }
   };
 
@@ -90,7 +97,7 @@ const Login = () => {
             placeholder="Номер телефона"
             className={LoginStyle.login_input}
           />
-          {errors.username && <div className={LoginStyle.errors}>{errors.username}</div>}
+          {errors.phone_number && <div className={LoginStyle.errors}>{errors.phone_number}</div>}
           <div className={LoginStyle.password_input_container}>
             <input
               type={showPassword ? 'text' : 'password'}
@@ -123,9 +130,9 @@ const Login = () => {
           </button>
           <div className={LoginStyle.login_links}>
             <Link className={LoginStyle.link} to="/signup">
-              <a className={LoginStyle.link} href="#">
-                Регистрация
-              </a>
+             <p className={LoginStyle.link}>
+              Регистрация
+             </p>
             </Link>
           </div>
           <div className={LoginStyle.market}><Market /></div>

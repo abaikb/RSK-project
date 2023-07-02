@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import axios from 'axios';
 import Logo from '../images/logo.png';
 import style from './header.module.css';
@@ -78,19 +78,18 @@ const Header = () => {
     <div className={style.modal_container}>
       <h2 className={style.modal_name}>{userName}</h2>
       <div className={style.modal_box}>
-      <a href="http://localhost:3000/personal" className={style.modal_link}>Личный кабинет</a>
+        <Link to="/personal" onClick={closeModal} className={style.modal_link}>Личный кабинет</Link>
       </div>
       <div className={style.modal_buttons}>
-      <button onClick={closeModal} className={style.modal_btn}>x</button>
-        <button className={style.logout_btn} onClick={handleLogout}> <a href="http://localhost:3000">Выйти</a></button>
+        <button onClick={closeModal} className={style.modal_btn}>x</button>
+        <button className={style.logout_btn} onClick={handleLogout}><Link to="/">выйти</Link></button>
       </div>
     </div>
   );
-
   return (
     <>
       <div className={style.header_wrapper}>
-        <img className={style.logo} src={Logo} alt="logo rsk" />
+        <Link to='/'> <img className={style.logo} src={Logo} alt="logo rsk" /></Link>
         <div className={style.links_container}>
           {links.map((link) => (
             <NavLink className={style.link} key={link.id} to={link.route}>

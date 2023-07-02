@@ -6,6 +6,9 @@ import CarouselComponent from '../../components/carousel/index';
 
 
 
+
+
+
 const apiBaseUrl = 'https://petshackaton.ru';
 
 const SelectOptions = ({ options, label, onChange }) => (
@@ -25,7 +28,6 @@ const SelectOptions = ({ options, label, onChange }) => (
     </select>
   </div>
 );
-
 function TicketForm() {
   const [date, setDate] = useState('');
   const [time, setTime] = useState('');
@@ -136,8 +138,8 @@ function TicketForm() {
         <CarouselComponent />
       </div>
       <div className={styles.cont}>
-        <div className={styles['ticket-form-container']}>
-          <form onSubmit={handleSubmit} className={styles['ticket-form']}>
+        <div className={styles.ticket_form_container}>
+          <form onSubmit={handleSubmit} className={styles.ticket_form}>
             <div className={styles['form-group']}>
               <SelectOptions
                 options={regionOptions}
@@ -169,7 +171,7 @@ function TicketForm() {
             <div className={styles['form-group']}>
               <SelectOptions
                 options={transactionOptions}
-                label="Транзакция"
+                label="Транзакцию"
                 onChange={handleTransactionChange}
               />
             </div>
@@ -195,7 +197,7 @@ function TicketForm() {
             <button className={styles.button_create} type="submit">Создать билет</button>
           </form>
         </div>
-        <div><Market /></div>
+        <div className={styles.market}><Market /></div>
       </div>
     </div>
   );

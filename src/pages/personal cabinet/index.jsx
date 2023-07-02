@@ -41,12 +41,16 @@ export const Personal = () => {
 
     const fetchTicketData = async () => {
       try {
-        const response = await axios.get('https://petshackaton.ru/ticket/get_ticket/', {
+        const accessToken = localStorage.getItem('accessToken');
+
+        const response = await axios.get('https://petshackaton.ru/ticket/get_my_ticket/', {
           headers: {
             accept: 'application/json',
-            'X-CSRFToken': 'UJIGPN4u8OBpMSQaNU5VvU6kJrKlf1vJI5468P6HU4ZFlCcqNgdaMBkOo1DT795j'
+            'X-CSRFToken': 'UJIGPN4u8OBpMSQaNU5VvU6kJrKlf1vJI5468P6HU4ZFlCcqNgdaMBkOo1DT795j',
+            Authorization: `Bearer ${accessToken}`,
           }
         });
+
         const ticketData = response.data[0];
         setTicketData(ticketData);
       } catch (error) {
@@ -80,6 +84,7 @@ export const Personal = () => {
           Authorization: `Bearer ${accessToken}`
         }
       });
+      window.location.reload()
 
       const updatedUserData = { ...userData, ...editedData };
       setUserData(updatedUserData);
@@ -107,7 +112,9 @@ export const Personal = () => {
         <div className={style.name_box}>
           <img className={style.avatar} src={Avatar} alt="#" />
           <h3 className={style.name}>
-            {userData.last_name} {userData.name}  {userData.otchestvo}
+            <div>{userData.last_name}</div>
+            <div>{userData.name}</div> <div>
+              {userData.otchestvo}</div>
           </h3>
           {editing && <img className={style.pen} src={wPen} alt="" />}
         </div>
@@ -129,7 +136,7 @@ export const Personal = () => {
           <input
             type="email"
             name="email"
-            placeholder={userData.email}
+            placeholder="Email"
             value={editedData.email || ''}
             onChange={handleInputChange}
             readOnly={!editing}
@@ -143,8 +150,7 @@ export const Personal = () => {
             readOnly={!editing}
           />
         )}
-        <input type="password" placeholder="Изменить пароль" />
-
+        <Link to='/change_password'><button className={style.change_btn_pass}>изменить пароль</button></Link>
         {editing ? (
           <button className={style.change_button} onClick={handleSaveClick}>
             Сохранить
@@ -160,8 +166,8 @@ export const Personal = () => {
             <div className={style.ticket}>
               <img src={pin} alt="#" />
               <div className={style.address}>
-                <span className={style.titleCity}>{ticketData?.city}</span>
-                <span className={style.department}>{ticketData?.department}</span>
+                <div className={style.titleCity}>{ticketData?.city}</div>
+                <div className={style.department}>{ticketData?.department}</div>
               </div>
               <div className={style.data}>
                 <span>
@@ -179,13 +185,13 @@ export const Personal = () => {
                     }).format(new Date(`2000-01-01T${ticketData.time}`))}
                 </span>
               </div>
+              <img src={arrow} alt="" />
             </div>
-            <img src={arrow} alt="" />
           </Link>
           <div className={style.history_box}>
-            <a className={style.history} href="#">
+            <div className={style.history}>
               История
-            </a>
+            </div>
             <img src={white_arrow} alt="" />
           </div>
         </div>
@@ -193,4 +199,3 @@ export const Personal = () => {
     </div >
   );
 };
-

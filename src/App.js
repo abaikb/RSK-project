@@ -6,13 +6,17 @@ import { AboutPage } from "./pages/about_us";
 import { MainPage } from "./pages/main/index";
 import RegistrationForm from "./pages/signup/signup";
 import Login from "./pages/login/login";
-import ChoosePerson from "./pages/person/index"
+import ChoosePerson from "./pages/person/index";
 import ForgotPasswordForm from "./pages/change_password/change";
 import CreateTicket from "./pages/create-ticket";
 import Ticket from "./pages/ticket/index";
 import { Personal } from "./pages/personal cabinet/index";
 import AdminLogin from "./pages/admin/login";
 import Points from "./pages/service_points";
+import { AdminLayout } from "./components/admin/layout";
+import { AdminMainPage } from "./pages/admin/main";
+import ChangePassword from "./pages/password_edit/password_edit";
+import PasswordResetCompleteForm from "./pages/pasword_code/paswordCode";
 
 
 const App = () => {
@@ -31,12 +35,16 @@ const App = () => {
             <Route path="/ticket" element={<Ticket />} />
             <Route path="/personal" element={<Personal />} />
             <Route path="/points" element={<Points />} />
+            <Route path="/change_password" element={<ChangePassword />} />
+            <Route path="/reset_password" element={<PasswordResetCompleteForm />} />
           </Route>
         </Routes>
         <Routes>
-        <Route path="/admin/login" element={<AdminLogin />} />
+          <Route path="/admin" element={<AdminLayout />}>
+            <Route path="/admin/login" element={<AdminLogin />} />
+            <Route path="/admin" element={<AdminMainPage />} />
+          </Route>
         </Routes>
-
       </BrowserRouter>
     </div>
   );

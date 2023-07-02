@@ -1,12 +1,12 @@
 import React from "react";
 import style from "./about.module.css"
-import Phone from "../../components/images/slide4.png"
+import CarouselComponent from "../../components/carousel";
 
 export const AboutPage = () => {
   return (
     <div className={style.container}>
       <div className={style.img_box}>
-        <img src={Phone} alt="#" />
+      <CarouselComponent/>
       </div>
       <div className={style.text_box}>
         <p className={style.subtitle}>Добро пожаловать в приложение РСК БАНК - вашему удобству и быстроте!
