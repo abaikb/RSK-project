@@ -41,12 +41,16 @@ export const Personal = () => {
 
     const fetchTicketData = async () => {
       try {
-        const response = await axios.get('https://petshackaton.ru/ticket/get_ticket/', {
+        const accessToken = localStorage.getItem('accessToken');
+
+        const response = await axios.get('https://petshackaton.ru/ticket/get_my_ticket/', {
           headers: {
             accept: 'application/json',
-            'X-CSRFToken': 'UJIGPN4u8OBpMSQaNU5VvU6kJrKlf1vJI5468P6HU4ZFlCcqNgdaMBkOo1DT795j'
+            'X-CSRFToken': 'UJIGPN4u8OBpMSQaNU5VvU6kJrKlf1vJI5468P6HU4ZFlCcqNgdaMBkOo1DT795j',
+            Authorization: `Bearer ${accessToken}`,
           }
         });
+
         const ticketData = response.data[0];
         setTicketData(ticketData);
       } catch (error) {
@@ -80,6 +84,7 @@ export const Personal = () => {
           Authorization: `Bearer ${accessToken}`
         }
       });
+      window.location.reload()
 
       const updatedUserData = { ...userData, ...editedData };
       setUserData(updatedUserData);
@@ -108,7 +113,7 @@ export const Personal = () => {
           <img className={style.avatar} src={Avatar} alt="#" />
           <h3 className={style.name}>
             <div>{userData.last_name}</div>
-             <div>{userData.name}</div> <div> 
+            <div>{userData.name}</div> <div>
               {userData.otchestvo}</div>
           </h3>
           {editing && <img className={style.pen} src={wPen} alt="" />}
@@ -145,8 +150,7 @@ export const Personal = () => {
             readOnly={!editing}
           />
         )}
-        <input type="password" placeholder="Изменить пароль" />
-
+        <Link to='/change_password'><button className={style.change_btn_pass}>изменить пароль</button></Link>
         {editing ? (
           <button className={style.change_button} onClick={handleSaveClick}>
             Сохранить
@@ -184,7 +188,7 @@ export const Personal = () => {
               <img src={arrow} alt="" />
             </div>
           </Link>
-          <div className={style.history_box}>
+          <div className={style.history_box}>2
             <a className={style.history} href="#">
               История
             </a>
@@ -195,4 +199,3 @@ export const Personal = () => {
     </div >
   );
 };
-
