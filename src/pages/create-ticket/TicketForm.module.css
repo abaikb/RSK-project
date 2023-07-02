@@ -67,6 +67,8 @@ input[type="time"] {
   padding: 12px;
   border-radius: 15px;
   border: none;
+  color: #9CB2C2;
+  padding-left: 29px;
 }
 
 .button_create {

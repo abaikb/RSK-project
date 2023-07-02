@@ -27,7 +27,7 @@ export const AdminNav = () => {
             </Link>
             <Link to="/Statistic"> <img src={statIcon} alt="#" />Статистика 
             </Link>
-            <Link to="/chat"> <img src={chatIcon} alt="#" />Чат
+            <Link to="/admin/chat"> <img src={chatIcon} alt="#" />Чат
             </Link>
             <Link to="/settings"> <img src={settingsIcon} alt="#" />Настройки 
             </Link>

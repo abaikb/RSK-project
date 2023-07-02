@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import CarouselComponent from '../../components/carousel/index';
 import style from './main.module.css';
 import Money from '../../components/images/money.png';
@@ -93,7 +94,9 @@ export const MainPage = () => {
                             <option value="">POS-терминалы</option>
                             <option value="">Банкоматы</option>
                         </select>
-                        <button className={style.btnShow}>Показать</button>
+                        <Link to="/points">
+                            <button className={style.btnShow}>Показать</button>
+                        </Link>
                         <div>
                             <a href="">Отделения</a>
                             <a href="">Банкоматы</a>

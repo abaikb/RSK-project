@@ -1,0 +1,72 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 50px 80px;
+}
+
+
+.region {
+    display: flex;
+    flex-direction: column;
+    font-size: 22px;
+    line-height: 27.5px;
+    color: #E8F7FF;
+}
+
+.dep {
+    display: flex;
+    flex-direction: column;
+    color: #FFF;
+    font-size: 26px;
+    font-weight: 500;
+    line-height: 27.5px;
+}
+
+.depOptions {
+    display: flex;
+}
+
+.depOptions>label {
+    margin: 0 70px 30px 0;
+}
+
+.depOptions>label>input {
+    margin-right: 20px;
+    color: red;
+}
+
+.list {
+    width: 955px;
+    padding: 13px 36px 38px 44px;
+    border-radius: 15px;
+    background: #FFF;
+    border: none;
+    color: #0F4F8D;
+    font-size: 18px;
+    font-family: Roboto;
+    line-height: 27.5px;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tr {
+    color: #0F4F8D;
+    font-size: 18px;
+    line-height: 27.5px;
+    padding-top: 22px;
+    border-bottom: 1px solid #0F4F8D;
+}
+
+.tr > td:first-child{
+    width: 47px;
+    height: 85px;
+    padding-left: 10px;
+    
+}
