@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import './chat.css';
+import style from './chat.module.css';
 
 const Chat = () => {
   const [messages, setMessages] = useState([]);
@@ -14,39 +14,35 @@ const Chat = () => {
   };
 
   return (
-    <div className="chat-container">
-      <div className="chat-header">
-        <h1>WhatsApp Chat</h1>
-      </div>
-      <div className="chat-messages">
+    <div className={style.chat_container}>
+      <div className={style.chat_messages}>
         {messages.map((message, index) => (
-          <div key={index} className="chat-message">
-            <span className="chat-message-user">{message.user}: </span>
+          <div key={index} className={style.chat_message}>
+            <span className={style.chat_message_user}>{message.user}: </span>
             {message.text}
           </div>
         ))}
       </div>
-      <form onSubmit={handleSubmit} className="chat-input-form">
+      <form onSubmit={handleSubmit} className={style.chat_input_form}>
         <input
           type="text"
           value={inputValue}
           onChange={(e) => setInputValue(e.target.value)}
-          placeholder="Type a message..."
-          className="chat-input"
+          placeholder="Введите сообщение..."
+          className={style.chat_input}
         />
         <input
           type="text"
           value={currentUser}
           onChange={(e) => setCurrentUser(e.target.value)}
-          placeholder="Your name"
-          className="chat-user-input"
+          placeholder="Ваше имя"
+          className={style.chat_user_input}
         />
-        <button type="submit" className="chat-send-button">
-          Send
+        <button type="submit" className={style.chat_send_button}>
+          Отправить
         </button>
       </form>
     </div>
   );
-};
-
-export default Chat;
+}
+export default Chat    
