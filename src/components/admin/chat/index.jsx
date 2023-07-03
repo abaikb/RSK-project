@@ -31,13 +31,13 @@ const Chat = () => {
           placeholder="Введите сообщение..."
           className={style.chat_input}
         />
-        <input
+        {/* <input
           type="text"
           value={currentUser}
           onChange={(e) => setCurrentUser(e.target.value)}
           placeholder="Ваше имя"
           className={style.chat_user_input}
-        />
+        /> */}
         <button type="submit" className={style.chat_send_button}>
           Отправить
         </button>
@@ -46,3 +46,4 @@ const Chat = () => {
   );
 }
 export default Chat    
+
