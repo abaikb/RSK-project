@@ -15,13 +15,27 @@ const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
+  const [timeoutId, setTimeoutId] = useState(null);
 
-  useEffect(() => {
-    const accessToken = localStorage.getItem('accessToken');
-    if (accessToken) {
-      navigate('/choose-person');
-    }
-  }, [navigate]);
+  const logout = () => {
+    localStorage.removeItem('accessToken');
+    localStorage.removeItem('refreshToken');
+    navigate('/login');
+  };
+
+  // useEffect(() => {
+  //   const accessToken = localStorage.getItem('accessToken');
+  // //   if (accessToken) {
+  // //     navigate('/choose-person');
+  // //   } else {
+  // //     const id = setTimeout(logout, 10 * 60 * 1000); 
+  // //     setTimeoutId(id);
+  // //   }
+
+  // //   return () => {
+  // //     clearTimeout(timeoutId);
+  // //   };
+  // // }, [navigate, timeoutId]);
 
   const handleUsernameChange = (e) => {
     setUsername(e.target.value);
