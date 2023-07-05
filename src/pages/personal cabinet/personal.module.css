@@ -91,6 +91,15 @@
   margin-bottom: 17px;
 }
 
+.erorr {
+  width: 100%;
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #E5EDFF;
+}
+
 .ticket {
   
   cursor: pointer;
@@ -274,6 +283,9 @@
   .name {
     margin-left: 30px;
     font-size: 24px;
+  }
+  .erorr h1 {
+    font-size: 15px;
   }
 }
 

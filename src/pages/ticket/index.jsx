@@ -35,14 +35,13 @@ const Ticket = () => {
   });
 
   const [showModal, setShowModal] = useState(false);
-  const [selectedRegion, setSelectedRegion] = useState('');
   const [selectedCity, setSelectedCity] = useState('');
   const [selectedDepartment, setSelectedDepartment] = useState('');
   const [selectedTransaction, setSelectedTransaction] = useState('');
-  const [regionOptions, setRegionOptions] = useState([]);
   const [cityOptions, setCityOptions] = useState([]);
   const [departmentOptions, setDepartmentOptions] = useState([]);
   const [transactionOptions, setTransactionOptions] = useState([]);
+  const [isTicketDeleted, setIsTicketDeleted] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -59,7 +58,6 @@ const Ticket = () => {
           axios.get(`${apiBaseUrl}/ticket/get_transaction/`)
         ]);
 
-        setRegionOptions(regionResponse.data);
         setCityOptions(cityResponse.data);
         setDepartmentOptions(departmentResponse.data);
         setTransactionOptions(transactionResponse.data);
@@ -112,71 +110,73 @@ const Ticket = () => {
       await axios.delete(`https://petshackaton.ru/ticket/change_ticket/${ticketId}/`, {
         headers: {
           accept: 'application/json',
-          'X-CSRFToken': 'kBr8yq8mDZWV2mREaXNCq5wJP0gn3KSs8XNyRsazpfkbB6dUajVRHMKduA9VVSs2',
+          'X-CSRFToken': 'kBr8yq8mboAxX3p5ndcGdPYwS1YK2gSoLH3LWwA43lKwzAHLUaPVptA8UHDC4mgg',
           Authorization: `Bearer ${accessToken}`,
         },
       });
 
-      window.location.reload();
+      setIsTicketDeleted(true);
     } catch (error) {
       console.error('Error deleting ticket:', error);
     }
   };
 
-  const handleModifyTicket = async () => {
-    try {
-      const accessToken = localStorage.getItem('accessToken');
-      const ticketId = ticketData.id;
+// ...
 
-      if (!selectedCity || !selectedDepartment || !selectedTransaction) {
-        console.error('Error: Required fields are null.');
-        return;
-      }
+const handleModifyTicket = async () => {
+  try {
+    const accessToken = localStorage.getItem('accessToken');
+    const ticketId = ticketData.id;
 
-      await axios.patch(
-        `https://petshackaton.ru/ticket/change_ticket/${ticketId}/`,
-        {
-          city: selectedCity,
-          department: selectedDepartment,
-          transaction: selectedTransaction,
-          date: modifiedData.date,
-          time: modifiedData.time,
+    if (!selectedCity || !selectedDepartment || !selectedTransaction) {
+      console.error('Error: Required fields are null.');
+      return;
+    }
+
+    await axios.patch(
+      `https://petshackaton.ru/ticket/change_ticket/${ticketId}/`,
+      {
+        city: selectedCity,
+        department: selectedDepartment,
+        transaction: selectedTransaction,
+        date: modifiedData.date,
+        time: modifiedData.time,
+      },
+      {
+        headers: {
+          accept: 'application/json',
+          'X-CSRFToken': 'kBr8yq8mDZWV2mREaXNCq5wJP0gn3KSs8XNyRsazpfkbB6dUajVRHMKduA9VVSs2',
+          Authorization: `Bearer ${accessToken}`,
         },
-        {
-          headers: {
-            accept: 'application/json',
-            'X-CSRFToken': 'kBr8yq8mDZWV2mREaXNCq5wJP0gn3KSs8XNyRsazpfkbB6dUajVRHMKduA9VVSs2',
-            Authorization: `Bearer ${accessToken}`,
-          },
-        }
-      );
-      window.location.reload()
-    } catch (error) {
-      console.error('Error modifying ticket:', error);
-    }
-  };
+      }
+    );
+    window.location.reload()
+  } catch (error) {
+    console.error('Error modifying ticket:', error);
+  }
+};
 
-  const handleInputChange = (event) => {
-    const { name, value } = event.target;
+const handleInputChange = (event) => {
+  const { name, value } = event.target;
 
-    if (name === 'city') {
-      setSelectedCity(value || ''); 
-    } else if (name === 'department') {
-      setSelectedDepartment(value || ''); 
-    } else if (name === 'transaction') {
-      setSelectedTransaction(value || ''); 
-    } else if (name === 'date') {
-      setModifiedData((prevState) => ({
-        ...prevState,
-        date: value,
-      }));
-    } else if (name === 'time') {
-      setModifiedData((prevState) => ({
-        ...prevState,
-        time: value,
-      }));
-    }
-  };
+  if (name === 'city') {
+    setSelectedCity(value || ''); 
+  } else if (name === 'department') {
+    setSelectedDepartment(value || ''); 
+  } else if (name === 'transaction') {
+    setSelectedTransaction(value || ''); 
+  } else if (name === 'date') {
+    setModifiedData((prevState) => ({
+      ...prevState,
+      date: value,
+    }));
+  } else if (name === 'time') {
+    setModifiedData((prevState) => ({
+      ...prevState,
+      time: value,
+    }));
+  }
+};
 
   const openModifyTicketModal = () => {
     setShowModal(true);
@@ -185,6 +185,19 @@ const Ticket = () => {
   const closeModifyTicketModal = () => {
     setShowModal(false);
   };
+
+  if (isTicketDeleted) {
+    return (
+      <div className={style.container}>
+        <div className={style.bankImg}>
+          <CarouselComponent />
+        </div>
+        <div className={style.delete_ticket}>
+          <h1>Ваш билет удален !</h1>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className={style.container}>

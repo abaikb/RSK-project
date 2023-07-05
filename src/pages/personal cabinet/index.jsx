@@ -34,7 +34,7 @@ export const Personal = () => {
         setLoading(false);
       } catch (error) {
         console.error('Error fetching user data:', error);
-        setError('Не удалось загрузить данные');
+        setError('Не удалось загрузить данные !');
         setLoading(false);
       }
     };
@@ -99,7 +99,7 @@ export const Personal = () => {
   }
 
   if (error) {
-    return <div>{error}</div>;
+    return <div className={style.erorr}><h1>{error}</h1></div>;
   }
 
   return (
