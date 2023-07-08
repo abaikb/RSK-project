@@ -1,0 +1,34 @@
+.adminList {
+    position: absolute;
+    width: 80%;
+    right: 0;
+    top: 250px;
+  }
+  
+  .adminList table {
+    width: 100%;
+  }
+  
+  .adminList th,
+  .adminList td {
+    padding-right: 200px;
+    font-family: Roboto;
+  }
+
+  .adminList th {
+    color: #6D7885;
+    font-size: 20px;
+    padding-bottom: 20px;
+  }
+  
+  .adminList .ticketCell {
+    vertical-align: top;
+  }
+
+  .adminList .ticket {
+    width: 272px;
+    margin-bottom: 8px;
+    padding: 8px;
+    background-color: #f7f9fb;
+  }
+  

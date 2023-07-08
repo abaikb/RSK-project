@@ -13,11 +13,11 @@ import Ticket from "./pages/ticket/index";
 import { Personal } from "./pages/personal cabinet/index";
 import AdminLogin from "./pages/admin/login";
 import Points from "./pages/service_points";
-import { AdminLayout } from "./components/admin/layout";
 import { AdminMainPage } from "./pages/admin/main";
 import ChangePassword from "./pages/password_edit/password_edit";
 import PasswordResetCompleteForm from "./pages/pasword_code/paswordCode";
 import Chat from "./components/admin/chat";
+import { AdminList } from "./components/admin/application_list";
 
 
 
@@ -42,9 +42,10 @@ const App = () => {
           </Route>
         </Routes>
         <Routes>
+            <Route path="/signin" element={<AdminLogin />} />
             <Route path="/admin" element={<AdminMainPage />}> 
             <Route path="/admin/chat" element={<Chat />} />
-            <Route path="/admin/login" element={<AdminLogin />} />
+            <Route path="/admin/application" element={<AdminList />} />
           </Route>
         </Routes>
       </BrowserRouter>

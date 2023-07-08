@@ -1,6 +1,7 @@
-import React from 'react'
+import React, {useState , useEffect} from 'react'
 import style from './nav.module.css'
 import { Link, } from 'react-router-dom';
+import axios from 'axios';
 import avatar from '../../../components/images/Ellipse 171.png'
 import historyIcon from '../../../components/admin/img/history-icon.svg'
 import statIcon from '../../../components/admin/img/stat-icon.svg'
@@ -9,19 +10,48 @@ import settingsIcon from '../../../components/admin/img/settings-icon.svg'
 import applicationIcon from '../../../components/admin/img/application-icon.svg'
 
 export const AdminNav = () => {
+  const [ data, setData ] = useState ([])
+
+  useEffect (() => {
+    const fetchData = async () => {
+      try {
+        const accessToken = localStorage.getItem('accessToken')
+
+        const response = await axios.get(
+          'https://petshackaton.ru/account/profile/',
+          {
+            headers: {
+              accept: 'application/json',
+              Authorization: `Bearer ${accessToken}`,
+              // 'X-CSRFToken': yQEa4LbFOm5uBYsAhBSmEs7FjES0OYOwEtc5qE2QoihbDhvldCjIg91PAgamj6ZZ,
+            },
+          }
+        );
+
+        const operatorWindow = response.data;
+        setData = (operatorWindow);
+      }catch (error) {
+        console.log(error);
+      }
+    };
+    fetchData();
+
+  }, []);
+
   return (
     <div className={style.container}>
+      {data.map(item => (
+                <div key={item.id} className={style.ticket}>
+                  <div>{item.name}</div>
+                  <div className={style.name_box}>{item.last_name}</div>
+                </div>
+              ))}
         <div className={style.info_table}>
         <img className={style.avatar} src={avatar} alt="#" />
-        <div className={style.name_box}>
-
-        <h3 className={style.name}>Алмазова К. А.</h3>
-        <h5 className={style.role}>Оператор</h5>
-        </div>
         </div>
 
         <div className={style.list}>
-            <Link to="/applications"> <img src={applicationIcon} alt="#" />Лента заявок 
+            <Link to="/admin/application"> <img src={applicationIcon} alt="#" />Лента заявок 
             </Link>
             <Link to="/history"> <img src={historyIcon} alt="#" />История 
             </Link>

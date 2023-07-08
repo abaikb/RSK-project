@@ -56,7 +56,7 @@ const AdminLogin = () => {
                 localStorage.setItem('refreshToken', refresh);
 
                 console.log('Успешный вход в систему');
-                navigate('/admin/main');
+                navigate('/admin');
                 window.location.reload();
             } catch (error) {
                 if (error.response && error.response.data && error.response.data.detail) {
