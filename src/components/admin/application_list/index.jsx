@@ -5,6 +5,22 @@ import style from './application.module.css';
 export const AdminList = () => {
   const [data, setData] = useState([]);
 
+  const calculateRemainingTime = (timestamp) => {
+    const ticketTime = new Date(timestamp).getTime() + 10 * 60 * 1000;
+    const currentTime = new Date().getTime();
+    const difference = ticketTime - currentTime;
+
+    if (difference <= 0) {
+      return '00:00:00';
+    }
+
+    const hours = Math.floor(difference / (1000 * 60 * 60));
+    const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+    return `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+  };
+
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -12,7 +28,7 @@ export const AdminList = () => {
         const refreshToken = localStorage.getItem('refreshToken');
 
         const response = await axios.get(
-          'https://petshackaton.ru/ticket/get_my_ticket/',
+          'https://petshackaton.ru/ticket/get_ticket/',
           {
             headers: {
               accept: 'application/json',
@@ -22,7 +38,9 @@ export const AdminList = () => {
           }
         );
 
-        const ticketList = response.data;
+        const ticketList = response.data.map(item => {
+          return { ...item, remainingTime: calculateRemainingTime(item.timestamp) };
+        });
         
         setData(ticketList);
       } catch (error) {
@@ -32,12 +50,6 @@ export const AdminList = () => {
 
     fetchData();
   }, []);
-
-  const startTimer = (ticketId) => {
-    setTimeout(() => {
-    }, 5 * 60 * 1000);
-
-  };
 
   return (
     <div className={style.adminList}>
@@ -57,7 +69,6 @@ export const AdminList = () => {
                 <div key={item.id} className={style.ticket}>
                   <div>{item.number}</div>
                   <div>{item.transaction}</div>
-                  {startTimer(item.id)}
                 </div>
               ))}
             </td>
