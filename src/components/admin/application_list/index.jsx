@@ -23,6 +23,7 @@ export const AdminList = () => {
         );
 
         const ticketList = response.data;
+        
         setData(ticketList);
       } catch (error) {
         console.error(error);
@@ -31,6 +32,12 @@ export const AdminList = () => {
 
     fetchData();
   }, []);
+
+  const startTimer = (ticketId) => {
+    setTimeout(() => {
+    }, 5 * 60 * 1000);
+
+  };
 
   return (
     <div className={style.adminList}>
@@ -50,6 +57,7 @@ export const AdminList = () => {
                 <div key={item.id} className={style.ticket}>
                   <div>{item.number}</div>
                   <div>{item.transaction}</div>
+                  {startTimer(item.id)}
                 </div>
               ))}
             </td>

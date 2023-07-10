@@ -51,4 +51,18 @@
   .list a img {
     margin-right: 5px;
   }
+
+  .name_box {
+    width: 170px;
+    margin-left: 10px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    
+  }
+
+  .name_box  div {
+    margin-top: 10px;
+  }
   
